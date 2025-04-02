@@ -6,3 +6,888 @@ Version: 1.0
 Author: AcousticStation
 Author URI: https://parhan.jp
 */
+
+/* 
+SPファーストで記述
+メディアクエリは後半にまとめている
+marginは基本はtopにかけるが、デザインの都合上ボトムにかけたい場合は「margin-bottom」を使う
+優先順位は、プラグイン自体のCSS→style.cssであることに注意(自分のCSSでプラグインのCSSを打ち消していないか要確認)
+*/
+
+/* ========================
+全体
+======================== */
+
+/*
+リセットCSSで変わっていない部分をリセット
+およびフォントなど全体に関わる部分を変更
+*/
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ 
+ul,
+ol {
+  list-style: none;
+}
+ 
+a {
+  color: inherit;
+  text-decoration: none;
+  /* トランジションを滑らかに */
+  transition-duration: 0.3s;
+}
+/* リンクホバー時にテキストカラーを変更 */
+a:hover {
+  color: #d4d4d4;
+}
+
+body {
+  /*パーキング飯用に変更すること
+  font-family: dnp-shuei-gothic-gin-std, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  */
+  font-size: 16px;
+  color: #000000;
+  line-height: 2;
+  background-color: #ffffff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.article-title {
+  /*パーキング飯用に変更すること
+  font-family: dnp-shuei-gothic-gin-std, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========================
+コンポーネント
+======================== */
+
+/*---- ボタン ----*/
+.btn-area {
+  margin: 2em 0;
+}
+.page-btn {
+  display: block;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  background-color: #A0D8EF;
+  color: #fff;
+  border: solid 1px #A0D8EF; 
+  border-radius: 20px;
+  font-size: 1rem;
+  transition-duration: 0.3s;
+}
+.page-btn:hover {
+  background-color: #fff;
+  color: #A0D8EF;
+  border: solid 1px #A0D8EF; 
+}
+ 
+/* ========================
+ヘッダー
+======================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  background-color: #fff;
+}
+
+.header-inner {
+  position: relative;
+  height: 70px;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo {
+  display: inline-block;
+  color: #A0D8EF;
+}
+.btn-menu {
+  display: block;
+  width: 44px;
+  height: 34px;
+  background-image: url(./img/icon-menu.png);
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: solid 2px #000;
+  border-radius: 0;
+  outline: none;
+}
+.site-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  background-color: #A0D8EF;
+  overflow-x: hidden;
+  width: 0;
+  transition-duration: 0.5s;
+}
+.site-menu.open-menu {
+  width: 100%;
+}
+.site-menu ul li {
+  margin: 2rem 0;
+}
+.site-menu ul li a {
+  display: inline-block;
+  padding: 1em 3em;
+  white-space: nowrap;
+}
+.site-menu ul li a:hover {
+  color: #A0D8EF;
+  background-color: #fff;
+}
+
+/* ========================
+メイン
+======================== */
+.main {
+  padding: 70px 20px 2rem;
+}
+/* コンテンツをはみ出ないようにする、および中央揃えに */
+.content-wrapper {
+  width: clamp(335px, 85%, 900px);
+  margin: auto;
+}
+
+/*---- アーカイブページ ----*/
+
+.page-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.article-list li a {
+  display: block;
+  overflow: hidden;
+}
+.article-list li a:hover .thumbnail-area img{
+transform: scale(1.05);
+}
+.thumbnail-area {
+  overflow: hidden;
+}
+.thumbnail-area img {
+  /* overflow:hidden; を効かせるためdisplayを変更*/
+  display: block;
+  
+  transition-duration: 0.3s;
+}
+.text {
+  padding: 0.75rem 0 2rem;
+}
+.entry-date {
+  font-size: 0.75rem;
+  margin: 0 0 0 1em;
+  color: #d4d4d4;
+}
+.article-title {
+  font-size: 1rem;
+  margin-top: 0.67em;
+}
+.category-list {
+  display: flex;
+  margin-top: 1.33em;
+}
+.article-category {
+  font-size: 0.625rem;
+  padding: 0.5em 1em;
+  border: solid 1px #A0D8EF;
+  border-radius: 20px;
+  color: #A0D8EF;
+  font-weight: 400;
+}
+.category-list li:not(.category-list li:first-child) {
+  margin-left: 1em;
+}
+
+/*-- ページネーション --*/
+.nav-links {
+text-align: center;
+padding: 0.5em;
+color: #A0D8EF;
+max-width: 400px;
+margin: 2em auto;
+}
+.page-numbers {
+display: inline-block;
+padding: 0.2em 0.5em; 
+margin: 0 3px;
+background-color: #fff;
+border: solid 1px #A0D8EF;
+}
+a.page-numbers:hover {
+color: #fff;
+background-color: #A0D8EF;
+}
+.page-numbers.current {
+color: #000;
+border: solid 1px #000;
+}
+ 
+/*-- プロフィール欄 --*/
+
+.profile-area {
+  margin: 1em 0;
+}
+.profile-top {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+.profile-img-area {
+  text-align: center;
+  position: relative;
+}
+.profile-img-area img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+.profile-img-area p {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: #fff;
+  border: solid 1px #000;
+}
+.profile-description {
+  margin-top: 1em;
+  line-height: 2;
+  max-width: 500px;
+  margin: 2em auto;
+}
+
+/*-- 個別投稿ページ --*/
+
+/* */
+ 
+/* タイトルエリア */
+.single-article .article-title {
+  font-size: 1.25rem;
+  margin-top: 1em;
+}
+.single-article .entry-date {
+  margin: 1em 0 0 0.5em;
+}
+
+/* カテゴリのCSSはアーカイブページのほうでベースを調節しているので注意 */
+.single-article .category-list {
+  margin: 0.5em 0 0.5em 0.5em;
+}
+
+/* アイキャッチエリア */
+.eyecatch-area {
+  padding: 1rem 0;
+}
+
+/* 記事の本文 */
+.article-content {
+padding: 1rem 0;
+}
+.article-content h2 {
+  font-size: 1.25rem;
+  margin: 3rem 0 1em 0;
+  padding: 0 0 0.6em 1em;
+  border-bottom: solid 1px #A0D8EF;
+}
+.article-content h3 {
+  font-size: 1rem;
+  margin: 3em 0 1.5em 0;
+  padding-left: 1em;
+  border-left: solid 2px #A0D8EF;
+}
+.article-content p {
+  margin-bottom: 2em;
+  letter-spacing: 0.05em;
+}
+.article-content img {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* 前後ページリンク */
+.page-link {
+margin-bottom: 2rem;
+}
+.page-link p {
+margin-bottom: 1em;
+font-size: 0.875rem;
+}
+.prev-page-link,
+.next-page-link {
+  padding: 0.5em 1em;
+  border: solid 1px #000;
+  border-radius: 20px;
+  text-align: center;
+}
+.prev-page-link::before {
+  content: '<';
+}
+.next-page-link::after {
+  content: '>';
+}
+
+/* 最新の記事エリア */
+.latest-pages {
+  padding: 3em 0 1em;
+}
+.latest-pages-title {
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+  padding-left: 0.5em;
+  border-left: solid 2px #A0D8EF;
+}
+.latest-pages ul li {
+  margin: 0.625em 0.625em 0 1em ;
+}
+ 
+ 
+/* ========================
+フッター
+======================== */
+.footer {
+  text-align: center;
+  padding: 3rem 0 1rem;
+  color: #fff;
+  background-color: #A0D8EF;
+}
+.footer-logo {
+  font-size: 1.5rem;
+}
+.copyright {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/*-- フッターのアーカイブ表示(サイドバーにもアーカイブブロックあり。共通の記述はそちらへ) --*/
+.footer .archive-block {
+margin: 1em 0;
+}
+.footer .yearly-archive li {
+font-size: 1rem;
+}
+
+/*-- 検索フォーム(searchform.php) --*/
+label[for="searchword"] {
+display: none;
+}
+#searchform .btn {
+line-height: 1.5em;
+border-width: 0;
+color: #f0264b;
+font-size: 1rem;
+cursor: pointer;
+background-color: transparent;
+}
+#searchform .btn span {
+  display: none;
+}
+.input-group {
+  display: flex;
+  justify-content: center;
+  margin: 0.5em auto 0;
+  border-radius: 18px;
+  padding: 5px 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3) inset;
+  color: #000;
+  background-color: #fff;
+  width: 200px;
+} 
+.form-control {
+  padding: 0 0 0 10px;
+  line-height: 1.5em;
+  border-width: 0;
+  width: 150px;
+}
+
+/*-- 検索フォーム(searchform.php) --*/
+.search-form-block {
+  margin: 2em 0;
+}
+
+/* ========================
+サイドバー
+======================== */
+
+/*-- 記事アーカイブ --*/
+.yearly-archive li {
+margin: 0.5em 0;
+}
+.yearly-archive li::before {
+content: '・';
+}
+
+/* ========================
+ウィジェット
+======================== */
+
+/*-- リスト --*/
+.wp-block-list {
+  background-color: #f5f5f5;
+  padding: 1em 2em;
+  margin-bottom: 1em;
+}
+.wp-block-list li{
+  margin-top: 0.5em;
+  line-height: 1.5;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+/* fontawesomeアイコン */
+.wp-block-list li:before{
+  font-family: "Font Awesome 6 Free";
+  content: '\f058';
+  color: #A0D8EF;
+}
+
+/*-- 詩 --*/
+pre.wp-block-verse {
+  background-color: #f5f5f5;
+  padding: 1em;
+  margin: 2em 0;
+}
+
+/* ========================
+wordpressの装飾
+======================== */
+
+/*---- 動画のキャプション ----*/
+.wp-element-caption {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #c0c0c0;
+}
+/* wpデフォルトのmarginを消す */
+.wp-block-embed :where(figcaption) {
+  margin-top: 0;
+}
+
+
+
+/* ========================
+プラグイン(本から基本はコードを拝借。本のコードは、プラグイン本体のコードをある程度そのまま上書きしているよう)
+======================== */
+
+/* start: プラグイン| LIQUIDO SPEECH BALLOON (吹き出し)の設定 */
+.liquid-speech-balloon-wrap {
+  display: flex;
+  flex-direction: row;
+  /* マージンを広く */
+  margin-bottom: 3rem;
+}
+.liquid-speech-balloon-wrap:not(.liquid-speech-balloon-vertical) .liquid-speech-balloon-arrow {
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 10px solid rgba(0, 0, 0, 0.2);
+}
+.liquid-speech-balloon-avatar {
+  flex-shrink: 0;
+  background-position: left top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  line-height: 1;
+  position: relative;
+}
+.liquid-speech-balloon-text {
+  width: 100%;
+  /* パディングを調整 */
+  padding: 1em;
+  margin-left: 20px;
+  position: relative;
+  z-index: 1;
+}
+/* 個別投稿のpに効いている余白を無効化 */
+.liquid-speech-balloon-text p,
+.liquid-speech-balloon-text .wp-block-liquid-speech-balloon {
+    margin: 0;
+    padding: 0;
+}
+.liquid-speech-balloon-arrow {
+  content: ".";
+  width: 0;
+  height: 0;
+  color: transparent;
+  line-height: 1;
+  position: absolute;
+  z-index: 2;
+}
+
+/* start: Easy Table of Contents */
+div#ez-toc-container {
+  background: #fff;
+  border: 1px solid #a0d8ef;
+}
+
+div#ez-toc-container {
+  padding-right: 20px;
+}
+
+#ez-toc-container {
+  border: 1px solid #aaa;
+  border-radius: 15px;
+  display: table;
+  padding: 1em;
+  position: relative;
+  width: auto;
+}
+
+#ez-toc-container li,
+#ez-toc-container ul,
+#ez-toc-container ul li,
+div.ez-toc-widget-container,
+div.ez-toc-widget-container li {
+  background: 0 0;
+  list-style: none;
+  line-height: 2;
+  margin: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#ez-toc-container li,
+#ez-toc-container ul {
+  padding: 0;
+}
+
+.entry-content a,
+.entry-summary a,
+.comment-content a,
+.posts-navigation a {
+  box-shadow: inset 0 -1px 0 rgb(15, 15, 15);
+  transition: color 80ms ease-in, box-shadow 130ms ease-in-out; 
+}
+
+#ez-toc-container a {
+  color: #444;
+  box-shadow: none;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.ez-toc-counter ul {
+  counter-reset: item;
+}
+
+/* 番号ふり */
+.ez-toc-counter nav ul li a::before {
+  counter-increment: item;
+  content: counters(item, ".", decimal) ". ";
+  display: inline-block;
+  margin-right: 0.2em;
+  float: left;
+}
+
+/* end:Easy Table of Contents */
+/* start：プラグイン｜WordPress Popular Posts */
+.entry-content a,
+.entry-summary a,
+.comment-content a,
+.posts-navigation a {
+  box-shadow: inset 0 -1px 0 rgb(15, 15, 15);
+  transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
+}
+
+.entry-title a,
+.entry-meta a,
+.page-links a,
+.page-links a .page-number,
+.entry-footer a,
+.entry-footer .cat-links a,
+.entry-footer .tags-links a,
+.edit-link a,
+.post-navigation a,
+.logged-in-as a,
+.comment-navigation a,
+.comment-metadata a,
+.comment-metadata a.comment-edit-link,
+.comment-reply-link,
+a .nav-title,
+.pagination a,
+.comments-pagination a,
+.site-info a {
+  box-shadow: inset 0 -1px 0 rgb(255, 255, 255);
+  text-decoration: none;
+  transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
+}
+
+.wpp-thumbnail {
+  display: inline;
+  float: left;
+  margin: 0 1rem 0 0;
+  border: none;
+}
+
+.entry-content a img,
+.comment-content a img {
+  box-shadow: 0 0 0 8px #fff;
+}
+
+.wpp-meta,
+.post-stats {
+  display: block;
+  font-size: 0.8em;
+}
+
+.wpp-list li {
+  overflow: hidden;
+  float: none;
+  clear: both;
+  margin-bottom: 1rem;
+}
+
+/* end：プラグイン｜WordPress Popular Posts */
+/* start：プラグイン｜Breadcrumb navXT*/
+
+.breadcrumb-inner {
+  font-size: 0.875rem;
+}
+.breadcrumb-inner .fas {
+  margin: 0 0.5em;
+}
+.theme-color {
+  color: #A0D8EF;
+}
+
+/* 個別投稿ページでは現在の記事が表示されないようにする */
+.single-post .breadcrumb .current-item {
+  display: none;
+}
+/* 最後のfontasesomeを非表示にする */
+.single-post .breadcrumb .fas:last-of-type {
+  display: none;
+}
+
+/* end：プラグイン｜Breadcrumb navXT */
+ 
+@media screen and (min-width: 768px) {
+ 
+  /* ========================
+  全体
+  ======================== */
+ 
+  /* 基本フォントをPCサイズでは大きく */
+  body {
+    font-size: 18px;
+  }
+ 
+  .single-article img {
+    max-width: 85%;
+    height: auto;
+  }
+
+  /* ========================
+  コンポーネント
+  ======================== */
+
+  /*---- ボタン ----*/
+  .btn-area {
+    margin: 2em 0;
+  }
+  .page-btn {
+    display: block;
+    padding: 0.5em 1em;
+    margin: 0 auto;
+    background-color: #A0D8EF;
+    color: #fff;
+    border: solid 1px #A0D8EF; 
+    border-radius: 30px;
+    font-size: 1.5rem;
+  }
+ 
+   /* ========================
+   ヘッダー
+   ======================== */
+   .header {
+     position: static;
+   }
+   .header-logo {
+     font-size: 1.5rem;
+   }
+   .btn-menu {
+     display: none;
+   }
+   .site-menu {
+     /* SP時のCSSを変更 */
+     position: static;
+     color: #000;
+     background-color: #fff;
+     width: auto;
+   }
+   .site-menu ul {
+     display: flex;
+   }
+   .site-menu ul li {
+     margin: 0 2em;
+   }
+   .site-menu ul li a {
+     white-space: nowrap;
+     padding: 0.5em 1em;
+   }
+   .site-menu ul li a:hover {
+     color: #fff;
+     background-color: #A0D8EF;
+   }
+ 
+   /* ========================
+   メイン
+   ======================== */
+   .main {
+     padding: 0 0 2rem;
+   }
+ 
+   /*---- アーカイブページ ----*/
+   .title {
+     margin: 2rem 0 1rem;
+   }
+ 
+   .article-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 50px;
+   }
+   .article-list > li {
+     flex-shrink: 0;
+     width: calc((100% - 100px) / 3);
+   }
+ 
+   /*---- 個別投稿ページ --*/
+   .article-content {
+    padding: 2rem 0;
+   }
+   .article-content h2 {
+    font-size: 1.5rem;
+  }
+  .article-content h3 {
+    font-size: 1.2rem;
+  }
+   .single-article .article-title {
+    font-size: 2rem;
+     margin-top: 2em;
+   }
+   .eyecatch-area {
+     text-align: center;
+   }
+ 
+   .article-content img {
+     margin: 0 auto 1rem;
+   }
+
+   /* 前後ページリンク */
+    .page-link {
+      display: flex;
+      justify-content: space-between;
+    }
+    .prev-page-link,
+    .next-page-link {
+      max-width: 250px;
+    }
+ 
+   /* 最新の記事エリア */
+    .latest-pages-title {
+     font-size: 1.5rem;
+   }
+
+   /* ========================
+   フッター
+   ======================== */
+
+   /*-- フッターのアーカイブ表示(サイドバーにもアーカイブブロックあり。共通の記述はそちらへ) --*/   
+   .footer .yearly-archive {
+     display: flex;
+     justify-content: center;
+     gap: 1em;
+   }
+   .footer .yearly-archive li {
+    font-size: 1.3rem;
+   }
+
+   /*-- 検索フォーム --*/
+   .input-group {
+    width: 250px;
+   }
+   .form-control {
+     width: 200px;
+   }
+
+   /* ========================
+   サイドバー
+   ======================== */
+
+   /* ========================
+   ウィジェット
+   ======================== */
+
+  /*-- リスト --*/
+  /* fontawesomeアイコン */
+  .wp-block-list li:before{
+    padding-right: 1em;
+  }
+  
+   /*-- 詩 --*/
+   pre.wp-block-verse {
+    text-align: center;
+   }
+
+  /* ========================
+  wordpressの装飾
+  ======================== */
+
+  /*---- 動画のキャプション ----*/
+  .wp-element-caption {
+    font-size: 1rem;
+  }
+
+  /* ========================
+  プラグイン
+  ======================== */
+
+  /* start：プラグイン｜Breadcrumb navXT*/
+
+  .breadcrumb-inner {
+    font-size: 1rem;
+  }
+  .breadcrumb-inner .fas {
+    margin: 0 0.5em;
+  }
+  /* end：プラグイン｜Breadcrumb navXT */
+
+ 
+}

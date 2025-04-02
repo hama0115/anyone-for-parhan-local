@@ -1,7 +1,10 @@
 <?php
 
-if ( ! function_exists( 'arublogtheme_setup' )):
-  function arublogtheme_setup() {
+if ( ! function_exists( 'anyonetheme_setup' )):
+  function anyonetheme_setup() {
+    //タイトルタグを出力
+    add_theme_support('title-tag');
+
     //アイキャッチ画像を使う
     add_theme_support( 'post-thumbnails' );
 
@@ -13,7 +16,7 @@ if ( ! function_exists( 'arublogtheme_setup' )):
     );
   }
 endif;
-add_action( 'after_setup_theme', 'arublogtheme_setup' );
+add_action( 'after_setup_theme', 'anyonetheme_setup' );
 
 //スクリプト、スタイルシートを追加(JavaScript,CSS)
 function enqueue_scripts() {
