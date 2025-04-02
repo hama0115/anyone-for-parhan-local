@@ -23,7 +23,7 @@
                 </ul>
               <?php endif; ?>
 
-              <?php get_template_part( 'template-parts/breadcrumb' ); ?>
+              <?php get_template_part( 'tmp/breadcrumb' ); ?>
 
             </div>
 

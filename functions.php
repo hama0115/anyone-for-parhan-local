@@ -30,3 +30,19 @@ function enqueue_scripts() {
   wp_enqueue_script('adobefont', get_stylesheet_directory_uri() . 'assets/js/adobefont.js', [], '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
+
+//ACF「パーキングメーター情報」をショートコードで出力できるようにする([acf_parking_info]で出力)
+function parking_info_shortcode() {
+  ob_start();
+  include get_stylesheet_directory() . '/tmp/parking-info-table.php';
+  return ob_get_clean();
+}
+add_shortcode('acf_parking_info','parking_info_shortcode');
+
+//ACF「飲食店情報」をショートコードで出力できるようにする([acf_parking_info]で出力)
+function restaurant_info_shortcode() {
+  ob_start();
+  include get_stylesheet_directory() . '/tmp/restaurant-info-table.php';
+  return ob_get_clean();
+}
+add_shortcode('acf_restaurant_info','restaurant_info_shortcode');
