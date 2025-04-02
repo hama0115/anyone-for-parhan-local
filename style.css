@@ -158,8 +158,8 @@ img {
   padding: 70px 20px 2rem;
 }
 /* コンテンツをはみ出ないようにする、および中央揃えに */
-.content-wrapper {
-  width: clamp(335px, 85%, 900px);
+.container {
+  width: clamp(335px, 85%, 1100px);
   margin: auto;
 }
 
@@ -587,12 +587,7 @@ div.ez-toc-widget-container li {
   /* ========================
   全体
   ======================== */
- 
-  /* 基本フォントをPCサイズでは大きく */
-  body {
-    font-size: 18px;
-  }
- 
+
   .single-article img {
     max-width: 85%;
     height: auto;
@@ -655,7 +650,18 @@ div.ez-toc-widget-container li {
    メイン
    ======================== */
    .main {
-     padding: 0 0 2rem;
+    display: flex;
+    padding: 2rem 0;
+    background-color: #f5f5f5;
+   }
+   .container {
+      display: flex;
+      justify-content: space-between;
+   }
+   .container .main-content {
+    width: 61.025%;
+    padding: 2rem;
+    background-color: #fff;
    }
  
    /*---- アーカイブページ ----*/
