@@ -12,14 +12,14 @@
                 <li>
                   <a href="<?php the_permalink(); ?>" >
             
-                    <div class="thumbnail-area">
-                      <?php
-                      if(has_post_thumbnail()):
-                        the_post_thumbnail('full');
-                      else: ?>
-                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample-thumbnail.JPG" alt="ダミーのサムネイル">
-                      <?php endif; ?>
-                    </div>
+                  <div class="thumbnail-area">
+                    <?php
+                    if(has_post_thumbnail()):
+                      the_post_thumbnail('full');
+                    else: ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample-thumbnail.JPG" alt="ダミーのサムネイル">
+                    <?php endif; ?>
+                  </div>
             
                     <div class="text">
                       <time class="entry-date"><?php echo get_the_date(); ?></time>

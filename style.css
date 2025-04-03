@@ -200,6 +200,7 @@ transform: scale(1.05);
 }
 .category-list {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 1.33em;
 }
 .article-category {
@@ -245,7 +246,6 @@ border: solid 1px #000;
 /* タイトルエリア */
 .single-article .article-title {
   font-size: 1.25rem;
-  margin-top: 1em;
 }
 .single-article .entry-date {
   margin: 1em 0 0 0.5em;
@@ -669,16 +669,6 @@ div.ez-toc-widget-container li {
      margin: 2rem 0 1rem;
    }
  
-   .article-list {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 50px;
-   }
-   .article-list > li {
-     flex-shrink: 0;
-     width: calc((100% - 100px) / 3);
-   }
- 
    /*---- 個別投稿ページ --*/
    .article-content {
     padding: 2rem 0;
@@ -691,7 +681,7 @@ div.ez-toc-widget-container li {
   }
    .single-article .article-title {
     font-size: 2rem;
-     margin-top: 2em;
+    margin-top: 0;
    }
    .eyecatch-area {
      text-align: center;

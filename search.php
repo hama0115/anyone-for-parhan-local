@@ -19,7 +19,7 @@
                     the_post_thumbnail('full');
 
                   else: ?>
-                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/sample-thumbnail.jpg" alt="ダミーのサムネイル">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample-thumbnail.JPG" alt="ダミーのサムネイル">
 
                   <?php endif; ?>
                 </div>
