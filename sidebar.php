@@ -4,7 +4,7 @@
 </div>
 <!-- 最新の記事エリア -->
 <section class="latest-pages">
-  <h2 class="latest-pages-title">最新の記事</h2>
+  <h3>最新の記事</h3>
   <?php
     $postid = get_the_ID();
     $authorid = get_the_author_meta( 'ID' );

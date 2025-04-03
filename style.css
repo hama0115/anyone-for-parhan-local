@@ -748,15 +748,10 @@ div.ez-toc-widget-container li {
   
   /* 最新の記事エリア */
   .latest-pages {
-    padding: 3em 0 1em;
+    padding: 2em;
     margin-top: 40px;
     background-color: #fff;
-  }
-  .latest-pages-title {
-    font-size: 1.2rem;
-    margin-bottom: 1.5em;
-    padding-left: 0.5em;
-    border-left: solid 2px #A0D8EF;
+    border-radius: 10px;
   }
   .latest-pages ul li {
     margin: 0.625em 0.625em 0 1em ;
@@ -772,6 +767,7 @@ div.ez-toc-widget-container li {
   /*-- 記事アーカイブ --*/
   .archive-block {
     padding: 2em;
+    margin-top: 40px;
     background-color: #fff;
     border-radius: 10px;
    }
