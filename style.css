@@ -159,7 +159,7 @@ img {
 }
 /* コンテンツをはみ出ないようにする、および中央揃えに */
 .container {
-  width: clamp(335px, 85%, 1100px);
+  width: clamp(335px, 85%, 1200px);
   margin: auto;
 }
 
@@ -741,6 +741,17 @@ div.ez-toc-widget-container li {
    /* ========================
    サイドバー
    ======================== */
+   .sidebar {
+   }
+
+   .search-block {
+    background-color: #fff;
+   }
+
+   .archive-block {
+    padding: 1em;
+    background-color: #fff;
+   }
 
    /* ========================
    ウィジェット
