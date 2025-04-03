@@ -175,7 +175,7 @@ img {
   overflow: hidden;
 }
 .article-list li a:hover .thumbnail-area img{
-transform: scale(1.05);
+  transform: scale(1.05);
 }
 .thumbnail-area {
   overflow: hidden;
@@ -667,6 +667,39 @@ div.ez-toc-widget-container li {
    /*---- アーカイブページ ----*/
    .title {
      margin: 2rem 0 1rem;
+   }
+
+   .article-list > li {
+    padding: 1em;
+   }
+
+   .article-list li a {
+    display: flex;
+    align-items: center;
+   }
+
+   .thumbnail-area {
+    max-width: 200px;
+    margin-right: 20px;
+   }
+
+   .text {
+    padding: 0;
+    width: 100%;
+   }
+
+   .information {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+   }
+
+   .entry-date {
+    margin: 0;    
+   }
+
+   .category-list {
+    margin: 0;
    }
  
    /*---- 個別投稿ページ --*/
