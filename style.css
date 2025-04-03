@@ -366,10 +366,9 @@ background-color: transparent;
 .input-group {
   display: flex;
   justify-content: center;
-  margin: 0.5em auto 0;
-  border-radius: 18px;
-  padding: 5px 10px;
-  box-shadow: 0 1px 3px rgba(0,0,0,.3) inset;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 1em 2em;
   color: #000;
   background-color: #fff;
   width: 200px;
@@ -657,6 +656,7 @@ div.ez-toc-widget-container li {
    .container {
       display: flex;
       justify-content: space-between;
+      border-radius: 10px;
    }
    .container .main-content {
     width: 61.025%;
@@ -732,25 +732,27 @@ div.ez-toc-widget-container li {
 
    /*-- 検索フォーム --*/
    .input-group {
-    width: 250px;
+    width: auto;
    }
    .form-control {
-     width: 200px;
+    width: 100%;
    }
 
    /* ========================
    サイドバー
    ======================== */
    .sidebar {
+    width: 32.649%;
    }
 
    .search-block {
-    background-color: #fff;
+    margin-bottom: 40px;
    }
 
    .archive-block {
-    padding: 1em;
+    padding: 2em;
     background-color: #fff;
+    border-radius: 10px;
    }
 
    /* ========================

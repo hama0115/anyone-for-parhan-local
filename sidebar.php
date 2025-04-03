@@ -1,6 +1,5 @@
 <!-- 検索フォームエリア -->
 <div class="search-block">
-  <h3>記事を検索</h3>
   <?php get_search_form(); ?>
 </div>
 <!-- アーカイブエリア -->
