@@ -829,6 +829,12 @@ div.ez-toc-widget-container li {
     margin: 0 0.5em;
   }
   /* end：プラグイン｜Breadcrumb navXT */
-
+  /* start：プラグイン｜WP-Paginavi */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+  }
+  /* end：プラグイン｜WP-Paginavi */
  
 }

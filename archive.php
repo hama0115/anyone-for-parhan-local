@@ -2,7 +2,7 @@
 
     <main class="main">    
       <div class="container">
-        <div class="main-content">
+        <div class="archive-content">
           <div class="content-inner">
             <?php the_archive_title( '<h1 class="page-title">', '</h1>'); ?>
             <div class="article-list-wrapper">
@@ -21,33 +21,33 @@
                       <?php endif; ?>
                     </div>
             
-                    <div class="text">
-                      <time class="entry-date"><?php echo get_the_date(); ?></time>
+                    <div class="text">                      
                       <p class="article-title"><?php the_title(); ?></p>
-                      <?php /* カテゴリーをリンクなしで表示 */
-                      $cats = get_the_category();
-                      if($cats):
-                      ?>
-                        <ul class="category-list">
-                        <?php foreach($cats as $cat): ?>
-                          <li class="article-category"><?php echo $cat->name; ?></li>
-                        <?php endforeach; ?>
-                        </ul>
-                      <?php endif; ?>
+                      <div class="information">
+                        <time class="entry-date"><?php echo get_the_date(); ?></time>
+                        <?php /* カテゴリーをリンクなしで表示 */
+                        $cats = get_the_category();
+                        if($cats):
+                        ?>
+                          <ul class="category-list">
+                          <?php foreach($cats as $cat): ?>
+                            <li class="article-category"><?php echo $cat->name; ?></li>
+                          <?php endforeach; ?>
+                          </ul>
+                        <?php endif; ?>
+                      </div>
                     </div>
                   </a>
                 </li>
                 <?php endwhile; else: ?>
                 <?php endif; ?>
               </ul>
-              <?php //ページネーション
-              $args = array(
-                'mid_size' => 1, //初期値と同じ
-                'prev_text' => '←',
-                'next_text' => '→'
-              );
-              the_posts_pagination($args);
-              ?>
+              <!-- プラグイン「wp-paginavi」 -->
+              <?php if(function_exists('wp_pagenavi')): ?>
+                <div class="pagination">
+                  <?php wp_pagenavi(); ?>
+                </div>
+              <?php endif; ?>
             </div>
           </div>          
         </div>
