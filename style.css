@@ -504,13 +504,18 @@ div.ez-toc-widget-container li {
   margin: 0.5em 0;
 }
 
-/* プラグイン元のCSSを上書き */
-.wp-pagenavi a,
-.wp-pagenavi span {
+/* プラグイン元のCSSを上書きしているのでクラスを詳細に指定 */
+.pagination .wp-pagenavi a,
+.pagination .wp-pagenavi span {
   font-size: 1.25rem;
 }
 
-.wp-pagenavi .page {
+.pagination .wp-pagenavi a:hover {
+  color: #fff;
+  background-color: #A0D8EF;
+}
+
+.pagination .wp-pagenavi .page {
   color: #A0D8EF;
   border: solid 1px #A0D8EF;
 }
