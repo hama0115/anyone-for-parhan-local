@@ -2,7 +2,7 @@
 
     <main class="main">    
       <div class="container">
-        <div class="main-content">
+        <div class="archive-content">
           <div class="content-inner">
             <?php the_archive_title( '<h1 class="page-title">', '</h1>'); ?>
             <div class="article-list-wrapper">

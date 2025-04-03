@@ -598,6 +598,14 @@ div.ez-toc-widget-container li {
     justify-content: space-between;
     border-radius: 10px;
   }
+
+  /* アーカイブページのコンテンツ */
+  .container .archive-content {
+    width: 61.025%;
+    padding:0 2rem 2rem;
+  }
+
+  /* シングルページのコンテンツ */
   .container .main-content {
     width: 61.025%;
     padding: 2rem;
@@ -611,6 +619,14 @@ div.ez-toc-widget-container li {
 
   .article-list > li {
     padding: 1em;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+	  box-shadow: 0 2px 4px 0 rgba(24, 44, 84, 0.1);	
+    transition-duration: 0.3s;
+  }
+  .article-list > li:hover {
+	  box-shadow: 5px 8px 10px 0 rgba(24, 44, 84, 0.1);	
   }
 
   .article-list li a {
