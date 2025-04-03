@@ -306,22 +306,7 @@ font-size: 0.875rem;
 }
 .next-page-link::after {
   content: '>';
-}
-
-/* 最新の記事エリア */
-.latest-pages {
-  padding: 3em 0 1em;
-}
-.latest-pages-title {
-  font-size: 1.2rem;
-  margin-bottom: 1.5em;
-  padding-left: 0.5em;
-  border-left: solid 2px #A0D8EF;
-}
-.latest-pages ul li {
-  margin: 0.625em 0.625em 0 1em ;
-}
- 
+} 
  
 /* ========================
 フッター
@@ -348,54 +333,9 @@ margin: 1em 0;
 font-size: 1rem;
 }
 
-/*-- 検索フォーム(searchform.php) --*/
-label[for="searchword"] {
-display: none;
-}
-#searchform .btn {
-line-height: 1.5em;
-border-width: 0;
-color: #f0264b;
-font-size: 1rem;
-cursor: pointer;
-background-color: transparent;
-}
-#searchform .btn span {
-  display: none;
-}
-.input-group {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  border-radius: 30px;
-  padding: 1em 2em;
-  color: #000;
-  background-color: #fff;
-  width: 200px;
-} 
-.form-control {
-  padding: 0 0 0 10px;
-  line-height: 1.5em;
-  border-width: 0;
-  width: 150px;
-}
-
-/*-- 検索フォーム(searchform.php) --*/
-.search-form-block {
-  margin: 2em 0;
-}
-
 /* ========================
 サイドバー
 ======================== */
-
-/*-- 記事アーカイブ --*/
-.yearly-archive li {
-margin: 0.5em 0;
-}
-.yearly-archive li::before {
-content: '・';
-}
 
 /* ========================
 ウィジェット
@@ -611,168 +551,226 @@ div.ez-toc-widget-container li {
     font-size: 1.5rem;
   }
  
-   /* ========================
-   ヘッダー
-   ======================== */
-   .header {
-     position: static;
-   }
-   .header-logo {
-     font-size: 1.5rem;
-   }
-   .btn-menu {
-     display: none;
-   }
-   .site-menu {
-     /* SP時のCSSを変更 */
-     position: static;
-     color: #000;
-     background-color: #fff;
-     width: auto;
-   }
-   .site-menu ul {
-     display: flex;
-   }
-   .site-menu ul li {
-     margin: 0 2em;
-   }
-   .site-menu ul li a {
-     white-space: nowrap;
-     padding: 0.5em 1em;
-   }
-   .site-menu ul li a:hover {
-     color: #fff;
-     background-color: #A0D8EF;
-   }
+  /* ========================
+  ヘッダー
+  ======================== */
+
+  .header {
+    position: static;
+  }
+  .header-logo {
+    font-size: 1.5rem;
+  }
+  .btn-menu {
+    display: none;
+  }
+  .site-menu {
+    /* SP時のCSSを変更 */
+    position: static;
+    color: #000;
+    background-color: #fff;
+    width: auto;
+  }
+  .site-menu ul {
+    display: flex;
+  }
+  .site-menu ul li {
+    margin: 0 2em;
+  }
+  .site-menu ul li a {
+    white-space: nowrap;
+    padding: 0.5em 1em;
+  }
+  .site-menu ul li a:hover {
+    color: #fff;
+    background-color: #A0D8EF;
+  }
  
-   /* ========================
-   メイン
-   ======================== */
-   .main {
+  /* ========================
+  メイン
+  ======================== */
+  .main {
     display: flex;
     padding: 2rem 0;
     background-color: #f5f5f5;
-   }
-   .container {
-      display: flex;
-      justify-content: space-between;
-      border-radius: 10px;
-   }
-   .container .main-content {
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+  }
+  .container .main-content {
     width: 61.025%;
     padding: 2rem;
     background-color: #fff;
-   }
- 
-   /*---- アーカイブページ ----*/
-   .title {
-     margin: 2rem 0 1rem;
-   }
+  }
 
-   .article-list > li {
+  /*---- アーカイブページ ----*/
+  .title {
+    margin: 2rem 0 1rem;
+  }
+
+  .article-list > li {
     padding: 1em;
-   }
+  }
 
-   .article-list li a {
+  .article-list li a {
     display: flex;
     align-items: center;
-   }
+  }
 
-   .thumbnail-area {
+  .thumbnail-area {
     max-width: 200px;
     margin-right: 20px;
-   }
+  }
 
-   .text {
+  .text {
     padding: 0;
     width: 100%;
-   }
+  }
 
-   .information {
+  .information {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-   }
+  }
 
-   .entry-date {
+  .entry-date {
     margin: 0;    
-   }
+  }
 
-   .category-list {
+  .category-list {
     margin: 0;
-   }
- 
-   /*---- 個別投稿ページ --*/
-   .article-content {
+  }
+
+  /*---- 個別投稿ページ --*/
+  .article-content {
     padding: 2rem 0;
-   }
-   .article-content h2 {
+  }
+  .article-content h2 {
     font-size: 1.5rem;
   }
   .article-content h3 {
     font-size: 1.2rem;
   }
-   .single-article .article-title {
+  .single-article .article-title {
     font-size: 2rem;
     margin-top: 0;
-   }
-   .eyecatch-area {
-     text-align: center;
-   }
- 
-   .article-content img {
-     margin: 0 auto 1rem;
-   }
+  }
+  .eyecatch-area {
+    text-align: center;
+  }
 
-   /* 前後ページリンク */
-    .page-link {
-      display: flex;
-      justify-content: space-between;
-    }
-    .prev-page-link,
-    .next-page-link {
-      max-width: 250px;
-    }
- 
-   /* 最新の記事エリア */
-    .latest-pages-title {
-     font-size: 1.5rem;
-   }
+  .article-content img {
+    margin: 0 auto 1rem;
+  }
 
-   /* ========================
-   フッター
-   ======================== */
+  /* 前後ページリンク */
+  .page-link {
+    display: flex;
+    justify-content: space-between;
+  }
+  .prev-page-link,
+  .next-page-link {
+    max-width: 250px;
+  }
 
-   /*-- フッターのアーカイブ表示(サイドバーにもアーカイブブロックあり。共通の記述はそちらへ) --*/   
-   .footer .yearly-archive {
-     display: flex;
-     justify-content: center;
-     gap: 1em;
-   }
-   .footer .yearly-archive li {
+  /* 最新の記事エリア */
+  .latest-pages-title {
+    font-size: 1.5rem;
+  }
+
+  /* ========================
+  フッター
+  ======================== */
+
+  /*-- フッターのアーカイブ表示(サイドバーにもアーカイブブロックあり。共通の記述はそちらへ) --*/   
+  .footer .yearly-archive {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+  .footer .yearly-archive li {
     font-size: 1.3rem;
-   }
+  }
 
-   /*-- 検索フォーム --*/
-   .input-group {
+  /*-- 検索フォーム --*/
+  .input-group {
     width: auto;
-   }
-   .form-control {
+  }
+  .form-control {
     width: 100%;
-   }
+  }
 
-   /* ========================
-   サイドバー
-   ======================== */
-   .sidebar {
+  /* ========================
+  サイドバー
+  ======================== */
+  .sidebar {
     width: 32.649%;
-   }
+  }
 
-   .search-block {
-    margin-bottom: 40px;
-   }
+  /*-- 検索フォーム(searchform.php) --*/
+  label[for="searchword"] {
+    display: none;
+  }
+  #searchform .btn {
+    line-height: 1.5em;
+    border-width: 0;
+    color: #f0264b;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  #searchform .btn span {
+    display: none;
+  }
+  .input-group {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 1em 2em;
+    color: #000;
+    background-color: #fff;
+    width: auto;
+  } 
+  .form-control {
+    padding: 0 0 0 10px;
+    line-height: 1.5em;
+    border-width: 0;
+    width: 100%;
+  }
+    
+  /*-- 検索フォーム(searchform.php) --*/
+  .search-form-block {
+    margin: 2em 0;
+  }
+  
+  /* 最新の記事エリア */
+  .latest-pages {
+    padding: 3em 0 1em;
+    margin-top: 40px;
+    background-color: #fff;
+  }
+  .latest-pages-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5em;
+    padding-left: 0.5em;
+    border-left: solid 2px #A0D8EF;
+  }
+  .latest-pages ul li {
+    margin: 0.625em 0.625em 0 1em ;
+  }
+  
+  .yearly-archive li {
+    margin: 0.5em 0;
+  }
+  .yearly-archive li::before {
+    content: '・';
+  }
 
-   .archive-block {
+  /*-- 記事アーカイブ --*/
+  .archive-block {
     padding: 2em;
     background-color: #fff;
     border-radius: 10px;
