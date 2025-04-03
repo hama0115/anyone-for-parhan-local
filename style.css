@@ -215,30 +215,6 @@ img {
   margin-left: 1em;
 }
 
-/*-- ページネーション --*/
-.nav-links {
-text-align: center;
-padding: 0.5em;
-color: #A0D8EF;
-max-width: 400px;
-margin: 2em auto;
-}
-.page-numbers {
-display: inline-block;
-padding: 0.2em 0.5em; 
-margin: 0 3px;
-background-color: #fff;
-border: solid 1px #A0D8EF;
-}
-a.page-numbers:hover {
-color: #fff;
-background-color: #A0D8EF;
-}
-.page-numbers.current {
-color: #000;
-border: solid 1px #000;
-}
-
 /*-- 個別投稿ページ --*/
 
 /* */

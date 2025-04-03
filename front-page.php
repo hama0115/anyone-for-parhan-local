@@ -42,14 +42,6 @@
                 <?php endwhile; else: ?>
                 <?php endif; ?>
               </ul>
-              <?php //ページネーション
-              $args = array(
-                'mid_size' => 1, //初期値と同じ
-                'prev_text' => '←',
-                'next_text' => '→'
-              );
-              the_posts_pagination($args);
-              ?>
             </div>
           </div>          
         </div>
