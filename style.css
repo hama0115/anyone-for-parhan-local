@@ -362,6 +362,7 @@ wordpressの装飾
 
 /* ========================
 プラグイン(本から基本はコードを拝借。本のコードは、プラグイン本体のコードをある程度そのまま上書きしているよう)
+CSSの優先度に注意。クラスを詳細に指定しないとプラグインのCSSに上書きされてしまうことがある
 ======================== */
 
 /* start: プラグイン| LIQUIDO SPEECH BALLOON (吹き出し)の設定 */
@@ -496,6 +497,28 @@ div.ez-toc-widget-container li {
 }
 
 /* end：プラグイン｜Breadcrumb navXT */
+/* start：プラグイン｜WP-Paginavi */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 0;
+}
+
+/* プラグイン元のCSSを上書き */
+.wp-pagenavi a,
+.wp-pagenavi span {
+  font-size: 1.25rem;
+}
+
+.wp-pagenavi .page {
+  color: #A0D8EF;
+  border: solid 1px #A0D8EF;
+}
+
+.pagination .wp-pagenavi span.current {
+  font-weight: inherit;
+}
+/* end：プラグイン｜WP-Paginavi */
  
 @media screen and (min-width: 768px) {
  
