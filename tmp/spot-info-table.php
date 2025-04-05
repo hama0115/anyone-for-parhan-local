@@ -1,6 +1,6 @@
 <!-- ACF「「スポット情報」を表示 -->
 <?php
-$selected_icons = get_field('spot-information');
+$selected_icons = get_field('spot-info');
 
 if ($selected_icons):
   echo '<div class="spot-list">';

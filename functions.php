@@ -39,13 +39,13 @@ function parking_info_shortcode() {
 }
 add_shortcode('acf_parking_info','parking_info_shortcode');
 
-//ACF「スポット情報」をショートコードで出力できるようにする([acf_spot_information]で出力)
+//ACF「スポット情報」をショートコードで出力できるようにする([acf_spot_info]で出力)
 function spot_info_shortcode() {
   ob_start();
   include get_stylesheet_directory() . '/tmp/spot-info-table.php';
   return ob_get_clean();
 }
-add_shortcode('acf_spot_information','spot_info_shortcode');
+add_shortcode('acf_spot_info','spot_info_shortcode');
 
 //ACF「飲食店情報」をショートコードで出力できるようにする([acf_parking_info]で出力)
 function restaurant_info_shortcode() {
