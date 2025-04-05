@@ -365,9 +365,9 @@ wordpressの装飾
 CSSの優先度に注意。クラスを詳細に指定しないとプラグインのCSSに上書きされてしまうことがある
 ======================== */
 
-/* start:「ACF」(カスタムフィールド) ※モバイルファーストになっていないので訂正すること */
+/* start:「ACF」(カスタムフィールド) */
 
-/* パーキング情報 */
+/* パーキング情報 ※モバイルファーストになっていないので訂正すること */
 .parking-info-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -384,7 +384,18 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   margin-bottom: 1em;
 }
 
-/* 飲食店情報 */
+/* スポット情報 */
+.spot-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.spot-icon {
+  /* スポットアイコンは最大5つ並ぶ */
+  width: calc((100% - 80px) / 5);
+}
+
+/* 飲食店情報 ※モバイルファーストになっていないので訂正すること */
 .restaurant-info-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
