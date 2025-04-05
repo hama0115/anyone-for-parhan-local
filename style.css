@@ -730,7 +730,7 @@ div.ez-toc-widget-container li {
     text-align: center;
   }
 
-  .article-content img {
+  .article-content > img {
     margin: 0 auto 1rem;
   }
 
@@ -886,6 +886,15 @@ div.ez-toc-widget-container li {
   .parking-text-container dl {
     /* cocoonで付与されているmargin?をリセット */
     margin-bottom: 1em;
+  }
+
+  /* スポット情報 */
+  .spot-list {
+    gap: 20px;
+  }
+  .spot-icon {
+    /* PC版はスポットアイコンは最大10コ並ぶ */
+    width: calc((100% - 180px) / 10);
   }
 
   /* 飲食店情報 */
