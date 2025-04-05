@@ -2,7 +2,13 @@
 <?php if(have_rows('meter-info')): ?>
   <?php while(have_rows('meter-info')): the_row(); ?>
     <div class="parking-info-container">
-      <?php //対象のサブフィールド(画像)が存在する場合に出力
+      <?php //対象のサブフィールド(画像)が存在する場合に出力(パーキングメーターの位置を示すイラスト)
+      $image = get_sub_field('parkingmeter-position');
+      if(!empty($image)):
+      ?>
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+      <?php endif; ?>
+      <?php //対象のサブフィールド(画像)が存在する場合に出力(パーキングメーターの写真)
       $image = get_sub_field('parkingmeter-photo');
       if(!empty($image)):
       ?>
@@ -10,22 +16,13 @@
       <?php endif; ?>
       <div class="parking-text-container">
         <?php if(get_sub_field('time')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
-        <dl>
-          <dt>【時間】</dt>
-          <dd><?php the_sub_field('time'); ?></dd>
-        </dl>
+          <p>【時間】<?php the_sub_field('time'); ?></p>
         <?php endif; ?>
         <?php if(get_sub_field('system')): ?>
-        <dl>
-          <dt>【方式】</dt>
-          <dd><?php the_sub_field('system'); ?></dd>
-        </dl>
+          <p>【方式】<?php the_sub_field('system'); ?></p>
         <?php endif; ?>
         <?php if(get_sub_field('the-number-of-field')): ?>
-        <dl>
-          <dt>【枠数】</dt>
-          <dd><?php the_sub_field('the-number-of-field'); ?></dd>
-        </dl>
+          <p>【枠数】<?php the_sub_field('the-number-of-field'); ?></p>
       </div>
     </div>
     <?php endif; ?>

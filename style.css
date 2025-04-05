@@ -253,7 +253,7 @@ img {
   padding-left: 1em;
   border-left: solid 2px #A0D8EF;
 }
-.article-content p {
+.article-content > p {
   margin-bottom: 2em;
   letter-spacing: 0.05em;
 }
@@ -365,12 +365,12 @@ wordpressの装飾
 CSSの優先度に注意。クラスを詳細に指定しないとプラグインのCSSに上書きされてしまうことがある
 ======================== */
 
-/* start:「ACF」(カスタムフィールド) */
+/* start:「ACF」(カスタムフィールド) ※モバイルファーストになっていないので訂正すること */
 
 /* パーキング情報 */
 .parking-info-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   column-gap: 30px;
 }
@@ -858,6 +858,44 @@ div.ez-toc-widget-container li {
   プラグイン
   ======================== */
 
+  /* start:「ACF」(カスタムフィールド) */
+
+  /* パーキング情報 */
+  .parking-info-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    column-gap: 15px;
+  }
+  .parking-info-container img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+  }
+  .parking-text-container dl {
+    /* cocoonで付与されているmargin?をリセット */
+    margin-bottom: 1em;
+  }
+
+  /* 飲食店情報 */
+  .restaurant-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    column-gap: 30px;
+    row-gap: 20px;
+  }
+  .restaurant-info-container img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+  .restaurant-text-container dl {
+    /* cocoonで付与されているmargin?をリセット */
+    margin-bottom: 0;
+    font-size: 0.8rem;
+  }
+  /* end:「ACF」(カスタムフィールド) */
   /* start：プラグイン｜Breadcrumb navXT*/
 
   .breadcrumb-inner {
