@@ -14,8 +14,8 @@
       ?>
       <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
       <?php endif; ?>
-      <?php //対象のサブフィールド(画像)が存在する場合に出力
-      $image = get_sub_field('area-illustration');
+      <?php //対象のサブフィールド(googleマップ)が存在する場合に出力
+      $image = get_sub_field('area-map');
       if(!empty($image)):
       ?>
       <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
