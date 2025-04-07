@@ -18,7 +18,7 @@ if ( ! function_exists( 'anyonetheme_setup' )):
 endif;
 add_action( 'after_setup_theme', 'anyonetheme_setup' );
 
-//スクリプト、スタイルシートを追加(JavaScript,CSS)
+//スタイルシート、スクリプトを追加(CSS、JSの読み込み)
 function enqueue_scripts() {
   //リセットCSSの読み込み
   wp_enqueue_style('reset-css', get_stylesheet_directory_uri() . '/assets/css/reset.css');
@@ -27,7 +27,13 @@ function enqueue_scripts() {
   //ハンバーガーメニューの読み込み
   wp_enqueue_script('hamburger-menu', get_stylesheet_directory_uri() . '/assets/js/btn-menu.js', [], '1.0', true);
   //adobeフォントの読み込み
-  wp_enqueue_script('adobefont', get_stylesheet_directory_uri() . 'assets/js/adobefont.js', [], '1.0', true);
+  wp_enqueue_script('adobefont', get_stylesheet_directory_uri() . '/assets/js/adobefont.js', [], '1.0', true);
+
+  //個別投稿の場合のjsの読み込み
+  if ( is_singular() ) {
+    wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGatra0HuPCJJbTX2poBI-CbErfTyMe1Y', [], '1.0', true);
+    wp_enqueue_script('googlemap', get_stylesheet_directory_uri() . '/assets/js/googlemap.js', [], '1.0', true);
+  }
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
