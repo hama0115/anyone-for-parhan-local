@@ -408,6 +408,10 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   height: 240px;
   object-fit: cover;
 }
+.restaurant-info-container .acf-map {
+  width: 100%;
+  height: 240px;
+}
 .restaurant-text-container dl {
   /* cocoonで付与されているmargin?をリセット */
   margin-bottom: 0;
