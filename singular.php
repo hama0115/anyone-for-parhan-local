@@ -47,5 +47,9 @@
       </aside>      
     </div>
   </main>
+
+  <!-- とりあえずacfのgooglemapのjsを記述 -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGatra0HuPCJJbTX2poBI-CbErfTyMe1Y"></script>
+  <script src="/assets/js/googlemap.js"></script>
     
 <?php get_footer(); ?>

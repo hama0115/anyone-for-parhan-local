@@ -15,10 +15,11 @@
       <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
       <?php endif; ?>
       <?php //対象のサブフィールド(googleマップ)が存在する場合に出力
-      $image = get_sub_field('area-map');
-      if(!empty($image)):
-      ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+      $location = get_sub_field('area-map');
+      if( $location ): ?>
+        <div class="acf-map" data-zoom="16">
+          <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+        </div>
       <?php endif; ?>
       <div class="restaurant-text-container">
         <?php if(get_sub_field('time-to-eat')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>

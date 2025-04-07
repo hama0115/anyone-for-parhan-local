@@ -47,6 +47,13 @@ function spot_info_shortcode() {
 }
 add_shortcode('acf_spot_info','spot_info_shortcode');
 
+//ACF「googleマップ」を出力できるようにする
+function my_acf_google_map_api( $api ){
+  $api['key'] = 'AIzaSyCGatra0HuPCJJbTX2poBI-CbErfTyMe1Y';
+  return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
 //ACF「飲食店情報」をショートコードで出力できるようにする([acf_parking_info]で出力)
 function restaurant_info_shortcode() {
   ob_start();
