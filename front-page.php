@@ -18,16 +18,16 @@
                 <li>
                   <a href="<?php the_permalink(); ?>" >
                   
-                  <div class="thumbnail-area">
-                    <?php //アイキャッチ画像があれば表示
-                    if(has_post_thumbnail()):
-                      the_post_thumbnail('full');
+                    <div class="thumbnail-area">
+                      <?php //アイキャッチ画像があれば表示
+                      if(has_post_thumbnail()):
+                        the_post_thumbnail('full');
 
-                    else: ?>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets//img/sample-thumbnail.jpg" alt="ダミーのサムネイル">
+                      else: ?>
+                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets//img/sample-thumbnail.jpg" alt="ダミーのサムネイル">
 
-                    <?php endif; ?>
-                  </div>
+                      <?php endif; ?>
+                    </div>
                   
                     <div class="text">
                       <time class="entry-date"><?php echo get_the_date(); ?></time>
@@ -53,12 +53,6 @@
                   <p>投稿はありません。</p>
                 <?php endif; ?>
               </ul>
-              <!-- プラグイン「wp-paginavi」 -->
-              <?php if(function_exists('wp_pagenavi')): ?>
-                <div class="pagination">
-                  <?php wp_pagenavi(); ?>
-                </div>
-              <?php endif; ?>
             </div>
           </div>          
         </div>
