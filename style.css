@@ -219,7 +219,12 @@ img {
   margin-left: 1em;
 }
 
-/*-- 個別投稿ページ --*/
+/*-- 個別投稿ページ(.single-post) --*/
+
+/* 個別投稿ページではサイドバーのアーカイブを非表示に */
+.single-post .archive-block {
+  display: none;
+}
  
 /* タイトルエリア */
 .single-article .article-title {
@@ -303,29 +308,44 @@ font-size: 0.875rem;
   margin-top: 1rem;
 }
 
-/*-- フッターのアーカイブ表示(サイドバーにもアーカイブブロックあり。共通の記述はそちらへ) --*/
-.footer .archive-block {
-margin: 1em 0;
-}
-.footer .yearly-archive li {
-font-size: 1rem;
-}
-
 /* ========================
 サイドバー
 ======================== */
+
+.sidebar h3 {
+  font-size: 1.3rem;
+  margin: 1em 0;
+}
 
 /* SP版では検索フォームを非表示 */
 .search-block {
   display: none;
 }
 
-/* 「最新の記事」 */
+/* 最新の記事エリア */
 .latest-pages {
   line-height: 1.8;
 }
+.latest-pages h3:before {
+  font-family: "Font Awesome 6 Free";
+  content: '\f1d8';
+  margin-right: 0.5em;
+}
 .latest-pages ul li {
   margin-top: 0.5em;
+  border-top: solid 0.5px #000;
+  padding-top: 10px;
+}
+
+/* 過去のアーカイブ */
+.archive-block {
+  margin-top: 20px;
+}
+.archive-block h3:before {
+  font-family: "Font Awesome 6 Free";
+  content: '\f07c';
+  font-weight: 900;
+  margin-right: 0.5em;
 }
 
 /* ========================
@@ -559,7 +579,7 @@ div.ez-toc-widget-container li {
 .single-post .breadcrumb .current-item {
   display: none;
 }
-/* 最後のfontasesomeを非表示にする */
+/* 最後のfontawesomeを非表示にする */
 .single-post .breadcrumb .fas:last-of-type {
   display: none;
 }
@@ -732,6 +752,11 @@ div.ez-toc-widget-container li {
   }
 
   /*---- 個別投稿ページ --*/
+
+  .single-post .archive-block {
+    display: block;
+  }
+
   .article-content {
     padding: 2rem 0;
   }
@@ -795,6 +820,11 @@ div.ez-toc-widget-container li {
   ======================== */
   .sidebar {
     width: 32.649%;
+  }
+
+  /* PCではh3のmargin-topを0に */
+  .sidebar h3 {
+    margin-top: 0;
   }
 
   /*-- 検索フォーム(searchform.php) --*/
