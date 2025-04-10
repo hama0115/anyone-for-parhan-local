@@ -12,12 +12,14 @@ SPファーストで記述
 メディアクエリは後半にまとめている
 marginは基本はtopにかけるが、デザインの都合上ボトムにかけたい場合は「margin-bottom」を使う
 優先順位は、プラグイン自体のCSS→style.cssであることに注意(自分のCSSでプラグインのCSSを打ち消していないか要確認)
+フォントはgoogleフォントを使用
 */
 
 /* ========================
 全体
 ======================== */
 
+/* カスタムプロパティ */
 :root {
   --base-color: #fff;
   --main-color: rgb(000, 019, 172);
@@ -53,11 +55,10 @@ a:hover {
 }
 
 body {
-  /*パーキング飯用に変更すること
-  font-family: dnp-shuei-gothic-gin-std, sans-serif;
+  font-family: "Noto Sans JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-style: normal;
-  font-weight: 400;
-  */
   font-size: 16px;
   color: #000000;
   line-height: 2;
@@ -70,11 +71,9 @@ h4,
 h5,
 h6,
 .article-title {
-  /*パーキング飯用に変更すること
-  font-family: dnp-shuei-gothic-gin-std, sans-serif;
+  font-family: "Klee One", serif;
+  font-weight: 400;
   font-style: normal;
-  font-weight: 500;
-  */
 }
 
 img {
