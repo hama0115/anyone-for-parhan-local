@@ -18,6 +18,11 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
 全体
 ======================== */
 
+:root {
+  --base-color: #fff;
+  --main-color: rgb(000, 019, 172);
+}
+
 /*
 リセットCSSで変わっていない部分をリセット
 およびフォントなど全体に関わる部分を変更
@@ -211,8 +216,8 @@ img {
 .article-category {
   font-size: 0.625rem;
   padding: 0.2em 0.8em;
-  border: solid 1px #A0D8EF;
-  color: #A0D8EF;
+  border: solid 1px var(--main-color);
+  color: var(--main-color);
   font-weight: 400;
 }
 .category-list li:not(.category-list li:first-child) {
