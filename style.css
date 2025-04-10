@@ -21,6 +21,7 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
 :root {
   --base-color: #fff;
   --main-color: rgb(000, 019, 172);
+  --accent-color: rgb(110, 197, 227);
 }
 
 /*
@@ -113,7 +114,7 @@ img {
 }
 .header-logo {
   display: inline-block;
-  color: #A0D8EF;
+  color: var(--main-color);
 }
 .btn-menu {
   display: block;
@@ -135,7 +136,7 @@ img {
   right: 0;
   text-align: center;
   color: #fff;
-  background-color: #A0D8EF;
+  background-color: var(--main-color);
   overflow-x: hidden;
   width: 0;
   transition-duration: 0.5s;
@@ -152,7 +153,7 @@ img {
   white-space: nowrap;
 }
 .site-menu ul li a:hover {
-  color: #A0D8EF;
+  color: var(--main-color);
   background-color: #fff;
 }
 
@@ -257,13 +258,13 @@ img {
   font-size: 1.25rem;
   margin: 3rem 0 1em 0;
   padding: 0 0 0.6em 1em;
-  border-bottom: solid 1px #A0D8EF;
+  border-bottom: solid 1px var(--main-color);
 }
 .article-content h3 {
   font-size: 1rem;
   margin: 3em 0 1.5em 0;
   padding-left: 1em;
-  border-left: solid 2px #A0D8EF;
+  border-left: solid 2px var(--main-color);
 }
 .article-content > p {
   margin-bottom: 2em;
@@ -303,7 +304,7 @@ font-size: 0.875rem;
   text-align: center;
   padding: 3rem 0 1rem;
   color: #fff;
-  background-color: #A0D8EF;
+  background-color: var(--main-color);
 }
 .footer-logo {
   font-size: 1.5rem;
@@ -327,13 +328,14 @@ font-size: 0.875rem;
   display: none;
 }
 
-/* 最新の記事エリア */
+/*-- 最新の記事エリア --*/
 .latest-pages {
   line-height: 1.8;
 }
 .latest-pages h3:before {
   font-family: "Font Awesome 6 Free";
   content: '\f1d8';
+  color: var(--accent-color);
   margin-right: 0.5em;
 }
 .latest-pages ul li {
@@ -342,7 +344,7 @@ font-size: 0.875rem;
   padding-top: 10px;
 }
 
-/* 過去のアーカイブ */
+/*-- 過去のアーカイブ --*/
 .archive-block {
   margin-top: 20px;
 }
@@ -350,6 +352,7 @@ font-size: 0.875rem;
   font-family: "Font Awesome 6 Free";
   content: '\f07c';
   font-weight: 900;
+  color: var(--accent-color);
   margin-right: 0.5em;
 }
 
@@ -373,7 +376,7 @@ font-size: 0.875rem;
 .wp-block-list li:before{
   font-family: "Font Awesome 6 Free";
   content: '\f058';
-  color: #A0D8EF;
+  color: var(--main-color);
 }
 
 /*-- 詩 --*/
@@ -505,7 +508,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 /* start: Easy Table of Contents */
 div#ez-toc-container {
   background: #fff;
-  border: 1px solid #a0d8ef;
+  border: 1px solid var(--main-color);
 }
 
 div#ez-toc-container {
@@ -577,7 +580,7 @@ div.ez-toc-widget-container li {
   margin: 0 0.5em;
 }
 .theme-color {
-  color: #A0D8EF;
+  color: var(--main-color);
 }
 
 /* 個別投稿ページでは現在の記事が表示されないようにする */
@@ -605,12 +608,12 @@ div.ez-toc-widget-container li {
 
 .pagination .wp-pagenavi a:hover {
   color: #fff;
-  background-color: #A0D8EF;
+  background-color: var(--main-color);
 }
 
 .pagination .wp-pagenavi .page {
-  color: #A0D8EF;
-  border: solid 1px #A0D8EF;
+  color: var(--main-color);
+  border: solid 1px var(--main-color);
 }
 
 .pagination .wp-pagenavi span.current {
@@ -641,9 +644,9 @@ div.ez-toc-widget-container li {
     display: block;
     padding: 0.5em 1em;
     margin: 0 auto;
-    background-color: #A0D8EF;
+    background-color: var(--main-color);
     color: #fff;
-    border: solid 1px #A0D8EF; 
+    border: solid 1px var(--main-color); 
     border-radius: 30px;
     font-size: 1.5rem;
   }
@@ -680,7 +683,7 @@ div.ez-toc-widget-container li {
   }
   .site-menu ul li a:hover {
     color: #fff;
-    background-color: #A0D8EF;
+    background-color: var(--main-color);
   }
  
   /* ========================
