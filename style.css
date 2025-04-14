@@ -701,13 +701,13 @@ div.ez-toc-widget-container li {
 
   /* アーカイブページのコンテンツ */
   .container .archive-content {
-    width: 61.025%;
+    width: 70%;
     padding:0 2rem 2rem;
   }
 
   /* シングルページのコンテンツ */
   .container .main-content {
-    width: 61.025%;
+    width: 70%;
     padding: 2rem;
     background-color: #fff;
   }
@@ -826,7 +826,7 @@ div.ez-toc-widget-container li {
   サイドバー
   ======================== */
   .sidebar {
-    width: 32.649%;
+    width: 23%;
   }
 
   /* PCではh3のmargin-topを0に */
