@@ -418,10 +418,6 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   height: 240px;
   object-fit: cover;
 }
-.parking-text-container dl {
-  /* cocoonで付与されているmargin?をリセット */
-  margin-bottom: 1em;
-}
 .detail-container .spot-list {
   display: flex;
   flex-wrap: wrap;
@@ -929,24 +925,12 @@ div.ez-toc-widget-container li {
 
   /* パーキング情報 */
   .parking-info-container {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
-    column-gap: 30px;
-  }
-  .parking-info-container > img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-  .parking-text-container dl {
-    /* cocoonで付与されているmargin?をリセット */
-    margin-bottom: 1em;
+    gap: 30px;
   }
   .detail-container .spot-list {
-    display: flex;
     gap: 20px;
-    margin-top: 20px;
   }
   .detail-container .spot-icon {
     /* PC版はスポットアイコンは最大6コ並ぶ */
