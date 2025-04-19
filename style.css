@@ -412,11 +412,8 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 /* パーキング情報 ※モバイルファーストになっていないので訂正すること */
 .parking-info-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-between;
-  column-gap: 30px;
 }
-.parking-info-container img {
+.parking-info-container > img {
   width: 100%;
   height: 240px;
   object-fit: cover;
@@ -425,16 +422,15 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   /* cocoonで付与されているmargin?をリセット */
   margin-bottom: 1em;
 }
-
-/* スポット情報 */
-.spot-list {
+.detail-container .spot-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
+  margin-top: 20px;
 }
-.spot-icon {
-  /* スポットアイコンは最大5つ並ぶ */
-  width: calc((100% - 80px) / 5);
+.detail-container .spot-icon {
+  /* SP版はスポットアイコンは最大5コ並ぶ */
+  width: calc((100% - 50px) / 5);
 }
 
 /* 飲食店情報 ※モバイルファーストになっていないので訂正すること */
@@ -901,9 +897,9 @@ div.ez-toc-widget-container li {
     border-radius: 10px;
    }
 
-   /* ========================
-   ウィジェット
-   ======================== */
+  /* ========================
+  ウィジェット
+  ======================== */
 
   /*-- リスト --*/
   /* fontawesomeアイコン */
@@ -940,7 +936,7 @@ div.ez-toc-widget-container li {
   }
   .parking-info-container > img {
     width: 100%;
-    height: 240px;
+    height: 300px;
     object-fit: cover;
   }
   .parking-text-container dl {
@@ -953,7 +949,7 @@ div.ez-toc-widget-container li {
     margin-top: 20px;
   }
   .detail-container .spot-icon {
-    /* PC版はスポットアイコンは最大10コ並ぶ */
+    /* PC版はスポットアイコンは最大6コ並ぶ */
     width: calc((100% - 120px) / 6);
   }
 
