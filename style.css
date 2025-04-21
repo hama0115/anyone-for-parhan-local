@@ -444,6 +444,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   width: 100%;
   height: 240px;
 }
+.restaurant-desc {
+  margin-top: 1em;
+}
 /* end:「ACF」(カスタムフィールド) */
 /* start: プラグイン| LIQUIDO SPEECH BALLOON (吹き出し)の設定 */
 .liquid-speech-balloon-wrap {
