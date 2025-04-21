@@ -1,7 +1,5 @@
 <!-- 検索フォームエリア -->
-<div class="search-block">
-  <?php get_search_form(); ?>
-</div>
+<?php get_template_part( 'tmp/searcharea' ) ?>
 <!-- 最新の記事エリア -->
 <section class="latest-pages">
   <h3>最新の記事</h3>
