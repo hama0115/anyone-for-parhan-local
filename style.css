@@ -322,11 +322,6 @@ font-size: 0.875rem;
   margin: 1em 0;
 }
 
-/* SP版では検索フォームを非表示 */
-.search-block {
-  display: none;
-}
-
 /*-- 最新の記事エリア --*/
 .latest-pages {
   line-height: 1.8;
@@ -357,6 +352,16 @@ font-size: 0.875rem;
 
 /* ========================
 ウィジェット
+======================== */
+
+/*-- 検索フォーム --*/
+/* SP版では検索フォームを非表示 */
+.search-block {
+  display: none;
+}
+
+/* ========================
+ブロック
 ======================== */
 
 /*-- リスト --*/
@@ -672,6 +677,10 @@ div.ez-toc-widget-container li {
     color: #fff;
     background-color: var(--main-color);
   }
+
+  .header .search-block .input-group {
+    border: 0.5px solid #000;
+  }
  
   /* ========================
   メイン
@@ -820,7 +829,37 @@ div.ez-toc-widget-container li {
   /* PCではh3のmargin-topを0に */
   .sidebar h3 {
     margin-top: 0;
+  }  
+  
+  /* 最新の記事エリア */
+  .latest-pages {
+    padding: 2em;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 10px;
   }
+  .latest-pages ul li {
+    margin: 0.625em 0.625em 0 1em ;
+  }
+  
+  .yearly-archive li {
+    margin: 0.5em 0;
+  }
+  .yearly-archive li::before {
+    content: '・';
+  }
+
+  /*-- 記事アーカイブ --*/
+  .archive-block {
+    padding: 2em;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+   }
+
+  /* ========================
+  ウィジェット
+  ======================== */
 
   /*-- 検索フォーム(searchform.php) --*/
   .search-block {
@@ -857,40 +896,12 @@ div.ez-toc-widget-container li {
     border-width: 0;
     width: 100%;
   }
-    
-  /*-- 検索フォーム(searchform.php) --*/
   .search-form-block {
     margin: 2em 0;
   }
-  
-  /* 最新の記事エリア */
-  .latest-pages {
-    padding: 2em;
-    margin-top: 40px;
-    background-color: #fff;
-    border-radius: 10px;
-  }
-  .latest-pages ul li {
-    margin: 0.625em 0.625em 0 1em ;
-  }
-  
-  .yearly-archive li {
-    margin: 0.5em 0;
-  }
-  .yearly-archive li::before {
-    content: '・';
-  }
-
-  /*-- 記事アーカイブ --*/
-  .archive-block {
-    padding: 2em;
-    margin-top: 40px;
-    background-color: #fff;
-    border-radius: 10px;
-   }
 
   /* ========================
-  ウィジェット
+  ブロック
   ======================== */
 
   /*-- リスト --*/

@@ -24,5 +24,8 @@
             ?>
           </nav>
         <?php endif; ?>
+
+        <!-- 検索フォーム -->
+        <?php get_template_part( 'tmp/searcharea' ) ?>
       </div>
     </header>
