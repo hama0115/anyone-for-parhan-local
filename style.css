@@ -920,6 +920,9 @@ div.ez-toc-widget-container li {
   /* start:「ACF」(カスタムフィールド) */
 
   /* パーキング情報 */
+  .article-content .parking-info-container img {
+    margin-bottom: 0;
+  }
   .parking-info-container {
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
@@ -928,6 +931,7 @@ div.ez-toc-widget-container li {
   .parking-info-container > img {
     /* 優先度を高くするためPC版でも表記 */
     max-width: 100%;
+    height: 220px;
   }
   .detail-container .spot-list {
     gap: 20px;
