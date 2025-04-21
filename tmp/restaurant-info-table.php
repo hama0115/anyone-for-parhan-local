@@ -22,37 +22,27 @@
         </div>
       <?php endif; ?>
       <div class="restaurant-text-container">
-        <?php if(get_sub_field('time-to-eat')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
-        <dl>
-          <dt>【食事の目安時間】</dt>
-          <dd><?php the_sub_field('time-to-eat'); ?></dd>
-        </dl>
+        <?php if(get_sub_field('hp')): //対象のサブフィールド(URL)が存在する場合に出力 ?>
+        <p>【HP】<a href="<?php the_sub_field('hp'); ?>"><?php the_sub_field('hp'); ?></a></p>
         <?php endif; ?>
-        <?php if(get_sub_field('parking-meter')): ?>
-        <dl>
-          <dt>【Pメーター】</dt>
-          <dd><?php the_sub_field('parking-meter'); ?></dd>
-        </dl>
-        <?php endif; ?>
-        <?php if(get_sub_field('takeout')): ?>
-        <dl>
-          <dt>【テイクアウト】</dt>
-          <dd><?php the_sub_field('takeout'); ?></dd>
-        </dl>
+        <?php if(get_sub_field('takeout')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
+        <p>【テイクアウト】<?php the_sub_field('takeout'); ?></p>
         <?php endif; ?>
         <?php if(get_sub_field('order')): ?>
-        <dl>
-          <dt>【予約】</dt>
-          <dd><?php the_sub_field('order'); ?></dd>
-        </dl>
+          <p>【予約】<?php the_sub_field('order'); ?></p>
         <?php endif; ?>
         <?php if(get_sub_field('opening-hours')): ?>
-        <dl>
-          <dt>【営業時間】</dt>
-          <dd><?php the_sub_field('opening-hours'); ?></dd>
-        </dl>
+          <p>【営業時間】<?php the_sub_field('opening-hours'); ?></p>
         <?php endif; ?>
-      </div>
+      </div>      
     </div>
+    <div class="restaurant-desc">
+      <?php if(get_sub_field('desc')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
+        <dl>
+          <dt>【飲食店の概要】</dt>
+          <dd><?php the_sub_field('desc'); ?></dd>
+        </dl>
+      <?php endif; ?>
+      </div>
   <?php endwhile; ?>
 <?php endif; ?>
