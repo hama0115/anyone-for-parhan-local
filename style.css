@@ -954,7 +954,7 @@ div.ez-toc-widget-container li {
   .detail-container .spot-icon,
   .detail-container .convenience-icon {
     /* PC版はスポットアイコンは最大6コ並ぶ */
-    width: calc((100% - 120px) / 6);
+    width: calc((100% - 160px) / 8);
   }
 
   /* 飲食店情報 */
