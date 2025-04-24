@@ -414,7 +414,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
 /* start:「ACF」(カスタムフィールド) */
 
-/* パーキング情報 ※モバイルファーストになっていないので訂正すること */
+/* パーキング情報 */
 .parking-info-container {
   display: grid;
 }
@@ -424,13 +424,16 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   height: 240px;
   object-fit: cover;
 }
-.detail-container .spot-list {
+.detail-container .spot-list,
+.detail-container .convenience-list
+ {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
 }
-.detail-container .spot-icon {
+.detail-container .spot-icon,
+.detail-container .convenience-icon {
   /* SP版はスポットアイコンは最大5コ並ぶ */
   width: calc((100% - 50px) / 5);
 }
@@ -944,10 +947,12 @@ div.ez-toc-widget-container li {
     max-width: 100%;
     height: 220px;
   }
-  .detail-container .spot-list {
+  .detail-container .spot-list,
+  .detail-container .convenience-list {
     gap: 20px;
   }
-  .detail-container .spot-icon {
+  .detail-container .spot-icon,
+  .detail-container .convenience-icon {
     /* PC版はスポットアイコンは最大6コ並ぶ */
     width: calc((100% - 120px) / 6);
   }
