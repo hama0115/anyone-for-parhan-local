@@ -318,8 +318,24 @@ font-size: 0.875rem;
 ======================== */
 
 .sidebar h3 {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 1em 0;
+}
+
+/*-- リンク集エリア --*/
+.link-area {
+  line-height: 1.8;
+}
+.link-area h3:before {
+  font-family: "Font Awesome 6 Free";
+  content: '\f1d8';
+  color: var(--accent-color);
+  margin-right: 0.5em;
+}
+.link-area ul li {
+  margin-top: 0.5em;
+  border-top: solid 0.5px #000;
+  padding-top: 10px;
 }
 
 /*-- 最新の記事エリア --*/
@@ -832,7 +848,18 @@ div.ez-toc-widget-container li {
   /* PCではh3のmargin-topを0に */
   .sidebar h3 {
     margin-top: 0;
-  }  
+  }
+
+  /*-- リンク集エリア --*/
+  .link-area {
+    padding: 2em;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .link-area ul li {
+    margin: 0.625em 0.625em 0 1em ;
+  }
   
   /* 最新の記事エリア */
   .latest-pages {
@@ -845,20 +872,20 @@ div.ez-toc-widget-container li {
     margin: 0.625em 0.625em 0 1em ;
   }
   
+
+  /*-- 過去のアーカイブ --*/
+  .archive-block {
+    padding: 2em;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
   .yearly-archive li {
     margin: 0.5em 0;
   }
   .yearly-archive li::before {
     content: '・';
   }
-
-  /*-- 記事アーカイブ --*/
-  .archive-block {
-    padding: 2em;
-    margin-top: 40px;
-    background-color: #fff;
-    border-radius: 10px;
-   }
 
   /* ========================
   ウィジェット
