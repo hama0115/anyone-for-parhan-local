@@ -323,6 +323,7 @@ font-size: 0.875rem;
 }
 
 /*-- リンク集エリア --*/
+/*
 .link-area {
   line-height: 1.8;
 }
@@ -337,6 +338,7 @@ font-size: 0.875rem;
   border-top: solid 0.5px #000;
   padding-top: 10px;
 }
+*/
 
 /*-- 最新の記事エリア --*/
 .latest-pages {
@@ -851,6 +853,7 @@ div.ez-toc-widget-container li {
   }
 
   /*-- リンク集エリア --*/
+  /*
   .link-area {
     padding: 2em;
     margin-top: 40px;
@@ -860,6 +863,7 @@ div.ez-toc-widget-container li {
   .link-area ul li {
     margin: 0.625em 0.625em 0 1em ;
   }
+  */
   
   /* 最新の記事エリア */
   .latest-pages {
