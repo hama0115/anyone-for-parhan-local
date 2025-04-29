@@ -890,6 +890,11 @@ div.ez-toc-widget-container li {
     width: 18%;
   }
 
+  .sidebar-inner {
+    position: sticky;
+    top: calc(70px + 2rem);
+  }
+
   /* PCではh3のmargin-topを0に */
   .sidebar h3 {
     margin-top: 0;
