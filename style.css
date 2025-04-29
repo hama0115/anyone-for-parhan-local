@@ -432,7 +432,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
 /* start:「ACF」(カスタムフィールド) */
 
-/* パーキング情報 */
+/* パーキング情報(2:1) */
 .parking-info-container {
   display: grid;
 }
@@ -440,7 +440,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   width: 100%;
   max-width: 100%;
   height: 240px;
+  /*不要?
   object-fit: cover;
+  */
 }
 .detail-container .spot-list,
 .detail-container .convenience-list
@@ -452,6 +454,32 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 }
 .detail-container .spot-icon,
 .detail-container .convenience-icon {
+  /* SP版はスポットアイコンは最大5コ並ぶ */
+  width: calc((100% - 50px) / 5);
+}
+
+/* パーキング情報(4:3) */
+.postid-244 .parking-info-container {
+  display: grid;
+}
+.postid-244 .parking-info-container > img {
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+  /*不要?
+  object-fit: cover;
+  */
+}
+.postid-244 .detail-container .spot-list,
+.postid-244 .detail-container .convenience-list
+ {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.postid-244 .detail-container .spot-icon,
+.postid-244 .detail-container .convenience-icon {
   /* SP版はスポットアイコンは最大5コ並ぶ */
   width: calc((100% - 50px) / 5);
 }
@@ -730,6 +758,21 @@ div.ez-toc-widget-container li {
     background-color: #fff;
   }
 
+  /*---- フロントページ ----*/
+
+  .front-content-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .tag-search-area {
+    padding: 2em;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
   /*---- アーカイブページ ----*/
   .title {
     margin: 2rem 0 1rem;
@@ -984,6 +1027,30 @@ div.ez-toc-widget-container li {
   }
   .detail-container .spot-icon,
   .detail-container .convenience-icon {
+    /* PC版はスポットアイコンは最大8コ並ぶ */
+    width: calc((100% - 80px) / 8);
+  }
+
+  /* パーキング情報(4:3) */
+  .postid-244 .article-content .parking-info-container img {
+    margin-bottom: 0;
+  }
+  .postid-244 .parking-info-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .postid-244 .parking-info-container > img {
+    /* 優先度を高くするためPC版でも表記 */
+    max-width: 100%;
+    height: 300px;
+  }
+  .postid-244 .detail-container .spot-list,
+  .postid-244 .detail-container .convenience-list {
+    gap: 10px;
+  }
+  .postid-244 .detail-container .spot-icon,
+  .postid-244 .detail-container .convenience-icon {
     /* PC版はスポットアイコンは最大8コ並ぶ */
     width: calc((100% - 80px) / 8);
   }
