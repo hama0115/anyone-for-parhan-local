@@ -641,13 +641,16 @@ div.ez-toc-widget-container li {
 .single-post .breadcrumb .current-item {
   display: none;
 }
-/* 個別投稿ページでは現在の記事が表示されないようにする */
-.single-post .breadcrumb .current-item {
+/* 個別投稿ページ(通常投稿、「飲食店」)では現在の記事が表示されないようにする */
+.single-post .breadcrumb .current-item,
+.single-restaurant .breadcrumb .current-item {
   display: none;
 }
 /* 最後のfontawesomeを非表示にする */
 .single-post .breadcrumb .fas:last-of-type,
-.single-post .breadcrumb .fa-solid:last-of-type {
+.single-post .breadcrumb .fa-solid:last-of-type,
+.single-restaurant .breadcrumb .fas:last-of-type,
+.single-restaurant .breadcrumb .fa-solid:last-of-type {
   display: none;
 }
 
