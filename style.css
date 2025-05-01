@@ -617,19 +617,22 @@ div.ez-toc-widget-container li {
 .breadcrumb-inner {
   font-size: 0.875rem;
 }
-.breadcrumb-inner .fas {
+.breadcrumb-inner .fas,
+.breadcrumb-inner .fa-solid {
   margin: 0 0.5em;
-}
-.theme-color {
   color: var(--main-color);
 }
 
+.single-post .breadcrumb .current-item {
+  display: none;
+}
 /* 個別投稿ページでは現在の記事が表示されないようにする */
 .single-post .breadcrumb .current-item {
   display: none;
 }
 /* 最後のfontawesomeを非表示にする */
-.single-post .breadcrumb .fas:last-of-type {
+.single-post .breadcrumb .fas:last-of-type,
+.single-post .breadcrumb .fa-solid:last-of-type {
   display: none;
 }
 
