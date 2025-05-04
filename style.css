@@ -169,7 +169,10 @@ img {
 .site-menu ul li a:hover::after {
   scale: 1;
 }
-
+/* サブメニュー */
+.site-menu .sub-menu {
+  display: none;
+}
 
 /* ========================
 メイン
@@ -746,6 +749,18 @@ div.ez-toc-widget-container li {
 
   .header .search-block .input-group {
     border: 0.5px solid #000;
+  }
+
+  /* サブメニュー */
+  .site-menu .sub-menu {
+    position: absolute;
+    z-index: 2;
+    top: 70px;
+    background-color: var(--main-color);
+    color: #fff;
+  }  
+  .site-menu li:hover > .sub-menu {
+    display: block;
   }
  
   /* ========================

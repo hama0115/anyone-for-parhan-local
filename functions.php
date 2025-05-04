@@ -24,10 +24,16 @@ function enqueue_scripts() {
   wp_enqueue_style('reset-css', get_stylesheet_directory_uri() . '/assets/css/reset.css');
   //style.cssの読み込み
   wp_enqueue_style('main-css', get_stylesheet_uri());
+  //swiper(CDN)のCSSの読み込み
+  wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
   //ハンバーガーメニューの読み込み
   wp_enqueue_script('hamburger-menu', get_stylesheet_directory_uri() . '/assets/js/btn-menu.js', [], '1.0', true);
   //adobeフォントの読み込み
   wp_enqueue_script('adobefont', get_stylesheet_directory_uri() . '/assets/js/adobefont.js', [], '1.0', true);
+  //swiper(CDN)のJSの読み込み
+  wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
+  //swiper.jsの読み込み
+  wp_enqueue_script('swiper-slide-js', get_stylesheet_directory_uri() . '/assets/js/swiper-slide.js', [], '1.0', true);
 
   //個別投稿の場合のjsの読み込み
   if ( is_singular() ) {
