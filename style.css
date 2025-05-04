@@ -186,6 +186,26 @@ img {
   margin: auto;
 }
 
+/*---- フロントページ ----*/
+.swiper-slide {
+  position: relative;
+}
+/* フェード切り替え時に白いブラーを挟む */
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+/* スライドがフェードアウトする瞬間に白くなる */
+.swiper-slide.swiper-slide-prev::before,
+.swiper-slide.swiper-slide-next::before {
+  opacity: 0.4; /* お好みで0.2〜0.6あたり調整可能 */
+}
+
 /*---- アーカイブページ ----*/
 
 .page-title {

@@ -1,4 +1,11 @@
 const swiper1 = new Swiper(".swiper" , {
+  //フェード効果
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+  //スライドが切り替わるときのスピード
+  speed: 2000,
   //ページネーション
   pagination: {
     el: ".swiper-pagination"
