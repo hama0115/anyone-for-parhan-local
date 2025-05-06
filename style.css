@@ -751,7 +751,7 @@ div.ez-toc-widget-container li {
   }
   .site-menu {
     /* SP時のCSSを変更 */
-    position: static;
+    position: relative;
     color: #000;
     background-color: #fff;
     width: auto;
@@ -766,11 +766,11 @@ div.ez-toc-widget-container li {
     white-space: nowrap;
     padding: 0.5em 1em;
   }
-  .site-menu .sub-menu {
+  /* .site-menu .sub-menu {
     position: absolute;
     top: 100%;
     background-color: var(--base-color);
-  }
+  } */
 
   .header .search-block .input-group {
     border: 0.5px solid #000;
