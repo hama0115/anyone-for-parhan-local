@@ -170,9 +170,9 @@ img {
   scale: 1;
 }
 /* サブメニュー */
-.site-menu .sub-menu {
+/* .site-menu .sub-menu {
   display: none;
-}
+} */
 
 /* ========================
 メイン
@@ -756,7 +756,7 @@ div.ez-toc-widget-container li {
     background-color: #fff;
     width: auto;
   }
-  .site-menu ul {
+  .site-menu > ul {
     display: flex;
   }
   .site-menu ul li {
@@ -766,22 +766,18 @@ div.ez-toc-widget-container li {
     white-space: nowrap;
     padding: 0.5em 1em;
   }
+  .site-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    background-color: var(--base-color);
+  }
 
   .header .search-block .input-group {
     border: 0.5px solid #000;
   }
 
   /* サブメニュー */
-  .site-menu .sub-menu {
-    position: absolute;
-    z-index: 2;
-    top: 70px;
-    background-color: var(--main-color);
-    color: #fff;
-  }  
-  .site-menu li:hover > .sub-menu {
-    display: block;
-  }
+  
  
   /* ========================
   メイン
