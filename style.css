@@ -170,9 +170,9 @@ img {
   scale: 1;
 }
 /* サブメニュー */
-/* .site-menu .sub-menu {
+.site-menu .sub-menu {
   display: none;
-} */
+}
 
 /* ========================
 メイン
@@ -751,7 +751,15 @@ div.ez-toc-widget-container li {
   }
   .site-menu {
     /* SP時のCSSを変更 */
+
+    /* header-innerのflexによって変わってしまった位置を元に戻す */
     position: relative;
+    /* SP版の配置を初期状態へ */
+    top: 0;
+    /* SP版のoverflowを初期値へ */
+    overflow-x: visible;
+    
+
     color: #000;
     background-color: #fff;
     width: auto;
@@ -766,11 +774,15 @@ div.ez-toc-widget-container li {
     white-space: nowrap;
     padding: 0.5em 1em;
   }
-  /* .site-menu .sub-menu {
+  .site-menu .sub-menu {
     position: absolute;
     top: 100%;
     background-color: var(--base-color);
-  } */
+  }
+  /* ホバー時にサブメニューを表示 */
+  .site-menu ul > li:hover > .sub-menu {
+    display: block;
+  }
 
   .header .search-block .input-group {
     border: 0.5px solid #000;
