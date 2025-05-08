@@ -1,0 +1,14 @@
+{
+  "name": "parking-meter-block",
+  "title": "パーキング情報ブロック",
+  "description": "個別のパーキング情報を入力して表示できます。",
+  "style": [ "file:../../assets/css/acf-block.css" ],
+  "category": "acf-block",
+  "icon": "media-default",
+  "keywords": ["背景色"],
+  "acf": {
+      "mode": "auto",
+      "renderTemplate": "./acf-blocks/parking-meter/parking-meter.php"
+  },
+  "align": "full"
+}

@@ -73,3 +73,21 @@ function restaurant_info_shortcode() {
   return ob_get_clean();
 }
 add_shortcode('acf_restaurant_info','restaurant_info_shortcode');
+
+//カスタムブロックの登録
+add_action( 'init', 'register_acf_blocks' );
+function register_acf_blocks() {
+  register_block_type( __DIR__ . '/acf-blocks/parking-meter' );
+}
+
+//ACFブロックカテゴリーの登録
+add_filter('block_categories_all', function ($categories) {
+  $new_category = [
+      'slug' => 'acf-block',
+      'title' => 'ACFブロック',
+  ];
+  
+  array_splice($categories, 1, 0, [$new_category]);
+  
+  return $categories;
+});
