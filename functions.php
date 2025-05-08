@@ -78,6 +78,7 @@ add_shortcode('acf_restaurant_info','restaurant_info_shortcode');
 add_action( 'init', 'register_acf_blocks' );
 function register_acf_blocks() {
   register_block_type( __DIR__ . '/acf-blocks/parking-meter' );
+  register_block_type( __DIR__ . '/acf-blocks/restaurant-info' );
 }
 
 //ACFブロックカテゴリーの登録
