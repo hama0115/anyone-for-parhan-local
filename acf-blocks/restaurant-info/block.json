@@ -4,7 +4,7 @@
   "description": "個別のレストラン情報を入力して表示できます。",
   "style": [ "file:../../assets/css/acf-block.css" ],
   "category": "acf-block",
-  "icon": "media-default",
+  "icon": "media-interactive",
   "keywords": ["背景色"],
   "acf": {
       "mode": "auto",
