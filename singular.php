@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
   <main class="main">
-    <div class="container">      
+    <div class="container">       
       <div class="main-content">
         <div class="content-inner">
           <?php if( have_posts() ): while( have_posts() ) : the_post(); ?>
@@ -24,6 +24,8 @@
             <?php if(has_post_thumbnail()): ?>
               <div class="eyecatch-area"><?php the_post_thumbnail(); ?></div>
             <?php endif; ?>
+            <!-- スライドショー -->
+            <?php get_template_part( 'tmp/slideshow' ) ?>
             <div class="article-content">
               <?php the_content(); ?>
             </div>

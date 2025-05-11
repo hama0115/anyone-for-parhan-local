@@ -2,26 +2,7 @@
 
     <main class="main">    
       <div class="container">
-        <div class="archive-content">
-          <!-- swiper -->
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample-thumbnail.jpg" alt="サンプルだお">
-              </div>
-              <div class="swiper-slide">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample1.jpg" alt="サンプルだお">
-              </div>
-              <div class="swiper-slide">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample2.jpeg" alt="サンプルだお">
-              </div>
-            </div>
-            <!-- ページネーション用の要素 -->
-            <div class="swiper-pagination"></div>
-            <!-- ナビゲーションボタン -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
+        <div class="archive-content">          
           <div class="content-inner">
             <h2 class="front-content-title">最新の記事</h2>
             <div class="article-list-wrapper">
