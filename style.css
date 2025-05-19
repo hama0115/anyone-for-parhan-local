@@ -24,6 +24,7 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
   --base-color: #fff;
   --main-color: rgb(000, 019, 172);
   --accent-color: rgb(110, 197, 227);
+  --meshi-color: #ffa71a;
 }
 
 /*
@@ -184,6 +185,26 @@ img {
 .container {
   width: clamp(335px, 85%, 1200px);
   margin: auto;
+}
+
+/*---- フロントページ ----*/
+
+/* 「タグから探す」エリア */
+.restaurant-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.restaurant-tag-list li a {
+  display: inline-block;
+  padding: 0.2em 0.8em;
+  color: var(--base-color);
+  background-color: #ffa71a;
+  border: solid 1px #ffa71a;
+}
+.restaurant-tag-list li a:hover {
+  color: #ffa71a;
+  background-color: var(--base-color);
 }
 
 /*---- アーカイブページ ----*/
@@ -508,6 +529,18 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .postid-244 .detail-container .convenience-icon {
   /* SP版はスポットアイコンは最大5コ並ぶ */
   width: calc((100% - 50px) / 5);
+}
+
+.restaurant-container {
+  margin-top: 1em;
+}
+.restaurant-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.restaurant-img {
+  display: inline-block;
 }
 
 /* 飲食店情報 */

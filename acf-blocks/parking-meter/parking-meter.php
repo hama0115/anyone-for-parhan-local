@@ -21,7 +21,7 @@
           <?php if(get_sub_field('the-number-of-field')): ?>
             <p>【枠数】<?php the_sub_field('the-number-of-field'); ?></p>
         </div>        
-        <?php
+        <?php //スポット情報のアイコンを表示
         $selected_icons = get_sub_field('spot-information');
         if ($selected_icons):
           echo '<div class="spot-list">';
@@ -48,6 +48,24 @@
       <div class="desc-area">
         <?php if(get_sub_field('description')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
           <p><?php the_sub_field('description'); ?></p>
+        <?php endif; ?>
+        
+        <?php if( have_rows('restaurant-around') ): ?>
+          <div class="restaurant-container">
+            <?php while ( have_rows('restaurant-around')): the_row();
+              $illusts = get_sub_field('restaurant-illust');
+              $name = get_sub_field('restaurant-name');
+            ?>
+              <div class="restaurant-item">
+                <?php if ($illusts): ?>
+                  <?php foreach( $illusts as $illust ): ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/restaurant-icon/<?php echo esc_attr($illust); ?>.png" alt="<?php echo esc_attr($illust); ?>">
+                  <?php endforeach; ?>
+                <?php endif; ?>
+                <p><?php echo esc_html($name); ?></p>
+              </div>
+            <?php endwhile; ?>
+          </div>
         <?php endif; ?>
       </div>
       
