@@ -265,7 +265,8 @@ img {
 
 /*-- 個別投稿ページ(.single-post) --*/
 
-.wp-block-image img {
+/* 画像を中央寄せ */
+.single-post .wp-block-image img {
   display: block;
   margin: 0 auto;
 }
@@ -294,6 +295,10 @@ img {
 }
 
 /* スライドショー(swiper.js) */
+
+.swiper {
+  margin-top: 10px;
+}
 
 .swiper-slide {
   text-align: center;
