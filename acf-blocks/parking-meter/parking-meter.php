@@ -32,7 +32,7 @@
           echo '</div>';
         endif;
         ?>
-        <?php
+        <?php //周辺のコンビニのリストを表示
         $selected_icons = get_sub_field('convenience-store');
         if ($selected_icons):
           echo '<div class="convenience-list">';
@@ -62,7 +62,9 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/restaurant-icon/<?php echo esc_attr($illust); ?>.png" alt="<?php echo esc_attr($illust); ?>">
                   <?php endforeach; ?>
                 <?php endif; ?>
-                <p><?php echo esc_html($name); ?></p>
+                <a href="<?php echo esc_url($name['url']) ?>">
+                  <p><?php echo esc_html($name['title']); ?></p>
+                </a>
               </div>
             <?php endwhile; ?>
           </div>
