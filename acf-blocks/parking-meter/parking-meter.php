@@ -62,9 +62,12 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/restaurant-icon/<?php echo esc_attr($illust); ?>.png" alt="<?php echo esc_attr($illust); ?>">
                   <?php endforeach; ?>
                 <?php endif; ?>
-                <a href="<?php echo esc_url($name['url']) ?>">
-                  <p><?php echo esc_html($name['title']); ?></p>
-                </a>
+
+                <?php if (is_array($name) && !empty($name['url']) && !empty($name['title'])): ?>
+                  <a href="<?php echo esc_url($name['url']); ?>">
+                    <p><?php echo esc_html($name['title']); ?></p>
+                  </a>
+                <?php endif; ?>
               </div>
             <?php endwhile; ?>
           </div>
