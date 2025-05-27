@@ -1,6 +1,9 @@
 <!-- ACF「飲食店情報」を表示 -->
 <?php if(have_rows('restaurant-info')): ?>
   <?php while(have_rows('restaurant-info')): the_row(); ?>
+    <?php if(get_sub_field('restaurant-name')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
+    <p class="restaurant-name"><?php the_sub_field('restaurant-name'); ?></p>
+    <?php endif; ?>
     <div class="restaurant-info-container">
       <?php //対象のサブフィールド(画像)が存在する場合に出力
       $image = get_sub_field('restaurant-photo');

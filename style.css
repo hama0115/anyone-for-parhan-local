@@ -340,7 +340,7 @@ img {
   padding-left: 1em;
   border-left: solid 2px var(--main-color);
 }
-.article-content > p {
+.article-content > p:not(.restaurant-name) {
   margin-bottom: 2em;
   letter-spacing: 0.05em;
 }
@@ -531,6 +531,15 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 /* 飲食店情報 */
 .restaurant-info-container {
   display: grid;
+}
+.restaurant-name {
+  text-align: center;
+  font-size: 1.3rem;
+
+  margin-bottom: 1em;
+  /* .article-content > p のmargin-bottomではこのクラスを除外してある */
+
+  font-weight: bold;
 }
 .restaurant-info-container img {
   width: 100%;
