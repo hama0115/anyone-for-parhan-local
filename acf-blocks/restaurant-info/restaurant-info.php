@@ -22,8 +22,12 @@
         </div>
       <?php endif; ?>
       <div class="restaurant-text-container">
-        <?php if(get_sub_field('hp')): //対象のサブフィールド(URL)が存在する場合に出力 ?>
-        <p>【HP】<a href="<?php the_sub_field('hp'); ?>"><?php the_sub_field('hp'); ?></a></p>
+        <?php //対象のサブフィールド(リンク)が存在する場合に出力
+        $hp = get_sub_field('hp');
+        if (is_array($hp) && !empty($hp['url']) && !empty($hp['title'])): ?>
+          <a href="<?php echo esc_url($hp['url']); ?>">
+            <p>【HP】<?php echo esc_html($hp['title']); ?></p>
+          </a>
         <?php endif; ?>
         <?php if(get_sub_field('takeout')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
         <p>【テイクアウト】<?php the_sub_field('takeout'); ?></p>
