@@ -496,6 +496,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 /* パーキング情報 */
 .parking-info-container {
   display: grid;
+  background-color: #f5f5f5;
 }
 .parking-info-container > img {
   width: 100%;
