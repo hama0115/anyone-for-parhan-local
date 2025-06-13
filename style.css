@@ -534,6 +534,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .restaurant-block {
   padding: 1em;
   background-color: #FFF0DB;
+  border-top: 1px solid #000;
 }
 .restaurant-info-container {
   display: grid;
