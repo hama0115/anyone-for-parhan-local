@@ -523,10 +523,11 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .restaurant-item {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
 }
-.restaurant-img {
+.restaurant-item img {
   display: inline-block;
+  margin-top: 0.3em;
 }
 
 /* 飲食店情報 */
