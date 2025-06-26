@@ -38,7 +38,7 @@
         if ($selected_icons):
           echo '<div class="convenience-list">';
           foreach ($selected_icons as $icon) {
-            $icon_url = get_stylesheet_directory_uri() . '/assets/img/convenience-icon/' . $icon . '.jpeg';
+            $icon_url = get_stylesheet_directory_uri() . '/assets/img/convenience-icon/' . $icon . '.png';
             echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon) . '" class="convenience-icon">';
           }
           echo '</div>';

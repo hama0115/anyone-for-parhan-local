@@ -728,6 +728,13 @@ div.ez-toc-widget-container li {
   font-weight: inherit;
 }
 /* end：プラグイン｜WP-Paginavi */
+/*　start：プラグイン｜LuckyWP */
+
+.lwptoc {
+  display: none;
+}
+
+/* end：プラグイン｜WP-Paginavi */
  
 @media screen and (min-width: 768px) {
  
