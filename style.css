@@ -979,7 +979,6 @@ div.ez-toc-widget-container li {
   }
 
   .sidebar-inner {
-    position: sticky;
     top: calc(70px + 2rem);
   }
 
