@@ -21,7 +21,7 @@
           <?php if(get_sub_field('the-number-of-field')): ?>
             <p>【枠数】<?php the_sub_field('the-number-of-field'); ?></p>
           <?php endif; ?>
-        </div>        
+        </div>
         <?php //スポット情報のアイコンを表示
         $selected_icons = get_sub_field('spot-information');
         if ($selected_icons):

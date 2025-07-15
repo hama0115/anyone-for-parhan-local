@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   const toc = document.querySelector('.lwptoc');
-  const sidebar = document.querySelector('.sidebar-inner');
+  const postIt = document.querySelector('.post-it');
 
-  if (toc && sidebar) {
+  if (toc && postIt) {
     toc.style.display = 'block';
-    sidebar.prepend(toc);
+    postIt.insertAdjacentElement('afterend', toc);
   }
 });
