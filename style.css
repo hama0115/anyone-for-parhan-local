@@ -22,6 +22,7 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
 /* カスタムプロパティ */
 :root {
   --base-color: #fff;
+  --text-color: #000;
   --main-color: rgb(000, 019, 172);
   --accent-color: rgb(110, 197, 227);
   --meshi-color: #ffa71a;
@@ -429,6 +430,7 @@ font-size: 0.875rem;
   margin-right: 0.5em;
 }
 
+
 /* ========================
 ウィジェット
 ======================== */
@@ -670,6 +672,11 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   display: none;
 }
 
+//優先度を高くして文字色を変更
+.sidebar .lwptoc-light .lwptoc_i A {
+  color: var(--text-color);
+}
+
 /* end：プラグイン｜WP-Paginavi */
  
 @media screen and (min-width: 768px) {
@@ -776,7 +783,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
   /* シングルページのコンテンツ */
   .container .main-content {
-    width: 75%;
+    width: 68%;
     padding: 2rem;
     background-color: #fff;
   }
@@ -911,7 +918,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   ======================== */
   .sidebar {
     display: block;
-    width: 18%;
+    width: 25%;
   }
 
   .sidebar-inner {

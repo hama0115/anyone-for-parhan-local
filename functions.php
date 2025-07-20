@@ -34,6 +34,12 @@ function enqueue_scripts() {
   wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
   //swiper.jsの読み込み
   wp_enqueue_script('swiper-slide-js', get_stylesheet_directory_uri() . '/assets/js/swiper-slide.js', [], '1.0', true);
+  //追従スクロール用のjSの読み込み
+  wp_enqueue_script('scroll.js', get_stylesheet_directory_uri() . '/assets/js/scroll.js', [], '1.0', true);
+  //GSAPの読み込み
+  wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', [], '1.0', true);
+  //scrollTriggerの読み込み
+  wp_enqueue_script('scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', [], '1.0', true);
 
   //個別投稿の場合のjsの読み込み
   if ( is_singular() ) {
