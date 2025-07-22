@@ -676,6 +676,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .sidebar .lwptoc-light .lwptoc_i A {
   color: var(--text-color);
 }
+.sidebar .lwptoc-light .lwptoc_i A:visited {
+  color: var(--text-color);
+}
 
 /* end：プラグイン｜WP-Paginavi */
  
