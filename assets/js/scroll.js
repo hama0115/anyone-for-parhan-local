@@ -33,54 +33,9 @@ window.addEventListener("load", () => {
       start: `top-=${offset} top`,
       endTrigger: ".main-content",  
       end : `bottom-=${endOffset} top`,
-      markers: true,
+      //markers: true,
       pin: true,
       pinSpacing: false
     });
   }
 });
-
-
-
-/* バニラjsで試したもの
-
-const sidebar = document.querySelector('.sidebar');
-const bottomTrigger = document.querySelector('.sidebar-bottom-trigger');
-const footer = document.querySelector('.footer');
-
-const container = document.querySelector('.container');
-
-const containerRight = 
-  window.innerWidth - container.getBoundingClientRect().right;
-
-sidebar.style.right = `${containerRight}px`;
-
-// サイドバーの「下端」が画面に入ったら固定する
-const showTrigger = (entries) => {
-  const entry = entries[0];
-  if (entry.isIntersecting) {
-    sidebar.classList.add('fixed');
-  } else {
-    sidebar.classList.remove('fixed');
-  }
-};
-
-const scrollObserver = new IntersectionObserver(showTrigger, {
-  root: null,
-  threshold: 1.0,
-});
-scrollObserver.observe(bottomTrigger);
-
-// フッターが見えたら固定解除
-const stopTrigger = (entries) => {
-  if (entries[0].isIntersecting) {
-    sidebar.classList.remove('fixed');
-  }
-};
-
-const footerObserver = new IntersectionObserver(stopTrigger, {
-  root: null,
-  threshold: 0,
-});
-footerObserver.observe(footer);
-*/

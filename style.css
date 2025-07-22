@@ -672,7 +672,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   display: none;
 }
 
-//優先度を高くして文字色を変更
+/* 優先度を高くして文字色を変更 */
 .sidebar .lwptoc-light .lwptoc_i A {
   color: var(--text-color);
 }
@@ -1042,7 +1042,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   .parking-info-container > img {
     /* 優先度を高くするためPC版でも表記 */
     max-width: 100%;
-    height: 300px;
+    height: 250px;
   }
   .detail-container .spot-list,
   .detail-container .convenience-list {
