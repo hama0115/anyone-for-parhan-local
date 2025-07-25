@@ -28,6 +28,8 @@ function enqueue_scripts() {
   wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
   //ハンバーガーメニューの読み込み
   wp_enqueue_script('hamburger-menu', get_stylesheet_directory_uri() . '/assets/js/btn-menu.js', [], '1.0', true);
+  //fontawesomeの読み込み
+  wp_enqueue_script('fontawesome-kit', 'https://kit.fontawesome.com/9ab3ae9094.js', array(), null, true);
   //adobeフォントの読み込み
   wp_enqueue_script('adobefont', get_stylesheet_directory_uri() . '/assets/js/adobefont.js', [], '1.0', true);
   //swiper(CDN)のJSの読み込み
