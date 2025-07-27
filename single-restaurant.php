@@ -37,9 +37,13 @@
                 <p class="next-page-link"><?php next_post_link('%link', '%title'); //関数デフォルトの記号を非表示 ?></p>
               <?php endif; ?>
             </div>
-          </article>
+          </article>          
+
           <?php endwhile; else: ?>
           <?php endif; ?>
+
+          <?php comments_template(); ?>
+          
         </div>
       </div>
       <aside class="sidebar">
