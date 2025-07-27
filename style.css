@@ -46,8 +46,8 @@ ol {
 }
  
 a {
-  color: inherit;
-  text-decoration: none;
+  /* color: inherit;
+  text-decoration: none; */
   /* トランジションを滑らかに */
   transition-duration: 0.3s;
 }
@@ -114,6 +114,8 @@ img {
   align-items: center;
 }
 .header-logo {
+  color: inherit;
+  text-decoration: none;
   display: inline-block;
   color: var(--main-color);
 }
@@ -149,6 +151,8 @@ img {
   margin: 2rem 0;
 }
 .site-menu ul li a {
+  color: inherit;
+  text-decoration: none;
   display: inline-block;
   padding: 1em 3em;
   white-space: nowrap;
