@@ -87,3 +87,12 @@ function my_editor_support()
   add_theme_support('editor-styles');
   add_editor_style('assets/css/editor-style.css');
 }
+
+//コメント欄のカスタマイズ。URL、メールアドレス、クッキーを削除。
+function remove_comment_fields($fields) {
+  unset($fields['url']);
+  unset($fields['email']);
+  unset($fields['cookies']);
+  return $fields;
+}
+add_filter('comment_form_default_fields', 'remove_comment_fields');
