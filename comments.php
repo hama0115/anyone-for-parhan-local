@@ -1,9 +1,11 @@
 <section class="comments">
   <?php
   $comment_form_args = [
-    'title_reply' => '口コミを投稿する',
-    'label_submit' => '送信する',
+    'title_reply' => '口コミを投稿する',    
     'comment_field' => '<p class="comment-form-comment"><label for="comment">口コミ<span class="required">※</span></label> <textarea id="comment" name="comment" required="required"></textarea></p>',
+    'comment_notes_before' => '<p class="comment-notes"><span class="required-field-message"><span class="required">※</span> が付いている欄は必須項目です</span></p>',
+    'label_submit' => '送信する',
+    
   ];
   comment_form($comment_form_args);
   if ( have_comments() ):

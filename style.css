@@ -114,8 +114,10 @@ img {
   align-items: center;
 }
 .header-logo {
+  /* リンクを無効化 */
   color: inherit;
   text-decoration: none;
+
   display: inline-block;
   color: var(--main-color);
 }
@@ -214,6 +216,10 @@ img {
 
 /*---- アーカイブページ ----*/
 
+.archive-content a {
+  color: inherit;
+  text-decoration: none;
+}
 .page-title {
   text-align: center;
   font-size: 1.5rem;
@@ -362,6 +368,10 @@ margin-bottom: 2rem;
 margin-bottom: 1em;
 font-size: 0.875rem;
 }
+.page-link a {
+  color: inherit;
+  text-decoration: none;
+}
 .prev-page-link,
 .next-page-link {
   padding: 0.5em 1em;
@@ -376,7 +386,7 @@ font-size: 0.875rem;
   content: '>';
 }
 
-/* コメント欄 */
+/* コメント欄(ログイン状態に注意) */
 .comments {
   max-width: 100%;
 }
@@ -399,21 +409,25 @@ font-size: 0.875rem;
   border: solid 1px #000;
 }
 
+.comment-notes,
 .logged-in-as {
   font-size: 0.875rem;
 }
 
-.comment-form-comment {
+.comment-form-comment,
+.comment-form-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
   margin-top: 1em;
 }
-
-.comment-form-author {
-  margin-top: 1em;
+.comment-form-author input {
+  max-width: 100%;
 }
 
 .form-submit {
   text-align: center;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 .submit {
   font-size: 1.2rem;
@@ -453,6 +467,11 @@ font-size: 0.875rem;
 
 .sidebar {
   display: none;
+}
+
+.sidebar a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .sidebar h3 {
@@ -953,6 +972,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   }
 
   /* コメント欄 */
+  .comment-form-author input {
+    max-width: 40%;
+  }
 
 
 
