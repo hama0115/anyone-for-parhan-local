@@ -342,7 +342,9 @@ img {
 }
 .article-content h2 {
   font-size: 1.25rem;
-  margin: 3rem 0 1em 0;
+  margin: 3rem 0 1.5em 0;
+  padding-left: 1em;
+  border-left: solid 2px var(--main-color);
   background-color: var();
 }
 
