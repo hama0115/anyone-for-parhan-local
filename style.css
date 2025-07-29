@@ -700,6 +700,11 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   color: var(--main-color);
 }
 
+.breadcrumb-inner a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .single-post .breadcrumb .current-item {
   display: none;
 }
