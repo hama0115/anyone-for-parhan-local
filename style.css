@@ -26,6 +26,7 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
   --main-color: rgb(000, 019, 172);
   --accent-color: rgb(110, 197, 227);
   --meshi-color: #ffa71a;
+  --meshiback-color: #fff0db;
 }
 
 /*
@@ -342,14 +343,17 @@ img {
 .article-content h2 {
   font-size: 1.25rem;
   margin: 3rem 0 1em 0;
-  padding: 0 0 0.6em 1em;
-  border-bottom: solid 1px var(--main-color);
+  background-color: var();
 }
+
+/* 「飲食店情報ブロック」の見出しに合わせてあるので、「記事のh3」にはちょっと不適かも?(07/29) */
 .article-content h3 {
   font-size: 1rem;
-  margin: 3em 0 1.5em 0;
-  padding-left: 1em;
-  border-left: solid 2px var(--main-color);
+  font-weight: bold;
+  padding-top: 1em;
+  background-color: var(--meshiback-color);
+  text-align: center;
+  border-top: 1px solid #000;
 }
 .article-content > p:not(.restaurant-name) {
   margin-bottom: 2em;
@@ -613,8 +617,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 /* 飲食店情報 */
 .restaurant-block {
   padding: 1em;
-  background-color: #FFF0DB;
-  border-top: 1px solid #000;
+  background-color: var(--meshiback-color);
 }
 .restaurant-info-container {
   display: grid;
