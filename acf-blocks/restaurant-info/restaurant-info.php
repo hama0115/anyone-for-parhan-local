@@ -25,8 +25,11 @@
         <div class="restaurant-text-container">
           <?php //対象のサブフィールド(リンク)が存在する場合に出力
           $hp = get_sub_field('hp');
-          if (is_array($hp) && !empty($hp['url']) && !empty($hp['title'])): ?>
-            <a href="<?php echo esc_url($hp['url']); ?>">
+          if (is_array($hp) && !empty($hp['url']) && !empty($hp['title'])):
+            // 三項演算子でtargetが空の場合は_selfを設定
+          $target = !empty($hp['target']) ? $hp['target'] : '_self';
+          ?>
+            <a href="<?php echo esc_url($hp['url']); ?>" target="<?php echo esc_attr($target) ?>">
               <p>【HP】<?php echo esc_html($hp['title']); ?></p>
             </a>
           <?php endif; ?>
