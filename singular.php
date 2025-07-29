@@ -21,9 +21,6 @@
               <?php endif; ?>
               <?php get_template_part( 'tmp/breadcrumb' ); ?>
             </div>
-            <?php if(has_post_thumbnail()): ?>
-              <div class="eyecatch-area"><?php the_post_thumbnail(); ?></div>
-            <?php endif; ?>
             <!-- スライドショー -->
             <?php get_template_part( 'tmp/slideshow' ) ?>
             <div class="article-content">
