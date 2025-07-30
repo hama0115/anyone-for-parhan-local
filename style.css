@@ -31,8 +31,10 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
   --meshiback-color: #fff0db;
 
   /* 数値 */
+
+  /* コンテンツ幅は合計93%~95% */
   --main-content-width: 68%;
-  --sidebar-width: 25%;
+  --sidebar-width: 27%;
 }
 
 /*
@@ -809,6 +811,14 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   display: none;
 }
 
+.lwptoc {
+  font-size: 0.875rem;
+}
+
+.lwptoc_i {
+  width: 100%;
+}
+
 /* 優先度を高くして文字色を変更 */
 .sidebar .lwptoc-light .lwptoc_i A {
   color: var(--text-color);
@@ -915,7 +925,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     position: static;
     margin-left: 0;
     margin-right: 0;
-    
+
     font-size: 1.2rem;
   }
   .single-article .article-title {
