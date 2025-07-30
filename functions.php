@@ -96,3 +96,13 @@ function remove_comment_fields($fields) {
   return $fields;
 }
 add_filter('comment_form_default_fields', 'remove_comment_fields');
+
+//抜粋の文字数制限を設定
+add_filter( 'excerpt_length', function( $length ){
+  return 50;
+}, 999 );
+
+//省略記号を変更
+add_filter( 'excerpt_more', function( $more ){
+  return '<i class="fa-solid fa-circle-arrow-right"></i>';
+}, 999);

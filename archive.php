@@ -23,6 +23,7 @@
             
                     <div class="text">                      
                       <p class="article-title"><?php the_title(); ?></p>
+                      <div class="excerpt"><?php the_excerpt(); ?></div>
                       <div class="information">
                         <time class="entry-date"><?php echo get_the_date(); ?></time>
                         <?php /* カテゴリーをリンクなしで表示 */

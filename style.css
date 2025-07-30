@@ -216,7 +216,7 @@ img {
   margin: auto;
 }
 
-/*---- フロントページ ----*/
+/*---- フロントページ(アーカイブページとと共通の部分は書かない) ----*/
 
 /* 「飲食店をタグから探す」エリア */
 .restaurant-tag-list {
@@ -246,6 +246,7 @@ img {
 .front-content-title {
   text-align: center;
 }
+
 
 /*---- アーカイブページ ----*/
 
@@ -293,6 +294,18 @@ img {
 .article-title {
   font-size: 1rem;
   margin-top: 0.67em;
+}
+.excerpt {
+  color: #666;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  margin-top: 0.67em;
+}
+.excerpt i {
+  font-size: 0.75rem;
+  margin-left: 0.25em;
+  color: var(--accent-color);
 }
 .category-list {
   display: flex;
