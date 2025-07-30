@@ -28,7 +28,23 @@
           echo '<div class="spot-list">';
           foreach ($selected_icons as $icon) {
             $icon_url = get_stylesheet_directory_uri() . '/assets/img/spot-icon/' . $icon . '.png';
-            echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon) . '" class="spot-icon">';
+            
+            //ツールチップ用のタイトルを用意
+            $spot_title_map = [
+              'cafe' => 'カフェ',
+              'convenience' => 'コンビニ',
+              'fitness' => 'フィットネス',
+              'hotspring' => '銭湯',
+              'landmark' => 'ランドマーク',
+              'library' => '図書館',
+              'luup' => 'ループ',
+              'park' => '公園',
+              'sauna' => 'サウナ',
+              'toilet' => 'トイレ',
+            ];
+            $spot_title = isset($spot_title_map[$icon]) ? $spot_title_map[$icon] : $icon;
+
+            echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon) . '" title="'.esc_attr($spot_title) .'" class="spot-icon">';
           }
           echo '</div>';
         endif;
@@ -39,7 +55,26 @@
           echo '<div class="convenience-list">';
           foreach ($selected_icons as $icon) {
             $icon_url = get_stylesheet_directory_uri() . '/assets/img/convenience-icon/' . $icon . '.png';
-            echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon) . '" class="convenience-icon">';
+
+            //ツールチップ用のタイトルを用意
+            $store_title_map = [
+              'choshimaru' => '銚子丸',
+              'cocokara' => 'ココカラファイン',
+              'familymart' => 'ファミリーマート',
+              'hottomotto' => 'ほっともっと',
+              'kakuyasu' => 'カクヤス',
+              'kamakurapasta' => '鎌倉パスタ',
+              'konan' => 'コーナン',
+              'lawson' => 'ローソン',
+              'oksuper' => 'OKスーパー',
+              'sasafune' => '笹船',
+              'seveneleven' => 'セブンイレブン',
+              'washhouse' => 'WASHハウス',
+              'yamazaki' => 'ヤマザキ',
+            ];
+            $store_title = isset($store_title_map[$icon]) ? $store_title_map[$icon] : $icon;
+
+            echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon) . '" title="'.esc_attr($store_title) .'" class="convenience-icon">';
           }
           echo '</div>';
         endif;

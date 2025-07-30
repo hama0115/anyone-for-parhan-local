@@ -218,11 +218,7 @@ img {
 
 /*---- フロントページ ----*/
 
-.front-content-title {
-  text-align: center;
-}
-
-/* 「タグから探す」エリア */
+/* 「飲食店をタグから探す」エリア */
 .restaurant-tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -239,6 +235,16 @@ img {
 .restaurant-tag-list li a:hover {
   color: var(--meshi-color);
   background-color: var(--base-color);
+}
+
+/* フロントページのメインコンテンツ(最新の記事) */
+
+.content-inner {
+  margin-top: 1em;
+}
+
+.front-content-title {
+  text-align: center;
 }
 
 /*---- アーカイブページ ----*/
