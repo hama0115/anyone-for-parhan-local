@@ -383,6 +383,14 @@ img {
   background-color: var(--meshiback-color);
   text-align: center;
   border-top: 1px solid #000;
+
+  /* SP版ではコンテナを100vwにする */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 .article-content > p:not(.restaurant-name) {
   margin-bottom: 2em;
@@ -901,6 +909,13 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     font-size: 1.5rem;
   }
   .article-content h3 {
+
+    /* SP版の幅スタイルを無効化 */
+    width: 100%;
+    position: static;
+    margin-left: 0;
+    margin-right: 0;
+    
     font-size: 1.2rem;
   }
   .single-article .article-title {
