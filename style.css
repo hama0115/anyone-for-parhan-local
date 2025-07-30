@@ -21,12 +21,18 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
 
 /* カスタムプロパティ */
 :root {
+  /* カラー */
   --base-color: #fff;
   --text-color: #000;
   --main-color: rgb(000, 019, 172);
   --accent-color: rgb(110, 197, 227);
+  --back-color: #f5f5f5;
   --meshi-color: #ffa71a;
   --meshiback-color: #fff0db;
+
+  /* 数値 */
+  --main-content-width: 68%;
+  --sidebar-width: 25%;
 }
 
 /*
@@ -89,6 +95,19 @@ img {
 ======================== */
 
 /*---- ボタン ----*/
+.btn-area {
+  margin: 2em 0;
+}
+.page-btn {
+  display: block;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  background-color: var(--main-color);
+  color: #fff;
+  border: solid 1px var(--main-color); 
+  border-radius: 30px;
+  font-size: 1.5rem;
+}
  
 /* ========================
 ヘッダー
@@ -197,21 +216,26 @@ img {
 
 /*---- フロントページ ----*/
 
+.front-content-title {
+  text-align: center;
+}
+
 /* 「タグから探す」エリア */
 .restaurant-tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
+  margin-top: 1em;
 }
 .restaurant-tag-list li a {
   display: inline-block;
   padding: 0.2em 0.8em;
   color: var(--base-color);
-  background-color: #ffa71a;
-  border: solid 1px #ffa71a;
+  background-color: var(--meshi-color);
+  border: solid 1px var(--meshi-color);
 }
 .restaurant-tag-list li a:hover {
-  color: #ffa71a;
+  color: var(--meshi-color);
   background-color: var(--base-color);
 }
 
@@ -225,6 +249,9 @@ img {
   text-align: center;
   font-size: 1.5rem;
   margin: 1rem 0;
+}
+.article-list-wrapper {
+  margin-top: 1em;
 }
 .article-list li a {
   display: block;
@@ -532,7 +559,7 @@ font-size: 0.875rem;
 
 /*-- リスト --*/
 .wp-block-list {
-  background-color: #f5f5f5;
+  background-color: var(--back-color);
   padding: 1em 2em;
   margin-bottom: 1em;
 }
@@ -551,7 +578,7 @@ font-size: 0.875rem;
 
 /*-- 詩 --*/
 pre.wp-block-verse {
-  background-color: #f5f5f5;
+  background-color: var(--back-color);
   padding: 1em;
   margin: 2em 0;
 }
@@ -583,7 +610,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 /* パーキング情報 */
 .parking-info-container {
   display: grid;
-  background-color: #f5f5f5;
+  background-color: var(--back-color);
   padding: 1em;
 
   /* SP版ではコンテナを100vwにする */
@@ -784,7 +811,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
 /* end：プラグイン｜WP-Paginavi */
 
-@media screen and (min-width: 960px) {}
+/*　タブレット版*/
  
 @media screen and (min-width: 768px) {
  
@@ -801,104 +828,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   コンポーネント
   ======================== */
 
-  /*---- ボタン ----*/
-  .btn-area {
-    margin: 2em 0;
-  }
-  .page-btn {
-    display: block;
-    padding: 0.5em 1em;
-    margin: 0 auto;
-    background-color: var(--main-color);
-    color: #fff;
-    border: solid 1px var(--main-color); 
-    border-radius: 30px;
-    font-size: 1.5rem;
-  }
- 
-  /* ========================
-  ヘッダー
-  ======================== */
-
-  .header-logo {
-    font-size: 1.5rem;
-  }
-  .btn-menu {
-    display: none;
-  }
-  .site-menu {
-    /* SP時のCSSを変更 */
-
-    /* header-innerのflexによって変わってしまった位置を元に戻す */
-    position: relative;
-    /* SP版の配置を初期状態へ */
-    top: 0;
-    /* SP版のoverflowを初期値へ */
-    overflow-x: visible;
-    
-
-    color: #000;
-    background-color: #fff;
-    width: auto;
-  }
-  .site-menu > ul {
-    display: flex;
-  }
-  .site-menu ul li {
-    margin: 0 2em;
-  }
-  .site-menu ul li a {
-    white-space: nowrap;
-    padding: 0.5em 1em;
-  }
-  .site-menu .sub-menu {
-    position: absolute;
-    top: 100%;
-    background-color: var(--base-color);
-  }
-  /* ホバー時にサブメニューを表示 */
-  .site-menu ul > li:hover > .sub-menu {
-    display: block;
-  }
-
-  .header .search-block .input-group {
-    border: 0.5px solid #000;
-  }
-
-  /* サブメニュー */
-  
- 
-  /* ========================
-  メイン
-  ======================== */
-  .main {
-    display: flex;
-    padding: calc(70px + 2rem) 0 2rem;
-    background-color: #f5f5f5;
-  }
-  .container {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-  }
-
-  /* アーカイブページのコンテンツ */
-  .container .archive-content {
-    width: 75%;
-    padding:0 2rem 2rem;
-  }
-
-  /* シングルページのコンテンツ */
-  .container .main-content {
-    width: 68%;
-    padding: 2rem;
-    background-color: #fff;
-  }
-
   /*---- フロントページ ----*/
 
   .front-content-title {
-    text-align: center;
     font-size: 1.5rem;
     margin: 1rem 0;
   }
@@ -1003,9 +935,6 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     max-width: 40%;
   }
 
-
-
-
   /* ========================
   フッター
   ======================== */
@@ -1031,10 +960,6 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   /* ========================
   サイドバー
   ======================== */
-  .sidebar {
-    display: block;
-    width: 25%;
-  }
 
   .sidebar-inner {
     top: calc(70px + 2rem);
@@ -1074,46 +999,6 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   /* ========================
   ウィジェット
   ======================== */
-
-  /*-- 検索フォーム(searchform.php) --*/
-  .search-block {
-    display: block;
-  }
-
-  label[for="searchword"] {
-    display: none;
-  }
-  #searchform .btn {
-    line-height: 1.5em;
-    border-width: 0;
-    color: #f0264b;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: transparent;
-  }
-  #searchform .btn span {
-    display: none;
-  }
-  .input-group {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    border-radius: 30px;
-    padding: 0.3em 2em;
-    color: #000;
-    background-color: #fff;
-    width: auto;
-    max-width: 80%;
-  } 
-  .form-control {
-    padding: 0 0 0 10px;
-    line-height: 1.5em;
-    border-width: 0;
-    width: 100%;
-  }
-  .search-form-block {
-    margin: 2em 0;
-  }
 
   /* ========================
   ブロック
@@ -1220,4 +1105,149 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   }
   /* end：プラグイン｜WP-Paginavi */
  
+}
+
+/* PC版 */
+@media screen and (min-width: 1024px) {
+
+  /* ========================
+  ヘッダー
+  ======================== */
+
+  .header-logo {
+    font-size: 1.5rem;
+  }
+  .btn-menu {
+    display: none;
+  }
+  .site-menu {
+    /* SP時のCSSを変更 */
+
+    /* header-innerのflexによって変わってしまった位置を元に戻す */
+    position: relative;
+    /* SP版の配置を初期状態へ */
+    top: 0;
+    /* SP版のoverflowを初期値へ */
+    overflow-x: visible;
+    
+
+    color: #000;
+    background-color: #fff;
+    width: auto;
+  }
+  .site-menu > ul {
+    display: flex;
+  }
+  .site-menu ul li {
+    margin: 0 2em;
+  }
+  .site-menu ul li a {
+    white-space: nowrap;
+    padding: 0.5em 1em;
+  }
+  .site-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    background-color: var(--base-color);
+  }
+  /* ホバー時にサブメニューを表示 */
+  .site-menu ul > li:hover > .sub-menu {
+    display: block;
+  }
+
+  .header .search-block .input-group {
+    border: 0.5px solid #000;
+  }
+
+  /* ========================
+  メイン
+  ======================== */
+  .main {
+    display: flex;
+    padding: calc(70px + 2rem) 0 2rem;
+    background-color: #f5f5f5;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+  }
+
+  /* アーカイブページのコンテンツ */
+  .container .archive-content {
+    width: var(--main-content-width);
+    padding:0 2rem 2rem;
+  }
+
+  /* シングルページのコンテンツ */
+  .container .main-content {
+    width: var(--main-content-width);
+    padding: 2rem;
+    background-color: #fff;
+  }
+
+  /* ========================
+  サイドバー
+  ======================== */
+  .sidebar {
+    display: block;
+    width: var(--sidebar-width);
+  }
+
+  /* ========================
+  ウィジェット
+  ======================== */
+
+  /*-- 検索フォーム(searchform.php) --*/
+  .search-block {
+    display: block;
+  }
+
+  label[for="searchword"] {
+    display: none;
+  }
+  #searchform .btn {
+    line-height: 1.5em;
+    border-width: 0;
+    color: #f0264b;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  #searchform .btn span {
+    display: none;
+  }
+  .input-group {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 0.3em 2em;
+    color: #000;
+    background-color: #fff;
+    width: auto;
+    max-width: 80%;
+  } 
+  .form-control {
+    padding: 0 0 0 10px;
+    line-height: 1.5em;
+    border-width: 0;
+    width: 100%;
+  }
+  .search-form-block {
+    margin: 2em 0;
+  }
+
+
+
+  /* ========================
+  プラグイン
+  ======================== */
+  
+
+  /* start:「ACF」(カスタムフィールド) */
+
+  /* パーキング情報 */
+
+  /* end:「ACF」(カスタムフィールド) */
 }
