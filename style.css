@@ -707,7 +707,6 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 }
 .restaurant-info-container img {
   max-width: 100%;
-  max-height: 240px;
   object-fit: cover;
 }
 .restaurant-info-container .acf-map {
@@ -1123,13 +1122,10 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
     /* 優先度を高くするためPC版でも表記 */
     max-width: 100%;
-    
-    max-height: 240px;
     object-fit: cover;
   }
   .restaurant-info-container .acf-map {
     width: 100%;
-    max-height: 240px;
   }
   /* end:「ACF」(カスタムフィールド) */
   /* start：プラグイン｜Breadcrumb navXT*/
