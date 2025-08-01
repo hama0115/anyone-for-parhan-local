@@ -55,8 +55,7 @@ ol {
 }
  
 a {
-  /* color: inherit;
-  text-decoration: none; */
+  color: #00bbdd;
   /* トランジションを滑らかに */
   transition-duration: 0.3s;
 }
