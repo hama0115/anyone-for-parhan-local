@@ -28,10 +28,10 @@
             </div>
             <div class="page-link"><!-- 前後の記事がある場合はリンクを表示 -->
               <?php if( get_previous_post() ): ?>
-                <p class="prev-page-link"><?php previous_post_link('%link', '%title'); //関数デフォルトの記号を非表示 ?></p>
+                <a class="prev-page-link">前の記事へ</a>
               <?php endif; ?>
               <?php if( get_next_post() ): ?>
-                <p class="next-page-link"><?php next_post_link('%link', '%title'); //関数デフォルトの記号を非表示 ?></p>
+                <a class="next-page-link">次の記事へ</a>
               <?php endif; ?>
             </div>
           </article>

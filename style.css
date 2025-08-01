@@ -166,10 +166,12 @@ img {
   background-color: var(--main-color);
   overflow-x: hidden;
   width: 0;
+  height: 0;
   transition-duration: 0.5s;
 }
 .site-menu.open-menu {
   width: 100%;
+  height: 100vh;
 }
 .site-menu ul li {
   margin: 2rem 0;
@@ -424,28 +426,43 @@ img {
 
 /* 前後ページリンク */
 .page-link {
-margin-bottom: 2rem;
-}
-.page-link p {
-margin-bottom: 1em;
-font-size: 0.875rem;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
 }
 .page-link a {
-  color: inherit;
   text-decoration: none;
 }
 .prev-page-link,
 .next-page-link {
+  display: inline-block;
+  color: var(--base-color);
+  background-color: var(--accent-color);
   padding: 0.5em 1em;
-  border: solid 1px #000;
-  border-radius: 20px;
   text-align: center;
 }
+
+.prev-page-link {
+  border-radius: 2rem 0 0 2rem;
+}
+.next-page-link {
+  border-radius: 0 2rem 2rem 0;
+}
+
+ /* fontawesome */
+ .prev-page-link::before,
+ .next-page-link::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;  
+  color: var(--base-color);
+ }
 .prev-page-link::before {
-  content: '<';
+  content: '\f060';
+  margin-right: 0.5em;
 }
 .next-page-link::after {
-  content: '>';
+  content: '\f061';
+  margin-left: 0.5em;
 }
 
 /* コメント欄(ログイン状態に注意) */
@@ -601,6 +618,7 @@ font-size: 0.875rem;
 /* fontawesomeアイコン */
 .wp-block-list li:before{
   font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   content: '\f058';
   color: var(--main-color);
 }
@@ -794,7 +812,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 }
 
 /* end：Breadcrumb navXT */
-/* start：WP-Paginavi */
+/* start：WP-Paginavi(前後記事表示のページャーじゃないよ */
 .pagination {
   display: flex;
   justify-content: center;
