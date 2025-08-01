@@ -441,6 +441,12 @@ img {
   padding: 0.5em 1em;
   text-align: center;
 }
+.prev-page-link:hover,
+.next-page-link:hover {
+  color: var(--base-color);
+  /* ホバー時に暗い色にする */
+  background-color: #269cc3;
+}
 
 .prev-page-link {
   border-radius: 2rem 0 0 2rem;
