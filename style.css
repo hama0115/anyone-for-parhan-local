@@ -155,6 +155,7 @@ img {
   border-radius: 0;
   outline: none;
 }
+
 .site-menu {
   position: absolute;
   top: 100%;
@@ -173,7 +174,7 @@ img {
   height: 100vh;
 }
 .site-menu ul li {
-  margin: 2rem 0;
+  padding: 0 2em;
 }
 .site-menu ul li a {
   color: inherit;
@@ -200,9 +201,19 @@ img {
 .site-menu ul li a:hover::after {
   scale: 1;
 }
+
 /* サブメニュー */
 .site-menu .sub-menu {
   display: none;
+}
+
+/* サブサブメニュー */
+.site-menu .sub-menu .sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  white-space: nowrap;
 }
 
 /* ========================
@@ -1203,9 +1214,6 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   .site-menu > ul {
     display: flex;
   }
-  .site-menu ul li {
-    margin: 0 2em;
-  }
   .site-menu ul li a {
     white-space: nowrap;
     padding: 0.5em 1em;
@@ -1215,8 +1223,8 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     top: 100%;
     background-color: var(--base-color);
   }
-  /* ホバー時にサブメニューを表示 */
-  .site-menu ul > li:hover > .sub-menu {
+  /* ホバー時にサブメニュー、サブサブメニューを表示 */
+  .site-menu li:hover > .sub-menu {
     display: block;
   }
 
