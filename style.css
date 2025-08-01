@@ -978,8 +978,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
   /* 前後ページリンク */
   .page-link {
-    display: flex;
     justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
   }
   .prev-page-link,
   .next-page-link {
