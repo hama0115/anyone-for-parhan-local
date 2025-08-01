@@ -1223,6 +1223,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     top: 100%;
     background-color: var(--base-color);
   }
+  .site-menu li {
+    position: relative;
+  }
   /* ホバー時にサブメニュー、サブサブメニューを表示 */
   .site-menu li:hover > .sub-menu {
     display: block;
