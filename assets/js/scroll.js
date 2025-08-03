@@ -1,3 +1,4 @@
+//-- PC版でスクロールすると目次が固定される --//
 window.addEventListener("load", () => {
 
   //要素を取得

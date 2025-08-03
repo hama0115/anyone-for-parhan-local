@@ -1,3 +1,4 @@
+//-- LuckyWPをサイドバーに移動して表示 --//
 document.addEventListener('DOMContentLoaded', function () {
   const toc = document.querySelector('.lwptoc');
   const postIt = document.querySelector('.post-it');

@@ -25,6 +25,9 @@
           </nav>
         <?php endif; ?>
 
+        <!-- 目次パネル -->
+        <?php get_template_part( 'tmp/toc-panel' ) ?>
+
         <!-- 検索フォーム -->
         <?php get_template_part( 'tmp/searcharea' ) ?>
       </div>

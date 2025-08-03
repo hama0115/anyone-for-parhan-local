@@ -335,7 +335,7 @@ img {
   margin-left: 1em;
 }
 
-/*-- 個別投稿ページ(.single-post) --*/
+/*---- 個別投稿ページ(.single-post) ----*/
 
 /* 画像を中央寄せ */
 .single-post .wp-block-image img {
@@ -366,7 +366,7 @@ img {
   padding: 1rem 0;
 }
 
-/* スライドショー(swiper.js) */
+/*---- スライドショー(swiper.js) ----*/
 
 .swiper {
   margin-top: 10px;
@@ -434,7 +434,7 @@ img {
   margin-bottom: 1rem;
 }
 
-/* 前後ページリンク */
+/*---- 前後ページリンク ----*/
 .page-link {
   display: flex;
   justify-content: center;
@@ -536,6 +536,65 @@ img {
 .submit:hover {
   transform: translate(2px, 2px);
   box-shadow: 3px 3px;
+}
+
+/*---- 目次パネル ----*/
+
+/* 固定ボタン */
+.toc-fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0073aa;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* 目次パネル */
+.toc-panel {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  background-color: var(--main-color);
+  overflow-x: hidden;
+  width: 0;
+  height: 0;
+  padding: 1em 0;
+  transition-duration: 0.5s;
+  z-index: 99;
+}
+.toc-panel.open-toc {
+  width: 100%;
+  height: 100vh;
+}
+
+.toc-panel a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc-panel-header .header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#toc-close {
+  display: inline-block;
+}
+.toc-panel-header .fa-xmark {
+  font-size: 1.25rem;
+}
+
+/* 目次パネルではLuckyWPデフォルトのヘッダーを非表示 */
+.lwptoc_header {
+  display: none;
 }
 
  

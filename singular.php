@@ -37,6 +37,9 @@
           </article>
           <?php endwhile; else: ?>
           <?php endif; ?>
+
+          <!-- 目次パネルの開閉ボタン -->
+          <button id="toc-toggle-button" class="toc-fixed-button">目次を見る</button>
         </div>
       </div>
       <aside class="sidebar">

@@ -1,4 +1,5 @@
-<footer class="footer">
+      
+    <footer class="footer">
       <a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo"><?php bloginfo('name'); ?></a>
 
       <?php get_sidebar(); ?>
