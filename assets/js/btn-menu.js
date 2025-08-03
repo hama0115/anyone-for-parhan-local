@@ -17,15 +17,24 @@ const tocClose = document.getElementById("toc-close");
 // 目次を複製
 if (originalToc && tocPanelContent) {
   tocPanelContent.innerHTML = originalToc.innerHTML;
-  mainContent.insertAdjacentElement('afterbegin', tocPanel);
+  mainContent.insertAdjacentElement('afterbegin', tocPanel);  
+
+    //目次パネルを開閉
+    tocBtn.addEventListener("click", () => {
+      tocPanel.classList.toggle("open-toc");
+    });
+
+    //目次パネルを閉じる
+    tocClose.addEventListener("click", () => {
+      tocPanel.classList.remove("open-toc");
+    });
+
+    const eachWrap = tocPanel.querySelectorAll(".lwptoc_item");
+
+    //目次パネルの各項目をクリックしたら、目次パネルを閉じる
+    eachWrap.forEach(wrap => {
+      wrap.addEventListener("click", () => {
+        tocPanel.classList.remove("open-toc");
+      });
+    });
 }
-
-//目次パネルを開閉
-tocBtn.addEventListener("click", () => {
-  tocPanel.classList.toggle("open-toc");
-});
-
-//目次パネルを閉じる
-tocClose.addEventListener("click", () => {
-  tocPanel.classList.toggle("open-toc");
-});

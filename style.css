@@ -917,8 +917,8 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 /*　start：プラグイン｜LuckyWP */
 
 .lwptoc,
-/* h2直下のh3を非表示 */
-.lwptoc_item > .lwptoc_itemWrap {
+/* サイドバーの目次では、h2直下のh3を非表示 */
+.sidebar.lwptoc_item > .lwptoc_itemWrap {
   display: none;
 }
 
