@@ -1,11 +1,7 @@
 <div id="toc-panel" class="toc-panel">
-  <div class="thumbnail-area">
-    <?php if(has_post_thumbnail()): ?>
-      <?php the_post_thumbnail('full'); ?>
-    <?php else: ?>
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample-thumbnail.JPG" alt="ダミーのサムネイル">
-    <?php endif; ?>
-  </div>
+  <!-- パーキング情報の一覧マップ -->
+  <?php get_template_part( 'tmp/parking-map' ) ?>
+
   <div class="toc-panel-header">
     <p class="header-title">目次</p>
     <button id="toc-close">
