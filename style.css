@@ -1409,9 +1409,13 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   /* end:「ACF」(カスタムフィールド) */
 
   /* start:「luckyWP)サイドバーの目次 */
-  .lwptoc_i .lwptoc_items {
+
+  /* 目次が高さをはみだした場合、スクロールさせる */
+  .lwptoc_items {
     max-height: 300px;
     overflow-y: scroll;
   }
+
+
   /* end:「luckyWP)サイドバーの目次 */
 }
