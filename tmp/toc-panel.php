@@ -1,3 +1,4 @@
+<!-- 目次パネル -->
 <div id="toc-panel" class="toc-panel">
   <!-- パーキング情報の一覧マップ -->
   <?php get_template_part( 'tmp/parking-map' ) ?>

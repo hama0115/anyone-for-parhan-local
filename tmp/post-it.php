@@ -1,6 +1,6 @@
 <div class="post-it">
   <div class="post-it-area">
-    <a href="https://luup.sc/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-it/luup.jpg" alt="luupの付箋"></a>
+    <a href="https://luup.sc/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-it/luup.png" alt="luupの付箋"></a>
   </div>
   <div class="post-it-area">
     <a href="https://share.timescar.jp/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-it/timescarshare.png" alt="タイムズカーシェアの付箋"></a>

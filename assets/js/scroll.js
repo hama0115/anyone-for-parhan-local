@@ -2,17 +2,18 @@
 window.addEventListener("load", () => {
 
   //要素を取得
+  const parkingMap = document.querySelector('.parking-map-area');
   const toc = document.querySelector('.lwptoc');
   const archive = document.querySelector('.archive-block');
 
-  if (toc && archive) {
+  if (parkingMap && toc && archive) {
     //追従させるためのラッパーを作成
     const wrapper = document.createElement('div');
     wrapper.classList.add("fixed-area");
 
     //DOMにラッパーを挿入し、目次とアーカイブをラッパーの中に移動
     toc.parentNode.insertBefore(wrapper, toc);
-    wrapper.append(toc, archive);
+    wrapper.append(parkingMap, toc, archive);
 
     //固定するサイドバーのheightを取得
     const fixedArea = document.querySelector(".fixed-area");

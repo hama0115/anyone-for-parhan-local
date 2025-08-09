@@ -1,11 +1,13 @@
 //-- LuckyWPをサイドバーに移動して表示 --//
 document.addEventListener('DOMContentLoaded', function () {
   const toc = document.querySelector('.lwptoc');
-  const postIt = document.querySelector('.post-it');
+  const archive = document.querySelector('.archive-block');
 
-  if (toc && postIt) {
+  if (toc && archive) {
+    // 目次を表示
     toc.style.display = 'block';
-    postIt.insertAdjacentElement('afterend', toc);
+    // 目次をアーカイブの前に挿入
+    archive.insertAdjacentElement('beforebegin', toc);
   }
 
   // h3グループ（= 子リスト）を全部最初に非表示にする
@@ -36,3 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+/*コピー用
+const parkingMap = document.querySelector('.parking-map-area');
+
+if (toc && parkingMap) {
+  toc.style.display = 'block';
+  parkingMap.insertAdjacentElement('afterend', toc);
+}
+*/

@@ -1226,6 +1226,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     width: 100%;
   }
   /* end:「ACF」(カスタムフィールド) */
+  /* start:「luckyWP)サイドバーの目次 */
+  
+  /* end:「luckyWP)サイドバーの目次 */
   /* start：プラグイン｜Breadcrumb navXT*/
 
   .breadcrumb-inner {
@@ -1315,6 +1318,10 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     border-radius: 10px;
   }
 
+  .main-content .toc-panel {
+    display: none;
+  }
+
   /* アーカイブページのコンテンツ */
   .container .archive-content {
     width: var(--main-content-width);
@@ -1340,6 +1347,12 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     display: block;
     width: var(--sidebar-width);
   }
+
+  .post-it {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
 
   /* ========================
   ウィジェット
@@ -1393,8 +1406,12 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   
 
   /* start:「ACF」(カスタムフィールド) */
-
-  /* パーキング情報 */
-
   /* end:「ACF」(カスタムフィールド) */
+
+  /* start:「luckyWP)サイドバーの目次 */
+  .lwptoc_i .lwptoc_items {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  /* end:「luckyWP)サイドバーの目次 */
 }
