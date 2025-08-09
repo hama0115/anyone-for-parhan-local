@@ -368,8 +368,17 @@ img {
 
 /*---- スライドショー(swiper.js) ----*/
 
-.swiper {
+/* 詳細度を高めに */
+article .swiper {
   margin-top: 10px;
+
+  /* デフォルトのz-indexをなしに */
+  z-index: 0;
+}
+/* 詳細度を高めに */
+article .swiper-wrapper {
+  /* デフォルトのz-indexをなしに */
+  z-index: 0;
 }
 
 .swiper-slide {

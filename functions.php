@@ -22,10 +22,13 @@ add_action( 'after_setup_theme', 'anyonetheme_setup' );
 function enqueue_scripts() {
   //リセットCSSの読み込み
   wp_enqueue_style('reset-css', get_stylesheet_directory_uri() . '/assets/css/reset.css');
+  //Luminous(CDN)のCSSの読み込み(style.cssより上に)
+  wp_enqueue_style('luminous-css', 'https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous-basic.min.css');
   //style.cssの読み込み
   wp_enqueue_style('main-css', get_stylesheet_uri());
   //swiper(CDN)のCSSの読み込み
   wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+
   //ハンバーガーメニューの読み込み
   wp_enqueue_script('hamburger-menu', get_stylesheet_directory_uri() . '/assets/js/btn-menu.js', [], '1.0', true);
   //fontawesomeの読み込み
@@ -42,6 +45,10 @@ function enqueue_scripts() {
   wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', [], '1.0', true);
   //scrollTriggerの読み込み
   wp_enqueue_script('scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', [], '1.0', true);
+  //「Luminous」の読み込み
+  wp_enqueue_script('luminous-cdn', 'https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous.min.js', [], '1.0', true);
+  //ライブラリ「luminous」用の実際のjSの読み込み
+  wp_enqueue_script('luminous.js', get_stylesheet_directory_uri() . '/assets/js/luminous.js', ['luminous-cdn'], '1.0', true);
 
   //個別投稿の場合のjsの読み込み
   if ( is_singular() ) {
