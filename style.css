@@ -1415,6 +1415,13 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     max-height: 300px;
     overflow-y: scroll;
   }
+  .lwptoc_items::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+  }
+  .lwptoc_items::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 
 
   /* end:「luckyWP)サイドバーの目次 */
