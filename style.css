@@ -335,7 +335,39 @@ img {
   margin-left: 1em;
 }
 
-/*---- 個別投稿ページ(.single-post) ----*/
+/*---- 飲食店タイプ アーカイブページ(body_class=post-type-archive) ----*/
+
+
+.post-type-archive .text {
+  padding: 0.75rem 0 1rem;
+}
+.post-type-archive .article-list > li {
+  padding: 0;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(24, 44, 84, 0.1);	
+  transition-duration: 0.3s;
+}
+.post-type-archive .article-list > li:hover {
+  box-shadow: 5px 8px 10px 0 rgba(24, 44, 84, 0.1);	
+}
+
+.post-type-archive .article-list  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+
+.post-type-archive .text {
+  font-size: 0.75rem;
+  line-height: 1.7;
+  padding: 1em;
+}
+.post-type-archive .article-title {
+  font-size: 0.75rem;
+}
+
+/*---- 個別投稿ページ(body_class=.single-post) ----*/
 
 /* 画像を中央寄せ */
 .single-post .wp-block-image img {
@@ -1035,6 +1067,11 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
   .category-list {
     margin: 0;
+  }
+
+  /*---- 飲食店タイプ アーカイブページ(body_class=post-type-archive) ----*/
+  .post-type-archive .article-list  {
+    display: block;
   }
 
   /*---- 個別投稿ページ --*/
