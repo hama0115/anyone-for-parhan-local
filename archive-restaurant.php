@@ -4,8 +4,7 @@
       <div class="container">
         <div class="archive-content">
           <div class="content-inner">
-            <h1 class-"page-title">検索結果</h1>
-            <p class="keyword"><i class="fa-solid fa-magnifying-glass"></i>検索ワード「<?php the_search_query(); ?>」</p>
+            <?php the_archive_title( '<h1 class="page-title">', '</h1>'); ?>
             <div class="article-list-wrapper">
               <ul class="article-list">
                 <?php //メインループ開始
@@ -41,11 +40,7 @@
                     </div>
                   </a>
                 </li>
-                <?php endwhile; ?>
-                <?php else: ?>
-                  <div class="keyword">
-                    <p>検索結果はありませんでした。</p>
-                  </div>
+                <?php endwhile; else: ?>
                 <?php endif; ?>
               </ul>
               <!-- プラグイン「wp-paginavi」 -->
