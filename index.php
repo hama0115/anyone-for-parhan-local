@@ -15,7 +15,7 @@
                     <div class="thumbnail-area">
                       <?php
                       if(has_post_thumbnail()):
-                        the_post_thumbnail('full');
+                        the_post_thumbnail('full');j
                       else: ?>
                       <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample-thumbnail.JPG" alt="ダミーのサムネイル">
                       <?php endif; ?>
@@ -23,6 +23,7 @@
             
                     <div class="text">                      
                       <p class="article-title"><?php the_title(); ?></p>
+                      <div class="excerpt"><?php the_excerpt(); ?></div>
                       <div class="information">
                         <time class="entry-date"><?php echo get_the_date(); ?></time>
                         <?php /* カテゴリーをリンクなしで表示 */
