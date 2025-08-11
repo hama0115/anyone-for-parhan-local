@@ -26,16 +26,20 @@
                       <div class="excerpt"><?php the_excerpt(); ?></div>
                       <div class="information">
                         <time class="entry-date"><?php echo get_the_date(); ?></time>
-                        <?php /* カテゴリーをリンクなしで表示 */
-                        $cats = get_the_category();
-                        if($cats):
+
+                        <!-- タクソノミー「ジャンル」を取得、表示 -->
+                        <?php
+                        $terms = get_the_terms( get_the_ID(), 'genre');
+                        if ( $terms && !is_wp_error ( $terms ) ) {
+                          echo '<ul class="category-list">';
+                          foreach ( $terms as $term ) {
+                            echo '<li class="article-category">' . esc_html ($term->name)  . '</li>';
+                          }
+                          echo '</ul>';
+                        } else {
+                          echo '<p>ジャンル未設定</p>';
+                        }
                         ?>
-                          <ul class="category-list">
-                          <?php foreach($cats as $cat): ?>
-                            <li class="article-category"><?php echo $cat->name; ?></li>
-                          <?php endforeach; ?>
-                          </ul>
-                        <?php endif; ?>
                       </div>
                     </div>
                   </a>

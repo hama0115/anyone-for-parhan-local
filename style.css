@@ -270,7 +270,18 @@ img {
   text-align: center;
   font-size: 1.5rem;
   margin: 1rem 0;
+  border-bottom: solid 3px var(--main-color);
+  position: relative;
 }
+.page-title::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px var(--accent-color);
+  bottom: -3px;
+  width: 30%;
+}
+
 .article-list-wrapper {
   margin-top: 1em;
 }
@@ -323,6 +334,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   margin-top: 1em;
+  row-gap: 0.5em;
 }
 .article-category {
   font-size: 0.625rem;
@@ -367,6 +379,14 @@ img {
   font-size: 0.75rem;
 }
 
+.post-type-archive .article-category {
+  font-size: 0.625rem;
+  padding: 0.2em 0.8em;
+  border: solid 1px var(--meshi-color);
+  color: var(--meshi-color);
+  font-weight: 400;
+}
+
 /*---- 個別投稿ページ(body_class=.single-post) ----*/
 
 /* 画像を中央寄せ */
@@ -397,6 +417,9 @@ img {
 .eyecatch-area {
   padding: 1rem 0;
 }
+
+/*---- 飲食店タイプ 個別投稿ページ ----*/
+
 
 /*---- 404ページ ----*/
 
@@ -488,6 +511,7 @@ article .swiper-wrapper {
   display: flex;
   justify-content: center;
   gap: 1em;
+  margin-top: 1rem;
 }
 .page-link a {
   text-decoration: none;
@@ -530,9 +554,22 @@ article .swiper-wrapper {
   margin-left: 0.5em;
 }
 
+/*-- 飲食店タイプ --*/
+.type-restaurant .prev-page-link,
+.type-restaurant .next-page-link {
+  background-color: var(--meshi-color);
+  border-radius: 0;
+}
+.type-restaurant .prev-page-link:hover,
+.type-restaurant .next-page-link:hover {
+  /* ホバー時に暗い色にする */
+  background-color: #E58900;
+}
+
 /* コメント欄(ログイン状態に注意) */
 .comments {
   max-width: 100%;
+  margin-top: 3rem;
 }
 
 .comment-reply-title::before {
@@ -682,12 +719,23 @@ article .swiper-wrapper {
   color: inherit;
   text-decoration: none;
 }
+.sidebar a:hover {
+  color: #d4d4d4;
+}
 
 .sidebar h3 {
   font-size: 1rem;
   margin: 1em 0;
 }
 
+.parking-map-area {
+  transition-duration: 0.3s;
+}
+.parking-map-area:hover {
+  scale: 1.5;
+}
+
+/* 
 /*-- 最新の記事エリア --*/
 .latest-pages {
   line-height: 1.8;
@@ -702,7 +750,7 @@ article .swiper-wrapper {
   margin-top: 0.5em;
   border-top: solid 0.5px #000;
   padding-top: 10px;
-}
+} */
 
 /*-- 過去のアーカイブ --*/
 .archive-block {
@@ -919,7 +967,11 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 }
 
 .breadcrumb-inner a {
+  color: inherit;
   text-decoration: none;
+}
+.breadcrumb-inner a:hover {
+  color: #d4d4d4;
 }
 
 .single-post .breadcrumb .current-item {
@@ -936,6 +988,12 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .single-restaurant .breadcrumb .fas:last-of-type,
 .single-restaurant .breadcrumb .fa-solid:last-of-type {
   display: none;
+}
+
+/* 飲食店タイプのBreadnumb navXT */
+.type-restaurant .breadcrumb-inner .fas,
+.type-restaurant .breadcrumb-inner .fa-solid {
+  color: var(--meshi-color);
 }
 
 /* end：Breadcrumb navXT */
@@ -1028,6 +1086,10 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     margin: 2rem 0 1rem;
   }
 
+  .page-title {
+    text-align: left;
+  }
+
   .article-list > li {
     padding: 1em;
     margin-top: 20px;
@@ -1070,8 +1132,27 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   }
 
   /*---- 飲食店タイプ アーカイブページ(body_class=post-type-archive) ----*/
+  
+  /* グリッドを解除 */
   .post-type-archive .article-list  {
     display: block;
+  }
+
+  .post-type-archive .text {
+    font-size: 1rem;
+    line-height: 2;
+    padding: 1em;
+  }
+  .post-type-archive .article-list > li {
+    padding: 1em;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(24, 44, 84, 0.1);	
+    transition-duration: 0.3s;
+  }
+
+  .post-type-archive .article-title {
+    font-size: 1rem;
   }
 
   /*---- 個別投稿ページ --*/

@@ -25,11 +25,18 @@
               <?php the_content(); ?>
             </div>
             <div class="page-link"><!-- 前後の記事がある場合はリンクを表示 -->
-              <?php if( get_previous_post() ): ?>
-                <a class="prev-page-link">前の記事へ</a>
+              <?php
+              $previous_post = get_previous_post();
+              if( $previous_post ):
+              ?>
+                <a class="prev-page-link" href="<?php the_permalink($previous_post); ?>">前の記事へ</a>
               <?php endif; ?>
-              <?php if( get_next_post() ): ?>
-                <a class="next-page-link">次の記事へ</a>
+
+              <?php
+              $next_post = get_next_post();
+              if( $next_post ):
+              ?>
+                <a class="next-page-link" href="<?php the_permalink($next_post); ?>">次の記事へ</a>
               <?php endif; ?>
             </div>
           </article>          
