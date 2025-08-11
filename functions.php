@@ -14,6 +14,17 @@ if ( ! function_exists( 'anyonetheme_setup' )):
         'menu-1' => 'メインメニュー'
       ]
     );
+
+    //カスタムロゴを有効にする
+		add_theme_support(
+			'custom-logo',
+			[
+				'height'      => 70,
+				'width'       => 70,
+				'flex-width'  => true,
+				'flex-height' => true,
+			]
+		);
   }
 endif;
 add_action( 'after_setup_theme', 'anyonetheme_setup' );

@@ -10,7 +10,18 @@
     <?php wp_body_open(); ?>
     <header class="header">
       <div class="header-inner">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="header-logo"><?php bloginfo('name'); ?></a>
+        <?php if (function_exists('the_custom_logo')) : ?>
+          <div class="header-logo">
+            <?php the_custom_logo(); ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if (!has_custom_logo()) : ?>
+          <a href="<?php echo esc_url(home_url('/')); ?>" class="header-logo">
+            <?php bloginfo('name'); ?>
+          </a>
+        <?php endif; ?>       
+
         <button class="btn-menu"></button>
         <?php if (has_nav_menu( 'menu-1') ): ?>
           <nav class="site-menu">

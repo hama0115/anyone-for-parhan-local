@@ -1,3 +1,4 @@
+<!-- 使わないかも(2025/08/11)
 <div class="post-it">
   <div class="post-it-area">
     <a href="https://luup.sc/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-it/luup.png" alt="luupの付箋"></a>
@@ -19,3 +20,4 @@
     <a href="https://www.tablecheck.com/ja/japan?availability_days_limit=7&availability_format=date&date_min=2025-06-11&date_max=2025-08-10&geo_distance=1km&service_mode=dining&sort_by=distance&venue_type=all&geo_latitude=35.6823&geo_longitude=139.7987&auto_geolocate=false"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-it/tablecheck.png" alt="テーブルチェックの付箋"></a>
   </div>
 </div>
+ -->
