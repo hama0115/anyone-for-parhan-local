@@ -134,17 +134,13 @@ img {
   justify-content: space-between;
   align-items: center;
 }
-.header-logo {
-  height: 40px;
-}
-.custom-logo-link {
-  display: inline-block;
-  height: 40px;
-}
-.custom-logo-link img {
-  display: inline-block;
-  width: auto;
-  height: 40px;
+
+/*-- ロゴエリア --*/
+.header-logo img {
+  display: block;      /* 画像の下に余計な余白ができないようにする */
+  width: 160px;         /* 好きな横幅に調整 */
+  height: auto;        /* 縦横比を保つ */
+  max-width: none;     /* テーマやブラウザのmax-width制限を解除 */
 }
 
 .btn-menu {
