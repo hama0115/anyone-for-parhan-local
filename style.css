@@ -388,6 +388,45 @@ img {
   font-weight: 400;
 }
 
+/*---- 飲食店タイプ アーカイブページ(body_class=tax-genre) ----*/
+
+.tax-genre .text {
+  padding: 0.75rem 0 1rem;
+}
+.tax-genre .article-list > li {
+  padding: 0;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(24, 44, 84, 0.1);	
+  transition-duration: 0.3s;
+}
+.tax-genre .article-list > li:hover {
+  box-shadow: 5px 8px 10px 0 rgba(24, 44, 84, 0.1);	
+}
+
+.tax-genre .article-list  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+
+.tax-genre .text {
+  font-size: 0.75rem;
+  line-height: 1.7;
+  padding: 1em;
+}
+.tax-genre .article-title {
+  font-size: 0.75rem;
+}
+
+.tax-genre .article-category {
+  font-size: 0.625rem;
+  padding: 0.2em 0.8em;
+  border: solid 1px var(--meshi-color);
+  color: var(--meshi-color);
+  font-weight: 400;
+}
+
 /*---- 個別投稿ページ(body_class=.single-post) ----*/
 
 /* 画像を中央寄せ */
@@ -1154,6 +1193,30 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   }
 
   .post-type-archive .article-title {
+    font-size: 1rem;
+  }
+
+  /*---- 飲食店タイプ アーカイブページ(body_class=tax-genre) ----*/
+  
+  /* グリッドを解除 */
+  .tax-genre .article-list  {
+    display: block;
+  }
+
+  .tax-genre .text {
+    font-size: 1rem;
+    line-height: 2;
+    padding: 1em;
+  }
+  .tax-genre .article-list > li {
+    padding: 1em;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(24, 44, 84, 0.1);	
+    transition-duration: 0.3s;
+  }
+
+  .tax-genre .article-title {
     font-size: 1rem;
   }
 
