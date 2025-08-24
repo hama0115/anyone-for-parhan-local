@@ -46,6 +46,40 @@ function initMap() {
     content: yamanoImg,
     title: '築地やまの',
   });
+
+  // 3000日かけて~ハンバーガー のマーカー
+  const nameTag = document.createElement('div');
+  nameTag.className = 'name-tag';
+  nameTag.textContent = 'ハンバーガーField';
+  const marker = new google.maps.marker.AdvancedMarkerElement({
+    map: map,
+    position: { lat: 35.679334184609, lng:139.80641123999473 },
+    content: nameTag,
+  });
+
+  // le bois のマーカー（画像+名前タグ。両方を包含するコンテナを作って実装）
+  const leboisImg = document.createElement('img');
+  leboisImg.className = 'img-tag';
+  leboisImg.src = '/wp-content/themes/anyone-for-parhan/assets/img/lebois.jpeg';
+
+  const leboisNameTag = document.createElement('div');
+  leboisNameTag.className = 'name-tag';
+  leboisNameTag.textContent = 'le bois';
+
+  // 画像と名前タグを包含するコンテナ
+  const leboisContainer = document.createElement('div');
+  leboisContainer.className = 'gm__info';
+  
+  // コンテナに画像と名前タグを追加
+  leboisContainer.appendChild(leboisImg);
+  leboisContainer.appendChild(leboisNameTag);
+
+  const leboisMarker = new google.maps.marker.AdvancedMarkerElement({
+    map: map,
+    position: { lat: 35.67981087178964, lng:139.80473127766035},
+    content: leboisContainer,
+    title: 'le bois'
+  });
 }
 
 // DOMContentLoadedイベントで初期化
@@ -68,3 +102,5 @@ document.addEventListener('DOMContentLoaded', function() {
 //(「オールプレスエスプレッソ」の経緯) 35.67776094983446, 139.80518018209077
 //(「洋食屋POND」の経緯)35.67973018612079, 139.80174907972332
 //(「築地やまの」の経緯) 35.679227687817, 139.80105802495973
+//(「ハンバーガーfield」の経緯) 35.679334184609, 139.80641123999473
+//(「le bois」の経緯) 35.67981087178964, 139.80473127766035

@@ -862,6 +862,52 @@ wordpressの装飾
   margin-top: 0;
 }
 
+/* ========================
+googlemap内の装飾
+======================== */
+
+/*-- マップ内の飲食店情報 --*/
+.gm__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 記事用についているcssを解除 */
+.single-article .gm__info img {
+  max-width: 100%;
+  margin-bottom: 0;
+  width: 60px;
+  height: 60px;
+}
+.img-tag {
+  border: solid 3px #ffa71a;
+  border-radius: 50%;
+}
+.name-tag {
+  background-color: #ffa71a;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  padding: 0.5em 1em;
+  position: relative;
+  transform: translateY(-8px);
+}
+
+.name-tag::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #ffa71a;
+}
+
 
 
 /* ========================
