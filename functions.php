@@ -61,11 +61,15 @@ function enqueue_scripts() {
   //ライブラリ「luminous」用の実際のjSの読み込み
   wp_enqueue_script('luminous.js', get_stylesheet_directory_uri() . '/assets/js/luminous.js', ['luminous-cdn'], '1.0', true);
 
+  //googleマップAPIとgooglemap.jsの読み込み
+  wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGatra0HuPCJJbTX2poBI-CbErfTyMe1Y', [], '1.0', true);
+  wp_enqueue_script('googlemap', get_stylesheet_directory_uri() . '/assets/js/googlemap.js', ['jquery'], '1.0', true);
+
+  //(テスト)googlemapjjsapiのカスタムjs
+  wp_enqueue_script('custommap.js', get_stylesheet_directory_uri() . '/assets/js/custommap.js', ['google-map-api'], '1.0', true);
+
   //個別投稿の場合のjsの読み込み
   if ( is_singular() ) {
-    //googleマップAPIとgooglemap.jsの読み込み
-    wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGatra0HuPCJJbTX2poBI-CbErfTyMe1Y', [], '1.0', true);
-    wp_enqueue_script('googlemap', get_stylesheet_directory_uri() . '/assets/js/googlemap.js', ['jquery'], '1.0', true);
     //lwptoc.jsの読み込み
     wp_enqueue_script('lwptoc', get_stylesheet_directory_uri() . '/assets/js/lwptoc.js', [], '1.0', true);
   }
