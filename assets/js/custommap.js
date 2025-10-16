@@ -34,28 +34,14 @@ function initMap() {
         const markerImg = document.createElement('img');
         markerImg.className = 'img-tag';
         markerImg.src = spot.photo;
-        markerImg.style.width = '40px';
-        markerImg.style.height = '40px';
-        markerImg.style.border = 'solid 3px #fff';
-        markerImg.style.borderRadius = '50%';
 
         const markerNameTag = document.createElement('div');
         markerNameTag.className = 'name-tag';
         markerNameTag.textContent = spot.name;
-        markerNameTag.style.backgroundColor = '#333';
-        markerNameTag.style.color = '#fff';
-        markerNameTag.style.padding = '4px 8px';
-        markerNameTag.style.borderRadius = '4px';
-        markerNameTag.style.fontSize = '12px';
-        markerNameTag.style.whiteSpace = 'nowrap';
 
         // 画像と名前タグを包含するコンテナ
         const markerContainer = document.createElement('div');
         markerContainer.className = 'gm__info';
-        markerContainer.style.display = 'flex';
-        markerContainer.style.flexDirection = 'column';
-        markerContainer.style.alignItems = 'center';
-        markerContainer.style.gap = '5px';
         
         // コンテナに画像と名前タグを追加
         markerContainer.appendChild(markerImg);
