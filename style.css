@@ -27,7 +27,7 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
   --main-color: #1971ff;
   --accent-color: rgb(110, 197, 227);
   --back-color: #f5f5f5;
-  --meshi-color: #ffa71a;
+  --meshi-color: #ffa71a; /* rgb(255, 167, 26) */
   --meshiback-color: #fff0db;
 
   /* 数値 */
@@ -886,10 +886,10 @@ googlemap内の装飾
   border-radius: 50%;
 }
 .name-tag {
-  background-color: #ffa71a;
+  background-color: rgba(255, 167, 26, 0.9);
   border-radius: 8px;
   color: #FFFFFF;
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   padding: 0.5em 1em;
   position: relative;
   transform: translateY(-8px);
