@@ -26,17 +26,23 @@
             <div class="article-content">
               <!-- googlemapマーカー地図 -->
               <?php
-              $markers = get_field('googlemap-markers'); //ACFからデータ取得
+              $center = get_field('googlemap-center'); // 「googlemapマーカーの中心地点」からデータ取得
+              $markers = get_field('googlemap-markers'); //「googlemapマーカー地図」からデータ取得
               ?>
               <div id="map" style="width:100%;height:400px"></div>
-              <?php if ($markers): //jsonエンコードしてjsに渡す ?>
+              <?php if ($center && $markers): //jsonエンコードしてjsに渡す ?>
                 <script>
-                  console.log('PHP ACF Data:', <?php echo json_encode($markers, JSON_UNESCAPED_UNICODE); ?>);
+                  console.log('PHP ACF Data:', {
+                    center:<?php echo json_encode($center, JSON_UNESCAPED_UNICODE); ?>,
+                    markers:<?php echo json_encode($markers, JSON_UNESCAPED_UNICODE); ?>
+                  });
+                  window.mapCenter = <?php echo json_encode($center, JSON_UNESCAPED_UNICODE) ?>;
                   window.mapSpots = <?php echo json_encode($markers, JSON_UNESCAPED_UNICODE); ?>;
                 </script>
               <?php else: ?>
                 <script>
                   console.log('No ACF spots data found');
+                  window.mapCenter = null;
                   window.mapSpots = [];
                 </script>
               <?php endif; ?>

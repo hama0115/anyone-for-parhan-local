@@ -1,7 +1,7 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 16,
-    center: { lat: 35.6792227, lng: 139.80513297370942 },
+    center: window.mapCenter,
     mapId: '42e4a02c987a2573d8e4be12'
   });
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //メモ
-//(清澄白河の経緯) 35.6792227, 139.8019834
+//(清澄白河の緯度経度) 35.6792227, 139.8019834
 //(「KOFFEE MAMEYA Kakeru」の緯度経度) 35.676480133908754, 139.80428441394707
 //(「オールプレスエスプレッソ」の緯度経度) 35.67776094983446, 139.80518018209077
 //(「ブルーボトルコーヒー」の緯度経度) 35.677790948642276, 139.80058748430574
