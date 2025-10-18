@@ -26,13 +26,13 @@
             <div class="article-content">
               <!-- googlemapマーカー地図 -->
               <?php
-              $spots = get_field('googlemap-markers'); //ACFからデータ取得
+              $markers = get_field('googlemap-markers'); //ACFからデータ取得
               ?>
               <div id="map" style="width:100%;height:400px"></div>
-              <?php if ($spots): //jsonエンコードしてjsに渡す ?>
+              <?php if ($markers): //jsonエンコードしてjsに渡す ?>
                 <script>
-                  console.log('PHP ACF Data:', <?php echo json_encode($spots, JSON_UNESCAPED_UNICODE); ?>);
-                  window.mapSpots = <?php echo json_encode($spots, JSON_UNESCAPED_UNICODE); ?>;
+                  console.log('PHP ACF Data:', <?php echo json_encode($markers, JSON_UNESCAPED_UNICODE); ?>);
+                  window.mapSpots = <?php echo json_encode($markers, JSON_UNESCAPED_UNICODE); ?>;
                 </script>
               <?php else: ?>
                 <script>
