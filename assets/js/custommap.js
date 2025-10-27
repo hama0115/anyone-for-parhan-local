@@ -15,8 +15,8 @@ function initMap() {
       console.log(`Processing spot ${index}:`, spot);
 
       // 座標の取得（複数のフィールド名に対応）
-      const lat = parseFloat(spot["marker-spot"]?.lat)
-      const lng = parseFloat(spot["marker-spot"]?.lng)
+      const lat = spot["marker-spot"] && spot["marker-spot"].lat ? parseFloat(spot["marker-spot"].lat) : null; //三項演算子を使ってif文を使う
+      const lng = spot["marker-spot"] && spot["marker-spot"].lng ? parseFloat(spot["marker-spot"].lng) : null;
       const name = spot.name || spot.title || `Spot ${index + 1}`;
 
       // カスタムマーカーコンテンツの作成
