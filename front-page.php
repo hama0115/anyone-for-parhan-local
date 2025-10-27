@@ -23,10 +23,7 @@
             }
             ?>
           </div>      
-          <div class="content-inner">
-            <h2 class="front-content-title">Googleマップ</h2>
-            <div id="map" style="width:100%;height:400px;margin-bottom:30px;"></div>
-            
+          <div class="content-inner">            
             <h2 class="front-content-title">最新の記事</h2>
             <div class="article-list-wrapper">
               <ul class="article-list">
