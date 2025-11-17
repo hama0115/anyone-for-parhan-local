@@ -942,8 +942,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   gap: 10px;
   margin-top: 20px;
 }
-.detail-container .traffic-sign,
-.detail-container .convenience-icon {
+.detail-container .traffic-sign {
   /* SP版はスポットアイコンは最大5コ並ぶ */
   width: calc((100% - 50px) / 5);
 }
@@ -1440,8 +1439,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   .detail-container .convenience-list {
     gap: 10px;
   }
-  .detail-container .traffic-sign,
-  .detail-container .convenience-icon {
+  .detail-container .traffic-sign {
     /* PC版はスポットアイコンは最大8コ並ぶ */
     width: calc((100% - 80px) / 8);
   }

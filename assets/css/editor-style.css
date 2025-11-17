@@ -50,8 +50,7 @@ img {
   margin-top: 20px;
 }
 
-.detail-container .traffic-sign,
-.detail-container .convenience-icon {
+.detail-container .traffic-sign {
   /* SP版はスポットアイコンは最大5コ並ぶ */
   width: calc((100% - 50px) / 5);
 }
@@ -78,8 +77,7 @@ img {
   margin-top: 20px;
 }
 
-.postid-244 .detail-container .traffic-sign,
-.postid-244 .detail-container .convenience-icon {
+.postid-244 .detail-container .traffic-sign {
   /* SP版はスポットアイコンは最大5コ並ぶ */
   width: calc((100% - 50px) / 5);
 }
@@ -127,8 +125,7 @@ img {
   .detail-container .convenience-list {
     gap: 10px;
   }
-  .detail-container .traffic-sign,
-  .detail-container .convenience-icon {
+  .detail-container .traffic-sign {
     /* PC版はスポットアイコンは最大8コ並ぶ */
     width: calc((100% - 80px) / 8);
   }
@@ -150,8 +147,7 @@ img {
   .postid-244 .detail-container .convenience-list {
     gap: 10px;
   }
-  .postid-244 .detail-container .traffic-sign,
-  .postid-244 .detail-container .convenience-icon {
+  .postid-244 .detail-container .traffic-sign {
     /* PC版はスポットアイコンは最大8コ並ぶ */
     width: calc((100% - 80px) / 8);
   }
