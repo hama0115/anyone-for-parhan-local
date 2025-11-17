@@ -23,58 +23,21 @@
           <?php endif; ?>
         </div>
         <?php //スポット情報のアイコンを表示
-        $selected_icons = get_sub_field('spot-information');
+        $selected_icons = get_sub_field('traffic-sign-area');
         if ($selected_icons):
           echo '<div class="spot-list">';
           foreach ($selected_icons as $icon) {
-            $icon_url = get_stylesheet_directory_uri() . '/assets/img/spot-icon/' . $icon . '.png';
+            $icon_url = get_stylesheet_directory_uri() . '/assets/img/traffic-sign/' . $icon . '.png';
             
             //ツールチップ用のタイトルを用意
             $spot_title_map = [
-              'cafe' => 'カフェ',
-              'convenience' => 'コンビニ',
-              'fitness' => 'フィットネス',
-              'hotspring' => '銭湯',
-              'landmark' => 'ランドマーク',
-              'library' => '図書館',
-              'luup' => 'ループ',
-              'park' => '公園',
-              'sauna' => 'サウナ',
-              'toilet' => 'トイレ',
+              'not-cross' => '横断禁止',
+              'not-parking' => '駐停車禁止',
+              'parking-with-limit' => '時間制限駐車区間(09:30~19)',
             ];
             $spot_title = isset($spot_title_map[$icon]) ? $spot_title_map[$icon] : $icon;
 
-            echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon) . '" title="'.esc_attr($spot_title) .'" class="spot-icon">';
-          }
-          echo '</div>';
-        endif;
-        ?>
-        <?php //周辺のコンビニのリストを表示
-        $selected_icons = get_sub_field('convenience-store');
-        if ($selected_icons):
-          echo '<div class="convenience-list">';
-          foreach ($selected_icons as $icon) {
-            $icon_url = get_stylesheet_directory_uri() . '/assets/img/convenience-icon/' . $icon . '.png';
-
-            //ツールチップ用のタイトルを用意
-            $store_title_map = [
-              'choshimaru' => '銚子丸',
-              'cocokara' => 'ココカラファイン',
-              'familymart' => 'ファミリーマート',
-              'hottomotto' => 'ほっともっと',
-              'kakuyasu' => 'カクヤス',
-              'kamakurapasta' => '鎌倉パスタ',
-              'konan' => 'コーナン',
-              'lawson' => 'ローソン',
-              'oksuper' => 'OKスーパー',
-              'sasafune' => '笹船',
-              'seveneleven' => 'セブンイレブン',
-              'washhouse' => 'WASHハウス',
-              'yamazaki' => 'ヤマザキ',
-            ];
-            $store_title = isset($store_title_map[$icon]) ? $store_title_map[$icon] : $icon;
-
-            echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon) . '" title="'.esc_attr($store_title) .'" class="convenience-icon">';
+            echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon) . '" title="'.esc_attr($spot_title) .'" class="traffic-sign">';
           }
           echo '</div>';
         endif;
@@ -119,3 +82,5 @@
     </div>
   <?php endwhile; ?>
 <?php endif; ?>
+
+<!-- メモ　spot-information spot-icon　などを道路標識に置き換えた -->
