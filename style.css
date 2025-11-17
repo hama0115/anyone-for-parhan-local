@@ -935,7 +935,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .parking-info-container > img {
   max-width: 100%;
 }
-.detail-container .spot-list {
+.detail-container .traffic-sign-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -1434,12 +1434,12 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     /* 優先度を高くするためPC版でも表記 */
     max-width: 100%;
   }
-  .detail-container .spot-list {
+  .detail-container .traffic-sign-list {
     gap: 10px;
   }
   .detail-container .traffic-sign {
-    /* PC版はスポットアイコンは最大8コ並ぶ */
-    width: calc((100% - 80px) / 8);
+    /* PC版は道路標識アイコンは最大5コ並ぶ */
+    width: calc((100% - 50px) / 5);
   }
 
   /* 飲食店情報 */

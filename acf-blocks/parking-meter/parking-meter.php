@@ -22,10 +22,10 @@
             <p>【枠数】<?php the_sub_field('the-number-of-field'); ?></p>
           <?php endif; ?>
         </div>
-        <?php //スポット情報のアイコンを表示
+        <?php //道路標識のアイコンを表示
         $selected_icons = get_sub_field('traffic-sign-area');
         if ($selected_icons):
-          echo '<div class="spot-list">';
+          echo '<div class="traffic-sign-list">';
           foreach ($selected_icons as $icon) {
             $icon_url = get_stylesheet_directory_uri() . '/assets/img/traffic-sign/' . $icon . '.png';
             
