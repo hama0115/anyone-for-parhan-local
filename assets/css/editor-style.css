@@ -42,8 +42,7 @@ img {
   */
 }
 
-.detail-container .spot-list,
-.detail-container .convenience-list {
+.detail-container .spot-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -69,8 +68,7 @@ img {
   */
 }
 
-.postid-244 .detail-container .spot-list,
-.postid-244 .detail-container .convenience-list {
+.postid-244 .detail-container .spot-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -121,8 +119,7 @@ img {
     max-width: 100%;
     height: 220px;
   }
-  .detail-container .spot-list,
-  .detail-container .convenience-list {
+  .detail-container .spot-list {
     gap: 10px;
   }
   .detail-container .traffic-sign {
@@ -143,8 +140,7 @@ img {
     max-width: 100%;
     height: 300px;
   }
-  .postid-244 .detail-container .spot-list,
-  .postid-244 .detail-container .convenience-list {
+  .postid-244 .detail-container .spot-list {
     gap: 10px;
   }
   .postid-244 .detail-container .traffic-sign {

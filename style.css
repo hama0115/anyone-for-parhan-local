@@ -10,6 +10,7 @@ Author URI: https://parhan.jp
 /* 
 SPファーストで記述
 メディアクエリは後半にまとめている
+ブレイクポイントは768px、1024px
 marginは基本はtopにかけるが、デザインの都合上ボトムにかけたい場合は「margin-bottom」を使う
 優先順位は、プラグイン自体のCSS→style.cssであることに注意(自分のCSSでプラグインのCSSを打ち消していないか要確認)
 フォントはgoogleフォントを使用
@@ -934,9 +935,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .parking-info-container > img {
   max-width: 100%;
 }
-.detail-container .spot-list,
-.detail-container .convenience-list
- {
+.detail-container .spot-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -1435,8 +1434,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     /* 優先度を高くするためPC版でも表記 */
     max-width: 100%;
   }
-  .detail-container .spot-list,
-  .detail-container .convenience-list {
+  .detail-container .spot-list {
     gap: 10px;
   }
   .detail-container .traffic-sign {
