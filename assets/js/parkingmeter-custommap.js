@@ -1,19 +1,26 @@
-//マーカーつきgooglemap用のJS
+//個別PM用のマーカーつきgooglemap用のJS
+//「パーキング情報」ブロックそれぞれで初期化して作る必要があることに注意
 
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
+function initParkingMeterMap(mapData) {
+
+  const mapContainer = document.getElementById(mapData.containerId);
+
+  //nullチェック
+  if (!mapContainer) {
+    console.error(`Map container not found: ${mapData.containerId}`);
+    return;
+  }
+
+  const map = new google.maps.Map(mapContainer, {
     zoom: 16,
-    center: window.mapCenter,
+    center: mapData.Center,
     mapId: '42e4a02c987a2573d8e4be12'
   });
 
   const markers = [];
 
-  // ACFデータのデバッグ
-  console.log('window.mapSpots:', window.mapSpots);
-
-  if (window.mapSpots && Array.isArray(window.mapSpots) && window.mapSpots.length > 0) {
-    window.mapSpots.forEach((spot, index) => {
+  if (mapData.spots && Array.isArray(mapData.spots) && mapData.spots.length > 0) {
+    mapData.spots.forEach((spot, index) => {
       console.log(`Processing spot ${index}:`, spot);
 
       // 座標の取得（複数のフィールド名に対応）
@@ -92,18 +99,6 @@ function initMap() {
       console.log('No valid markers created');
     }
   } else {
-    console.log('No mapSpots data found or empty array');
+    console.log(`No mapSpots data found for map: ${mapData.containerId}`);
   }
 }
-
-// DOMContentLoadedイベントで初期化
-document.addEventListener('DOMContentLoaded', function() {
-  // 少し遅延させてから初期化（ACFデータの読み込みを待つ）
-  setTimeout(function() {
-    if (typeof google !== 'undefined' && google.maps) {
-      initMap();
-    } else {
-      console.error('Google Maps API not loaded');
-    }
-  }, 500);
-});

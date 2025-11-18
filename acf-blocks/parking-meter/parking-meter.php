@@ -44,11 +44,15 @@
         ?>
       </div>
 
+      <!-- 概要文、周辺の飲食店リストをまとめたエリア -->
       <div class="desc-area">
+
+        <!-- 概要文 -->
         <?php if(get_sub_field('description')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
           <p><?php the_sub_field('description'); ?></p>
         <?php endif; ?>
         
+        <!-- 周辺の飲食店リスト -->
         <?php if( have_rows('restaurant-around') ): ?>
           <div class="restaurant-container">
             <?php while ( have_rows('restaurant-around')): the_row();
@@ -72,15 +76,35 @@
           </div>
         <?php endif; ?>
       </div>
-      
-      <?php //対象のサブフィールド(画像)が存在する場合に出力(パーキングメーターの位置を示すイラスト)
-      $image = get_sub_field('parkingmeter-position');
-      if(!empty($image)):
+
+      <!-- googlemapマーカー地図 -->
+      <?php      
+      $map_id = 'map_' . $block['id']; //ブロックごとのidを付与
+      $center = get_field('pm-googlemap-center'); // 「PMごとのgooglemapマーカーの中心地点」からデータ取得
+      $markers = get_field('pm-googlemap-markers'); //「PMごとのgooglemapマーカー地図」からデータ取得
       ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+
+      <div id="<?php echo $map_id; ?>" style="width:100%;height:400px"></div>
+
+      <?php if ($center && $markers): //jsonエンコードしてjsに渡す ?>
+        <script>
+          //マップ固有のデータをオブジェクトとして定義
+          const mapData_<?php echo esc_js($map_id); ?> = {
+            //jsに渡すオブジェクトを定義
+            containerId: "<?php echo esc_js($map_id) ?>",
+            center: <?php echo json_encode($center, JSON_UNESCAPED_UNICODE); ?>,
+            spots: <?php echo json_encode($markers, JSON_UNESCAPED_UNICODE); ?>
+          };
+
+          if (typeof initParkingMeterMap === 'function') {
+            initParkingMeterMap(mapData_<?php echo esc_js($map_id) ?>);
+          }
+        </script>
+      <?php else: ?>
+        <script>
+          console.log('No ACF spots data found');
+        </script>
       <?php endif; ?>
     </div>
   <?php endwhile; ?>
 <?php endif; ?>
-
-<!-- メモ　spot-information spot-icon　などを道路標識に置き換えた -->

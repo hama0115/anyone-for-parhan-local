@@ -54,8 +54,10 @@ function enqueue_scripts() {
   wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGatra0HuPCJJbTX2poBI-CbErfTyMe1Y&libraries=marker', [], '1.0', true);
   wp_enqueue_script('googlemap', get_stylesheet_directory_uri() . '/assets/js/googlemap.js', ['jquery'], '1.0', true);
 
-  //(テスト)googlemapjjsapiのカスタムjs
+  //(全体用)googlemapjjsapiのカスタムjs
   wp_enqueue_script('custommap.js', get_stylesheet_directory_uri() . '/assets/js/custommap.js', ['google-map-api'], '1.0', true);
+  //(個別PM用)googlemapjjsapiのカスタムjs
+  wp_enqueue_script('parkingmeter-custommap.js', get_stylesheet_directory_uri() . '/assets/js/parkingmeter-custommap.js', ['google-map-api'], '1.0', true);
 
   //マーカークラスタリングライブラリの読み込み
   wp_enqueue_script('marker-cdn', 'https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js', [], '1.0', true);
