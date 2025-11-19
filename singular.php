@@ -24,7 +24,7 @@
             <!-- スライドショー -->
             <?php get_template_part( 'tmp/slideshow' ) ?>
             <div class="article-content">
-              <!-- googlemapマーカー地図 -->
+              <!-- 全体用のgooglemapマーカー地図 -->
               <?php
               $center = get_field('googlemap-center'); // 「googlemapマーカーの中心地点」からデータ取得
               $markers = get_field('googlemap-markers'); //「googlemapマーカー地図」からデータ取得

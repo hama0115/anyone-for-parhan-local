@@ -1,9 +1,12 @@
-//マーカーつきgooglemap用のJS
+//全体用のマーカーつきgooglemap用のJS
 
 function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
+  const mainMap = new google.maps.Map(document.getElementById("map"), {
     zoom: 16,
-    center: window.mapCenter,
+    center: {
+      lat: parseFloat(window.mapCenter.lat),
+      lng: parseFloat(window.mapCenter.lng)
+    },
     mapId: '42e4a02c987a2573d8e4be12'
   });
 
@@ -50,7 +53,7 @@ function initMap() {
       if (markerContent) {
         // カスタムコンテンツ付きAdvancedMarkerElement
         marker = new google.maps.marker.AdvancedMarkerElement({
-          map: map,
+          map: mainMap,
           position: { lat, lng },
           content: markerContent,
           title: name,
@@ -58,7 +61,7 @@ function initMap() {
       } else {
         // 標準マーカー
         marker = new google.maps.marker.AdvancedMarkerElement({          
-          map: map,
+          map: mainMap,
           title: name,
         });
       }
@@ -76,7 +79,7 @@ function initMap() {
       marker.addListener("click", () => {
         infoWindow.open({
           anchor: marker,
-          map: map,
+          map: mainMap,
         });
       });
       markers.push(marker);
@@ -85,7 +88,7 @@ function initMap() {
     // マーカークラスタリングを追加
     if (markers.length > 0) {
       new markerClusterer.MarkerClusterer({
-        map,
+        map: mainMap,
         markers,
       });
     } else {

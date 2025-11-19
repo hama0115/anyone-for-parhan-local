@@ -50,7 +50,7 @@ function enqueue_scripts() {
   //ライブラリ「luminous」用の実際のjSの読み込み
   wp_enqueue_script('luminous.js', get_stylesheet_directory_uri() . '/assets/js/luminous.js', ['luminous-cdn'], '1.0', true);
 
-  //googleマップAPIとgooglemap.js(ACF用)の読み込み
+  //googleマップAPIとgooglemap.js(ACF用)の読み込み(APIのために必要。先に読み込む)
   wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGatra0HuPCJJbTX2poBI-CbErfTyMe1Y&libraries=marker', [], '1.0', true);
   wp_enqueue_script('googlemap', get_stylesheet_directory_uri() . '/assets/js/googlemap.js', ['jquery'], '1.0', true);
 
