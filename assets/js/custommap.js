@@ -16,7 +16,7 @@ function initMap() {
   console.log('window.mapSpots:', window.mapSpots);
 
   if (window.mapSpots && Array.isArray(window.mapSpots) && window.mapSpots.length > 0) {
-    window.mapSpots.forEach((spot, index) => {
+    window.mapSpots.forEach((spot, index) => { //配列の各要素を「spot」として渡す
       console.log(`Processing spot ${index}:`, spot);
 
       // 座標の取得（複数のフィールド名に対応）
@@ -28,7 +28,7 @@ function initMap() {
       let markerContent = null;
       let marker = null;
 
-      if (spot.photo && spot.name) {
+      if (spot.photo && spot.name) { //「「photo」、「name」はACFで設定したフィールド名。「spot」はforEachで渡された要素
         // 画像+名前タグのカスタムマーカー作成
         const markerImg = document.createElement('img');
         markerImg.className = 'img-tag';

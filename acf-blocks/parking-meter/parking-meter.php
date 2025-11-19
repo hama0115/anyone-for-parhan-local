@@ -84,45 +84,45 @@ $markers = get_field('pm-googlemap-markers'); //「PMごとのgooglemapマーカ
             </div>
           <?php endif; ?>
         </div>
+
+        <!-- ブロック固有のgooglemapマーカー地図 -->
+        <?php if ($center && $markers): ?>
+        <div id="<?php echo esc_attr($map_id); ?>" style="width:100%;height:400px"></div>
+
+        <script>
+          //マップ固有のデータをオブジェクトとして定義
+          const mapData_<?php echo esc_js($map_id); ?> = {
+            containerId: "<?php echo esc_js($map_id) ?>",
+            center: <?php echo json_encode($center, JSON_UNESCAPED_UNICODE); ?>,
+            spots: <?php echo json_encode($markers, JSON_UNESCAPED_UNICODE); ?>
+          };
+
+          // 関数が呼べるまで待つ(ここ重要!)
+          function tryInitParkingMeterMap_<?php echo esc_js($map_id); ?>() {
+
+            //ブロックごとのidをcontainerへ
+            const container = document.getElementById("<?php echo esc_js($map_id); ?>");
+            //mapsapiの読み込みを確認
+            const apiReady = typeof google !== 'undefined' && google.maps && google.maps.Map;
+            const funcReady = typeof initParkingMeterMap === 'function';
+
+            if (container && apiReady && funcReady) {
+              //parkingmeter-custommap.jsで定義された関数。ここで呼び出している
+              initParkingMeterMap(mapData_<?php echo esc_js($map_id); ?>);
+            } else {
+              setTimeout(tryInitParkingMeterMap_<?php echo esc_js($map_id); ?>, 100);
+            }
+          }
+
+          // DOMContentLoadedまたは即座に実行
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', tryInitParkingMeterMap_<?php echo esc_js($map_id); ?>);
+          } else {
+            tryInitParkingMeterMap_<?php echo esc_js($map_id); ?>();
+          }
+        </script>
+        <?php endif; ?>
       </div>
     <?php endwhile; ?>
-  <?php endif; ?>
-
-  <!-- ブロック固有のgooglemapマーカー地図 -->
-  <?php if ($center && $markers): ?>
-  <div id="<?php echo esc_attr($map_id); ?>" style="width:100%;height:400px"></div>
-
-  <script>
-    //マップ固有のデータをオブジェクトとして定義
-    const mapData_<?php echo esc_js($map_id); ?> = {
-      containerId: "<?php echo esc_js($map_id) ?>",
-      center: <?php echo json_encode($center, JSON_UNESCAPED_UNICODE); ?>,
-      spots: <?php echo json_encode($markers, JSON_UNESCAPED_UNICODE); ?>
-    };
-
-    // 関数が呼べるまで待つ(ここ重要!)
-    function tryInitParkingMeterMap_<?php echo esc_js($map_id); ?>() {
-
-      //ブロックごとのidをcontainerへ
-      const container = document.getElementById("<?php echo esc_js($map_id); ?>");
-      //mapsapiの読み込みを確認
-      const apiReady = typeof google !== 'undefined' && google.maps && google.maps.Map;
-      const funcReady = typeof initParkingMeterMap === 'function';
-
-      if (container && apiReady && funcReady) {
-        //parkingmeter-custommap.jsで定義された関数。ここで呼び出している
-        initParkingMeterMap(mapData_<?php echo esc_js($map_id); ?>);
-      } else {
-        setTimeout(tryInitParkingMeterMap_<?php echo esc_js($map_id); ?>, 100);
-      }
-    }
-
-    // DOMContentLoadedまたは即座に実行
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', tryInitParkingMeterMap_<?php echo esc_js($map_id); ?>);
-    } else {
-      tryInitParkingMeterMap_<?php echo esc_js($map_id); ?>();
-    }
-  </script>
   <?php endif; ?>
 </div>
