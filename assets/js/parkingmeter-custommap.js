@@ -1,4 +1,4 @@
-//個別PM用のマーカーつきgooglemap用のJS
+//個別PM用のマーカー付きgooglemap用のJS
 
 function initParkingMeterMap(mapData) { //PHPから渡されたデータを引数にする
   console.log('initParkingMeterMap called with:', mapData);
@@ -34,7 +34,7 @@ function initParkingMeterMap(mapData) { //PHPから渡されたデータを引�
   // マップ作成
   try {
     const parkingMeterMap = new google.maps.Map(mapContainer, {
-      zoom: 16,
+      zoom: 15,
       center: {
         lat: mapData.center.lat,
         lng: mapData.center.lng
