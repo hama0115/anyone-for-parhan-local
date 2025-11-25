@@ -1143,7 +1143,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
   全体
   ======================== */
 
-  .single-article img {
+  .single-article > img {
     max-width: 85%;
     height: auto;
   }
@@ -1465,9 +1465,6 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     display: flex;
     gap: 30px;
   }
-  /* .restaurant-slider-slide > img {
-    display: inline-block;
-  } */
 
   .restaurant-info-container > img {
 
