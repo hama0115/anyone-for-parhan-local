@@ -27,7 +27,7 @@ function enqueue_scripts() {
   //style.cssの読み込み
   wp_enqueue_style('main-css', get_stylesheet_uri());
   //swiper(CDN)のCSSの読み込み
-  wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+  wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', [], '11.0');
 
   //ハンバーガーメニューの読み込み
   wp_enqueue_script('hamburger-menu', get_stylesheet_directory_uri() . '/assets/js/btn-menu.js', [], '1.0', true);
@@ -36,9 +36,9 @@ function enqueue_scripts() {
   //adobeフォントの読み込み
   wp_enqueue_script('adobefont', get_stylesheet_directory_uri() . '/assets/js/adobefont.js', [], '1.0', true);
   //swiper(CDN)のJSの読み込み
-  wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
-  //swiper.jsの読み込み
-  wp_enqueue_script('swiper-slide-js', get_stylesheet_directory_uri() . '/assets/js/swiper-slide.js', [], '1.0', true);
+  wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '11.0', true);
+  //カスタムのswiper.jsの読み込み
+  wp_enqueue_script('swiper-slide-js', get_stylesheet_directory_uri() . '/assets/js/swiper-slide.js', ['swiper-js'], '1.0', true);
   //追従スクロール用のjSの読み込み
   wp_enqueue_script('scroll.js', get_stylesheet_directory_uri() . '/assets/js/scroll.js', [], '1.0', true);
   //GSAPの読み込み

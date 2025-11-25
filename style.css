@@ -470,22 +470,22 @@ img {
   text-decoration: underline;
 }
 
-/*---- スライドショー(swiper.js) ----*/
+/*---- 個別投稿のトップスライドショー(swiper.js) ----*/
 
 /* 詳細度を高めに */
-article .swiper {
+article .top-gallery {
   margin-top: 10px;
 
   /* デフォルトのz-indexをなしに */
   z-index: 0;
 }
 /* 詳細度を高めに */
-article .swiper-wrapper {
+article .top-gallery-wrapper {
   /* デフォルトのz-indexをなしに */
   z-index: 0;
 }
 
-.swiper-slide {
+.top-gallery-slide {
   text-align: center;
   position: relative;
   width: 100%;
@@ -493,7 +493,7 @@ article .swiper-wrapper {
   object-fit: cover;  
 }
 /* フェード切り替え時に白いブラーを挟む */
-.swiper-slide::before {
+.top-gallery-slide::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -503,8 +503,8 @@ article .swiper-wrapper {
   z-index: 2;
 }
 /* スライドがフェードアウトする瞬間に白くなる */
-.swiper-slide.swiper-slide-prev::before,
-.swiper-slide.swiper-slide-next::before {
+.top-gallery-slide.swiper-slide-prev::before,
+.top-gallery-slide.swiper-slide-next::before {
   opacity: 0.4; /* お好みで0.2〜0.6あたり調整可能 */
 }
 
@@ -975,6 +975,11 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .restaurant-info-container {
   display: grid;
 }
+.restaurant-slider {
+  /* はみ出しを防ぐ */
+  max-width: 100%;
+  overflow: hidden; 
+}
 .restaurant-name {
   text-align: center;
   font-size: 1.3rem;
@@ -1135,7 +1140,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
 /* end：プラグイン｜WP-Paginavi */
 
-/*　タブレット版*/
+/*　タブレット(TB)版*/
  
 @media screen and (min-width: 768px) {
  
