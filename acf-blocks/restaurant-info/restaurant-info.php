@@ -3,18 +3,9 @@
   <?php while(have_rows('restaurant-info')): the_row(); ?>
     <div class="restaurant-block">
       <div class="restaurant-info-container">
-        <?php //対象のサブフィールド(画像)が存在する場合に出力
-        $image = get_sub_field('restaurant-photo');
-        if(!empty($image)):
-        ?>
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-        <?php endif; ?>
-        <?php //対象のサブフィールド(画像)が存在する場合に出力
-        $image = get_sub_field('menu-photo');
-        if(!empty($image)):
-        ?>
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-        <?php endif; ?>
+        <!-- 飲食店関連の画像のスライドショー -->
+        <?php get_template_part( 'tmp/restaurant-slide' ) ?>  
+                      
         <?php //対象のサブフィールド(googleマップ)が存在する場合に出力
         $location = get_sub_field('area-map');
         if( $location ): ?>

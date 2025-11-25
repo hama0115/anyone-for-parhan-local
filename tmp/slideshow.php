@@ -1,4 +1,4 @@
-<!-- swiper -->
+<!-- swiper(個別投稿のまとめスライダー) -->
 <?php
 $images = get_field('slider-gallery');
 if ($images): ?>

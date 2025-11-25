@@ -1442,7 +1442,7 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     width: calc((100% - 50px) / 5);
   }
 
-  /* 飲食店情報 */
+/* 飲食店情報 */
 .restaurant-block {
   /* SP版の幅スタイルを無効化 */
   width: 100%;
@@ -1457,6 +1457,18 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     column-gap: 30px;
     row-gap: 20px;
   }
+
+  .restaurant-slider {
+    grid-column: 1 / -1; /* 2枚をフル幅で横に並べる */
+  }
+  .restaurant-slider-wrapper {
+    display: flex;
+    gap: 30px;
+  }
+  /* .restaurant-slider-slide > img {
+    display: inline-block;
+  } */
+
   .restaurant-info-container > img {
 
     /* 優先度を高くするためPC版でも表記 */

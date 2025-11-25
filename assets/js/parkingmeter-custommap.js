@@ -34,7 +34,7 @@ function initParkingMeterMap(mapData) { //PHPから渡されたデータを引�
   // マップ作成
   try {
     const parkingMeterMap = new google.maps.Map(mapContainer, {
-      zoom: 15,
+      zoom: 16, //マップの縮尺
       center: {
         lat: mapData.center.lat,
         lng: mapData.center.lng
