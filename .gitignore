@@ -1,0 +1,11 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# WordPress specifics (Local環境などで不要な場合)
+# node_modules/ などがあればそれも追加
