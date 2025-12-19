@@ -975,11 +975,14 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 .restaurant-info-container {
   display: grid;
 }
+
+/* 飲食店別スライドショー */
 .restaurant-slider {
   /* はみ出しを防ぐ */
   max-width: 100%;
   overflow: hidden; 
 }
+
 .restaurant-name {
   text-align: center;
   font-size: 1.3rem;
@@ -1463,12 +1466,9 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     row-gap: 20px;
   }
 
+  /* 飲食店別スライドショー */
   .restaurant-slider {
     grid-column: 1 / -1; /* 2枚をフル幅で横に並べる */
-  }
-  .restaurant-slider-wrapper {
-    display: flex;
-    gap: 30px;
   }
 
   .restaurant-info-container > img {

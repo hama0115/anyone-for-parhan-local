@@ -32,6 +32,7 @@ const swiper1 = new Swiper(".top-gallery" , { //".swiper"はクラス名。「.�
 document.querySelectorAll(".restaurant-slider").forEach((sliderEl) => { //条件に一致するすべてを探し出し、それぞれについてループ
   new Swiper(sliderEl, {
     slidesPerView: 2,
+    spaceBetween: 30,
     slidesPerGroup: 2,
     pagination: {
       el: sliderEl.querySelector(".swiper-pagination"), // sliderEl を基準に検索
@@ -45,5 +46,6 @@ document.querySelectorAll(".restaurant-slider").forEach((sliderEl) => { //条件
     autoplay: {
       delay: 3000,
     },
+    //spaceBetween: 30,
   });
 });
