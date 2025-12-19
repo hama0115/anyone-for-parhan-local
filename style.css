@@ -523,7 +523,7 @@ article .top-gallery-wrapper {
 }
 
 /* 「飲食店情報ブロック」の見出しに合わせてあるので、「記事のh3」にはちょっと不適かも?(07/29) */
-.article-content h3 {
+.article-content > h3 {
   font-size: 1rem;
   font-weight: bold;
   padding-top: 1em;
@@ -1143,6 +1143,49 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
 
 /* end：プラグイン｜WP-Paginavi */
 
+/* ========================
+API
+======================== */
+
+/*-- Google Maps API --*/
+
+/* 情報ウィンドウ(API既定の設定を変更するので強め) */
+/* APIが勝手に付けている外枠の制限を強制解除する */
+.gm-style .gm-style-iw-c {
+  max-width: none !important;  /* インラインのチェックを外すのと同じ効果 */
+  padding: 0 !important;       /* 中の余白もリセットしてスッキリさせる */
+}
+/* インフォウィンドウ内の実際のコンテンツサイズを指定 */
+.gm-custom-popup {
+  width: 300px !important;    /* ここで好きな幅を強制指定 */
+  max-height: 500px;          /* 高さも必要に応じて制限 */
+  overflow-y: auto;           /* 中身が長すぎる場合はスクロール */
+}
+/* 画像を横幅いっぱい、かつ大きく見せる */
+.popup-image-wrap img {
+  width: 100% !important;
+  height: 200px; /* 高さを固定すると、写真が大きく目立つ */
+  object-fit: cover; /* 縦横比を保ったまま枠を埋める */
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+/* テキスト部分の余白とサイズ */
+.popup-body {
+  padding: 15px 10px;
+}
+.popup-body h3 {
+  margin: 0 0 8px 0 !important;
+  font-size: 20px !important; /* タイトルを大きく */
+  font-weight: bold;
+  color: #333;
+}
+.popup-body p {
+  margin: 0 !important;
+  font-size: 15px !important; /* 本文も読みやすく大きく */
+  line-height: 1.6;
+  color: #555;
+}
+
 /*　タブレット(TB)版*/
  
 @media screen and (min-width: 768px) {
@@ -1466,10 +1509,10 @@ CSSの優先度に注意。クラスを詳細に指定しないとプラグイ�
     row-gap: 20px;
   }
 
-  /* 飲食店別スライドショー */
-  .restaurant-slider {
-    grid-column: 1 / -1; /* 2枚をフル幅で横に並べる */
-  }
+/* 飲食店別スライドショー */
+.restaurant-slider {
+  grid-column: 1 / -1; /* 2枚をフル幅で横に並べる */
+}
 
   .restaurant-info-container > img {
 
