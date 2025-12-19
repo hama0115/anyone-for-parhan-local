@@ -21,7 +21,7 @@
           $target = !empty($hp['target']) ? $hp['target'] : '_self';
           ?>
             <a href="<?php echo esc_url($hp['url']); ?>" target="<?php echo esc_attr($target) ?>">
-              <p>【HP】<?php echo esc_html($hp['title']); ?></p>
+              <p><?php echo esc_html($hp['title']); ?></p>
             </a>
           <?php endif; ?>
           <?php if(get_sub_field('takeout')): //対象のサブフィールド(テキスト)が存在する場合に出力 ?>
