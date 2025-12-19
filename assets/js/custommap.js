@@ -66,15 +66,25 @@ function initMap() {
         });
       }
 
-      // 画像や説明をinfoWindowで表示
-      const content =`
-        <div>
-          ${spot.photo ? `<img src="${spot.photo}" alt="${name}" style="width:100%;border-radius:8px;margin-bottom:10px">` : ''}
-          <h3 style="margin:0 0 10px 0;font-size:16px;">${name}</h3>
-          ${spot.desc ? `<p style="margin:0;font-size:14px;line-height:1.5;">${spot.desc}</p>` : ''}          
+      // 画像や説明をinfoWindowで表示(既定の.gm-style-iw-d配下)
+      const content = `
+      <div class="gm-custom-popup">
+        ${spot.photo ? `
+          <div class="popup-image-wrap">
+            <img src="${spot.photo}" alt="${name}">
+          </div>` : ''}
+        <div class="popup-body">
+          <h3>${name}</h3>
+          ${spot.desc ? `<p>${spot.desc}</p>` : ''}
         </div>
+      </div>
       `;
-      const infoWindow = new google.maps.InfoWindow( { content } );
+
+      const infoWindow = new google.maps.InfoWindow({ 
+      content: content,
+      // 1. API側の最大幅制限を450pxまで広げる
+      maxWidth: 450 
+      });
 
       marker.addListener("click", () => {
         infoWindow.open({
