@@ -68,7 +68,7 @@ function initMap() {
 
       // 画像や説明をinfoWindowで表示
       const content =`
-        <div style="max-width:250px">
+        <div>
           ${spot.photo ? `<img src="${spot.photo}" alt="${name}" style="width:100%;border-radius:8px;margin-bottom:10px">` : ''}
           <h3 style="margin:0 0 10px 0;font-size:16px;">${name}</h3>
           ${spot.desc ? `<p style="margin:0;font-size:14px;line-height:1.5;">${spot.desc}</p>` : ''}          
