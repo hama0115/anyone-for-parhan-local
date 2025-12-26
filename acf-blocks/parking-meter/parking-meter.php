@@ -39,9 +39,16 @@ $markers = get_field('pm-googlemap-markers'); //「PMごとのgooglemapマーカ
             //ツールチップ用のタイトルを用意
             $spot_title_map = [
               'not-cross' => '横断禁止',
-              'not-parking' => '駐停車禁止',
+              'not-stop' => '駐停車禁止',
               'not-parking-07300930' => '駐停車禁止(07:30~09:30)',
-              'parking-with-limit' => '時間制限駐車区間(09:30~19)',
+              'not-parking' => '駐車禁止',
+              'parking-with-limit08002000' => '時間制限駐車区間(08:00~20)',
+              'parking-with-limit09001900' => '時間制限駐車区間(09:00~19)',
+              'parking-with-limit09301900' => '時間制限駐車区間(09:30~19)',
+              'oneway' => '一方通行',
+              'speed30' => '最高速度(30km)',
+              'speed50' => '最高速度(50km)',
+              'not-turn' => '転回禁止',
             ];
             $spot_title = isset($spot_title_map[$icon]) ? $spot_title_map[$icon] : $icon;
 
